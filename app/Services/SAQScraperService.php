@@ -18,6 +18,7 @@ class SAQScraperService
                 'nom' => $node->filter('.product-item-name')->text(),
                 'prix' => $node->filter('.price')->text(),
                 'url' => $node->filter('a.product-item-link')->attr('href'),
+                'img' => $node->filter('img.product-image-photo')->attr('srcset')
             ];
         });
         return $results;
