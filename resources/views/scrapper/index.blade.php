@@ -1,11 +1,7 @@
 <h1>Vins SAQ</h1>
 <ul>
-    @foreach ($bouteilles as $bouteille)
-    <li>
-        <a href="{{ $bouteille['url'] }}" target="_blank">
-            {{ $bouteille['nom'] }} — {{ $bouteille['prix'] }}
-        </a>
-        <img src="{{ $bouteille['img'] }}" alt="{{ $bouteille['nom'] }}">
-    </li>
+    @foreach ($codes_saq as $code)
+    <li>{{ $code }}</li>
     @endforeach
+    {{print_r($codes_saq);}}
 </ul>

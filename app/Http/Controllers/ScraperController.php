@@ -9,7 +9,7 @@ class ScraperController extends Controller
 {
     public function index(SAQScraperService $scraper)
     {
-        $bouteilles = $scraper->chercherVin();
-        return view('scrapper.index', compact('bouteilles'));
+        $codes_saq = $scraper->chercherSAQCodes();
+        return view('scrapper.index', compact('codes_saq'));
     }
 }
