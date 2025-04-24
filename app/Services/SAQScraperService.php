@@ -48,6 +48,15 @@ class SAQScraperService
         return $codes_saq;
     }
 
+    public function nettoyerPrix($prix)
+    {
+        // Enlève les caractères non numériques et remplace la virgule par un point
+        $prix = preg_replace('/[^\d,]/', '', $prix);
+        $prix = str_replace(',', '.', $prix);
+
+        return floatval($prix);
+    }
+
     public function chercherBouteilles(array $codes_saq)
     {
         set_time_limit(0); // Pour éviter les timeouts
@@ -67,14 +76,11 @@ class SAQScraperService
                 $format = $crawler->filter('.product.attribute.format .type')->count() ? trim($crawler->filter('.product.attribute.format .type')->text()) : 'Format inconnu';
                 $type = $crawler->filter('.product.attribute.identity .type')->count() ? trim($crawler->filter('.product.attribute.identity .type')->text()) : 'Type inconnu';
 
-
-
-
                 $bouteilles[] = [
                     'code_saq' => $code_saq,
                     'nom' => $nom,
                     'pays' => $pays,
-                    'prix_saq' => $prix_saq,
+                    'prix_saq' => $this->nettoyerPrix($prix_saq),
                     'url_image' => $url_image,
                     'format' => $format,
                     'type' => $type,

@@ -18,4 +18,13 @@ class Bouteille extends Model
         'bue'
     ];
     use HasFactory;
+
+    public function nettoyerPrix($prix)
+    {
+        // Enlève les caractères non numériques et remplace la virgule par un point
+        $prix = preg_replace('/[^\d,]/', '', $prix);
+        $prix = str_replace(',', '.', $prix);
+
+        return floatval($prix);
+    }
 }
