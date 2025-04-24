@@ -17,7 +17,6 @@ return new class extends Migration
             $table->string('pays')->nullable();
             $table->string('code_saq')->unique();
             $table->decimal('prix_saq', 8, 2)->nullable(); // 999,999.99 max
-            $table->string('url_saq')->nullable();
             $table->string('url_image')->nullable();
             $table->string('format')->nullable();
             $table->string('type')->nullable(); // temporairement string, à remplacer par `type_id` plus tard.

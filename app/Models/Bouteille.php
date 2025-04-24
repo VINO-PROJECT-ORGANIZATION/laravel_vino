@@ -9,12 +9,9 @@ class Bouteille extends Model
 {
     protected $fillable = [
         'nom',
-        'image',
-        'code_saq',
         'pays',
-        'description',
+        'code_saq',
         'prix_saq',
-        'url_saq',
         'url_image',
         'format',
         'type',

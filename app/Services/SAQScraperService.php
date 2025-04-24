@@ -64,7 +64,6 @@ class SAQScraperService
                 $url_image = $crawler->filter('img[itemprop="image"]')->count() ? $crawler->filter('img[itemprop="image"]')->attr('src') : null;
                 $pays = $crawler->filter('.product.attribute.country .type')->count() ? trim($crawler->filter('.product.attribute.country .type')->text()) : 'Pays inconnu';
                 $prix_saq = $crawler->filter('.price')->count() ? trim($crawler->filter('.price')->text()) : 'Prix inconnu';
-                $url_saq = $crawler->filter('link[rel="canonical"]')->count() ? $crawler->filter('link[rel="canonical"]')->attr('href') : null;
                 $format = $crawler->filter('.product.attribute.format .type')->count() ? trim($crawler->filter('.product.attribute.format .type')->text()) : 'Format inconnu';
                 $type = $crawler->filter('.product.attribute.identity .type')->count() ? trim($crawler->filter('.product.attribute.identity .type')->text()) : 'Type inconnu';
 
@@ -75,8 +74,7 @@ class SAQScraperService
                     'code_saq' => $code_saq,
                     'nom' => $nom,
                     'pays' => $pays,
-                    'prix' => $prix_saq,
-                    'url_saq' => $url_saq,
+                    'prix_saq' => $prix_saq,
                     'url_image' => $url_image,
                     'format' => $format,
                     'type' => $type,
