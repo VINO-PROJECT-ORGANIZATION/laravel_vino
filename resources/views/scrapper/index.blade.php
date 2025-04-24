@@ -5,3 +5,17 @@
     @endforeach
     {{print_r($codes_saq);}}
 </ul>
+
+<h1>bouteilles</h1>
+@foreach ($bouteilles as $bouteille)
+<ul>
+    <li>{{ $bouteille['nom'] }}</li>
+    <li>{{ $bouteille['prix'] }}</li>
+    <li><img src="{{ $bouteille['url_image'] }}" alt="{{ $bouteille['nom'] }}"></li>
+    <li>{{ $bouteille['pays']}}</li>
+    <li>{{ $bouteille['format']}}</li>
+    <li>{{ $bouteille['url_saq']}}</li>
+    <li>{{ $bouteille['type']}}</li>
+</ul>
+@endforeach
+{{print_r($bouteilles);}}
