@@ -12,13 +12,13 @@
 </head>
 
 <body>
-    <header>
+    <header class="header__general">
         <nav class="header__nav">
-            <div class="button__box">
-                <p>
-                    < </p>
+            <div class="bouton bouton_nav">
+                <a href="{{ back()->getTargetUrl() }}" class="nav__link">
+                    < </a>
             </div>
-            <div class="button__box">
+            <div class="bouton bouton_nav">
                 <p> ... </p>
             </div>
         </nav>

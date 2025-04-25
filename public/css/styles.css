@@ -1,4 +1,7 @@
 /* --- Importation des styles de bases --- */
 @import './base/reset.css';
+@import './base/boutons.css';
+@import './base/langages.css';
+@import './base/general.css';
 /* --- Importation des composents --- */
-@import './components/header-nav.css'
+@import './components/header-nav.css';
