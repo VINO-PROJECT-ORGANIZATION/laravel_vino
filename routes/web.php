@@ -32,6 +32,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/test-saq', [ScraperController::class, 'index']);
     //routes pour les bouteilles
     Route::get('/bouteilles', [BouteilleController::class, 'index'])->name('bouteilles.index');
+    Route::get('/bouteilles/{id}', [BouteilleController::class, 'show'])->name('bouteilles.show');
 });
 
 

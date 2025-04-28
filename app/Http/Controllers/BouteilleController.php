@@ -16,7 +16,7 @@ class BouteilleController extends Controller
         //afficher toutes les bouteilles
         $bouteilles = Bouteille::all();
 
-        return view('bouteilles.index', compact('bouteilles'));
+        return view('index', compact('bouteilles'));
     }
 
     /**
@@ -40,7 +40,11 @@ class BouteilleController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $bouteille = Bouteille::find($id);
+        if (!$bouteille) {
+            return redirect()->route('dashboard')->with('error', 'Bouteille not found');
+        }
+        return view('bouteilles.show', compact('bouteille'));
     }
 
     /**
