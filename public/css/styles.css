@@ -5,3 +5,4 @@
 @import './base/general.css';
 /* --- Importation des composents --- */
 @import './components/header-nav.css';
+@import './components/footer-nav.css';
