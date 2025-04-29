@@ -1,4 +1,4 @@
-.pied{
+.pied {
 
     border: 1px solid black;
     background-color: white;
@@ -10,49 +10,48 @@
     display: flex;
     overflow: hidden; 
 
-    & div{
-
+    & div {
         width: 25%;
 
-        & .conteneur{
+        & .conteneur {
 
             width: 40%;
             height: 70%;
             left: 2em;
             position: relative;
-    
-            & img{
-    
+
+            & img {
+
                 position: relative;
                 object-fit: contain;
                 width: 100%;
                 height: 100%;
-    
+
             }
 
+        }
+
+        & p {
+
+            color: #595654;
+            font-family: Sen;
+            font-size: 0.8em;
+            font-style: normal;
+            font-weight: 400;
+            text-transform: capitalize;
+            line-height: normal;
+            text-align: center;
+            height: 30%;
+
+        }
+
     }
 
-    & p{
-
-        color: #595654;
-        font-family: Sen;
-        font-size:0.8em;
-        font-style: normal;
-        font-weight: 400;
-        text-transform: capitalize;
-        line-height: normal;    
-        text-align: center;
-        height: 30%;
-    
-    }
-
-}
-
-    & div:hover{
+    & div:hover {
 
         cursor: pointer;
         background-color: gainsboro;
         
     }
-   
+
 }
