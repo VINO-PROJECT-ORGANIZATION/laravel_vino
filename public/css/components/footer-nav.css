@@ -1,16 +1,22 @@
 .pied {
 
+    background-color: var(--arriere-plan-bouton);
     border: 1px solid var(--bordure-claire);
     background-color: var(--fond-navigation);
     border-radius: 24px 24px 0px 0px;
-    height: 12%;
+    max-height: 15%;
     position: fixed;
     bottom: 0;
-    width: 100%;
+    min-width: 100%;
     display: flex;
+    overflow: hidden;
+
     overflow: hidden; 
 
     & div {
+
+
+        padding-top: var(--espace-petit);
         width: 25%;
 
         & .conteneur {
@@ -21,7 +27,6 @@
             position: relative;
 
             & img {
-
                 position: relative;
                 object-fit: contain;
                 width: 100%;
@@ -36,13 +41,15 @@
 
             color: var(--texte-primaire);
             font-family: var(--police-principale);
+            font-size: var(--taille-texte);
+            color: var(--texte-primaire);
+            font-family: var(--police-principale);
             font-size: var(--taille-texte-petit);
             font-style: normal;
             font-weight: var(--poids-texte-normal);
             text-transform: capitalize;
-            line-height: normal;
             text-align: center;
-            height: 30%;
+            padding-bottom: var(--espace-petit);
 
         }
 
@@ -51,6 +58,7 @@
     & div:hover {
 
         cursor: pointer;
+        background-color: var(--arriere-plan-bouton-survol);
         background-color: var( --arriere-plan-bouton-survol);       
     }
 

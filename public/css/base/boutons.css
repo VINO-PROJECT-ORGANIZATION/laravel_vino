@@ -2,7 +2,8 @@
     max-width: 100px;
     max-height: 20px;
     padding: 0px 5px;
-    background-color: var(--couleur-CTA);
+    background-color: var(--couleur-principale);
+    border-radius: var(--rayon-bouton);
     font-weight: 600;
     transition: all 0.3s ease-in-out;
 
@@ -13,9 +14,8 @@
 }
 
 .bouton:hover {
-    background-color: var(--couleur-CTA-hover);
+    background-color: var(--couleur-principale-survol);
     transition: all 0.3s ease-in-out;
-    scale: 1.05;
     cursor: pointer;
 }
 
@@ -29,9 +29,9 @@
     max-width: 45px;
     min-height: 45px;
     max-height: 45px;
-    background-color: #ECF0F4;
+    background-color: var(--arriere-plan-bouton);
 }
 
 .bouton_nav:hover {
-    background-color: var(--couleur-background-bouttons-hover);
+    background-color: var(--arriere-plan-bouton-survol);
 }
