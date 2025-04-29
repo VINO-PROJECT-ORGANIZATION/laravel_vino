@@ -8,6 +8,7 @@
     bottom: 0;
     width: 100%;
     display: flex;
+    overflow: hidden; 
 
     & div{
 
@@ -51,6 +52,7 @@
 
         cursor: pointer;
         background-color: gainsboro;
+        
     }
    
 }
