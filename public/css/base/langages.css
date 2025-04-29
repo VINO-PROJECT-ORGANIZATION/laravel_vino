@@ -7,7 +7,6 @@
     --arriere-plan: #FFFFFF;
     --arriere-plan-bouton: #ECF0F4;
     --arriere-plan-bouton-survol: #D0D7E4;
-    --couleur-background: #fff;
 
     /* Couleurs de texte */
     --texte-primaire: #181C2E;
@@ -31,7 +30,7 @@
     --bordure-claire: #E4E4E4;
 
     /*--- Typographie ---*/
-    --police-principale: 'Poppins', sans-serif;
+    --police-principale: 'Sen', sans-serif;
     --taille-titre: 1.25rem;
     --taille-texte: 1rem;
     --taille-texte-petit: 0.875rem;
