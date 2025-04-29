@@ -1,9 +1,50 @@
 :root {
-    --couleur-CTA: #AA8443;
-    --couleur-CTA-hover: #765823;
+    /* Couleurs principales */
+    --couleur-principale: #AA8443;
+    --couleur-principale-survol: #765823;
+
+    /* Couleurs d’arrière-plan */
+    --arriere-plan: #FFFFFF;
+    --arriere-plan-bouton: #ECF0F4;
+    --arriere-plan-bouton-survol: #D0D7E4;
     --couleur-background: #fff;
-    --couleur-background-bouttons: #ECF0F4;
-    --couleur-background-bouttons-hover: #D0D7E4;
-    --couleur-texte: #181C2E;
-    --couleur-texte-secondaire: #fff;
+
+    /* Couleurs de texte */
+    --texte-primaire: #181C2E;
+    --texte-secondaire: #FFFFFF;
+    --texte-info: #7B7B93;
+
+    /* Étiquettes de type de vin */
+    --vin-rouge: #C13156;
+    --vin-blanc: #C5D38A;
+    --vin-rose: #F4B5BE;
+
+    /* Étoiles */
+    --etoile-active: #DAA520;
+    --etoile-inactive: #D3D3D3;
+
+    /* Navigation */
+    --icone-navigation: #181C2E;
+    --fond-navigation: #F9F9F9;
+
+    /* Divers */
+    --bordure-claire: #E4E4E4;
+
+    /*--- Typographie ---*/
+    --police-principale: 'Poppins', sans-serif;
+    --taille-titre: 1.25rem;
+    --taille-texte: 1rem;
+    --taille-texte-petit: 0.875rem;
+    --taille-label: 0.75rem;
+    --poids-texte-normal: 400;
+    --poids-texte-gras: 600;
+
+    /*--- Espacement ---*/
+    --espace-petit: 0.5rem;
+    --espace-moyen: 1rem;
+    --espace-grand: 2rem;
+
+    --rayon-bouton: 0.5rem;
+    --rayon-carte: 1rem;
+    --taille-icone: 1.5rem;
 }
