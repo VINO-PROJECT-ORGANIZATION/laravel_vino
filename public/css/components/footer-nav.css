@@ -1,7 +1,7 @@
 .pied {
 
-    border: 1px solid black;
-    background-color: white;
+    border: 1px solid var(--bordure-claire);
+    background-color: var(--fond-navigation);
     border-radius: 24px 24px 0px 0px;
     height: 12%;
     position: fixed;
@@ -26,18 +26,19 @@
                 object-fit: contain;
                 width: 100%;
                 height: 100%;
-
+                filter: brightness(0) saturate(100%) invert(7%) sepia(33%) saturate(1557%) hue-rotate(197deg) brightness(91%) contrast(90%);
+              
             }
 
         }
 
         & p {
 
-            color: #595654;
-            font-family: Sen;
-            font-size: 0.8em;
+            color: var(--texte-primaire);
+            font-family: var(--police-principale);
+            font-size: var(--taille-texte-petit);
             font-style: normal;
-            font-weight: 400;
+            font-weight: var(--poids-texte-normal);
             text-transform: capitalize;
             line-height: normal;
             text-align: center;
@@ -50,8 +51,9 @@
     & div:hover {
 
         cursor: pointer;
-        background-color: gainsboro;
-        
+        background-color: var( --arriere-plan-bouton-survol);       
     }
 
 }
+
+
