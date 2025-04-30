@@ -1,16 +1,17 @@
 .carte{
 
 
-    border: 1px solid black;
+    border-bottom: 1px solid black;
     margin-top: 10px;
     margin-left: 10px;
     margin-right: 10px;
     height: 20vh;
     display: flex;
+    /* padding-top:0.5rem; */
 
     & .contenant{
 
-        border: 1px dashed blue;
+        /* border: 1px dashed blue; */
         width: 25%;
         height: 100%;
         position: relative;
@@ -48,20 +49,48 @@
     }
 
     & .detail{
-
-        border: 1px dashed red;
+/* 
+        border: 1px dashed red; */
         width: 75%;
 
         & .description{
 
-            border: 1px solid gold;
+            /* border: 1px solid gold; */
             height: 60%;
             display: grid;
             grid-template-columns: 4fr 1fr;
 
             & .desc{
 
-                border: 2px solid greenyellow;
+                /* border: 2px solid greenyellow; */
+
+                & h3{
+
+                    /* border: 2px solid black; */
+                  
+                    font-family: var( --police-principale);
+                    /* font-size: var( --taille-texte-petit); */
+                    font-style: normal;
+                    font-weight: 400;
+                    text-transform: capitalize;
+                    font-size: 0.80rem;
+                    line-height: normal;
+                    word-spacing:100%;
+                        
+                }
+
+
+                & .texte{
+
+                    /* border:2px solid #FFAA2A; */
+                    font-family: var( --police-principale);
+                    font-size:0.60rem;
+                    font-style: normal;
+                    font-weight: 400;
+                    margin-top: 0.77rem;
+                    color: #5C5F69;
+                }
+
             }
 
             & .favori{
