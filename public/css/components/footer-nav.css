@@ -1,14 +1,15 @@
 .pied {
 
-    background-color: var(--arriere-plan-bouton);
+    
+    border: 1px solid var(--bordure-claire);
+    background-color: var(--fond-navigation);
     border-radius: 24px 24px 0px 0px;
     max-height: 15%;
     position: fixed;
     bottom: 0;
     min-width: 100%;
     display: flex;
-    overflow: hidden;
-
+    overflow: hidden; 
 
     & div {
 
@@ -28,7 +29,8 @@
                 object-fit: contain;
                 width: 100%;
                 height: 100%;
-
+                filter: brightness(0) saturate(100%) invert(7%) sepia(33%) saturate(1557%) hue-rotate(197deg) brightness(91%) contrast(90%);
+              
             }
 
         }
@@ -38,8 +40,10 @@
             color: var(--texte-primaire);
             font-family: var(--police-principale);
             font-size: var(--taille-texte);
+            font-family: var(--police-principale);
+            font-size: var(--taille-texte-petit);
             font-style: normal;
-            font-weight: 400;
+            font-weight: var(--poids-texte-normal);
             text-transform: capitalize;
             text-align: center;
             padding-bottom: var(--espace-petit);
@@ -51,7 +55,9 @@
     & div:hover {
 
         cursor: pointer;
-        background-color: var(--arriere-plan-bouton-survol);
+        background-color: var(--arriere-plan-bouton-survol);      
     }
 
 }
+
+
