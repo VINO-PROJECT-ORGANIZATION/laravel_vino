@@ -1,0 +1,72 @@
+.carte{
+
+
+    border: 1px solid black;
+    margin-left: 10px;
+    margin-right: 10px;
+    height: 20vh;
+    display: flex;
+
+    & .contenant{
+
+        border: 1px dashed blue;
+        width: 25%;
+        height: 100%;
+        position: relative;
+
+        & .contenant_img{
+
+            /* border: 1px solid greenyellow; */
+            height: 85%;
+        
+            /* background-color: white; */
+            z-index: 6;
+            position: relative;
+
+            & img{
+
+                position:absolute;
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+           
+            }
+        }
+
+        & .plateau{
+
+            border-radius: 10px;
+            height: 15%;
+            background-color:var(--vin-rouge);
+            position: absolute;
+            z-index: 3;
+            width: 100%;
+            /* top: 5.8rem; */
+            bottom: 1.2rem;
+        }
+    }
+
+    & .detail{
+
+        border: 1px dashed red;
+        width: 75%;
+
+        & .description{
+
+            border: 1px solid gold;
+            height: 60%;
+        }
+
+        & .action{
+
+            border: 1px solid red;
+            height: 40%;
+
+            & .note{
+
+                border: 2px solid burlywood;
+                height:45%;
+            }
+        }
+    }
+}
