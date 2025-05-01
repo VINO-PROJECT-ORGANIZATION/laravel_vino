@@ -10,12 +10,14 @@ class Bouteille extends Model
     protected $fillable = [
         'nom',
         'pays',
-        'code_saq',
-        'prix_saq',
-        'url_image',
         'format',
+        'url_image',
+        'prix_saq',
+        'code_saq',
+        'degre_alcool',
+        'note_saq',
+        'region',
         'type',
-        'bue'
     ];
     use HasFactory;
 
