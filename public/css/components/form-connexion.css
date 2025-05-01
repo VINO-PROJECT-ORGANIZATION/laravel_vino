@@ -32,6 +32,7 @@ body{
 
         /* border: 1px solid saddlebrown; */
 
+      
 
         & .balise_courriel{
 
@@ -47,6 +48,8 @@ body{
             font-weight: 400;
             line-height: normal;
             text-transform: uppercase;
+
+         
 
             & input{
                 margin-top: 5px;
@@ -160,3 +163,17 @@ body{
 }
 
 
+input[type="email"],
+input[type="password"]
+{
+   
+    font-family: var(--police-principale);
+    color: #A0A5BA;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    border-radius: 5px;
+    height: 40px;
+    background-color: #F0F5FA;
+}
