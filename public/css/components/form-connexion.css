@@ -71,6 +71,36 @@ body{
             line-height: normal;
             text-transform: uppercase;
 
+
+            & .logo{
+
+                display: grid;
+                grid-template-columns: 100fr 1fr;
+                position: relative;
+            }
+
+            & .conteneur_logo{
+
+                position: absolute;
+                width: 40px;
+                height: 40px;
+                left: 20.5rem;
+                top:0.3rem;
+                /* border: 2px solid gray; */
+
+                & svg{
+
+                    margin-top: 0.5rem;
+                    width: 30px;
+                }
+            }
+
+
+            & .conteneur_logo:hover{
+
+              cursor: pointer;
+            }
+
             & input{
                 margin-top: 5px;
             }
