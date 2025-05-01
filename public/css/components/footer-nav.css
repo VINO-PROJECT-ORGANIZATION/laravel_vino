@@ -10,6 +10,7 @@
     min-width: 100%;
     display: flex;
     overflow: hidden; 
+    z-index: 10;
 
     & div {
 

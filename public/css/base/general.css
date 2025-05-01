@@ -1,6 +1,5 @@
 body {
-    /* background-color: var(--arriere-plan); */
-    background-color: black;
+    background-color: var(--arriere-plan);
     min-width: 100%;
     min-height: 100%;
     margin: 0;
