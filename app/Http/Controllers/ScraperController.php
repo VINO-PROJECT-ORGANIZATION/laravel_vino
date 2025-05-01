@@ -23,12 +23,14 @@ class ScraperController extends Controller
                     [
                         'nom' => $bouteille['nom'],
                         'pays' => $bouteille['pays'],
-                        'code_saq' => $bouteille['code_saq'],
-                        'prix_saq' => $bouteille['prix_saq'],
-                        'url_image' => $bouteille['url_image'],
                         'format' => $bouteille['format'],
+                        'url_image' => $bouteille['url_image'],
+                        'prix_saq' => $bouteille['prix_saq'],
+                        'code_saq' => $bouteille['code_saq'],
+                        'degre_alcool' => $bouteille['degre_alcool'],
+                        'note_saq' => $bouteille['note_saq'],
+                        'region' => $bouteille['region'],
                         'type' => $bouteille['type'],
-                        'bue' => 4, // 4 = non bue],
                     ]
                 );
             }
