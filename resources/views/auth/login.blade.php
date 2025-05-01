@@ -1,6 +1,11 @@
 <x-guest-layout>
+
     <!-- Session Status -->
     <x-auth-session-status class="mb-4" :status="session('status')" />
+
+    <div class="balise-form">
+
+
 
     <form method="POST" action="{{ route('login') }}">
         @csrf
@@ -44,4 +49,16 @@
             </x-primary-button>
         </div>
     </form>
+
+
+
+        <div class="balise-inscrire">
+        <p>Vous n'avez pas de compte?</p>
+        <a href="/">S'inscrire</a>
+        </div>
+       
+    </div>
+
+
+    
 </x-guest-layout>
