@@ -69,20 +69,27 @@ class SAQScraperService
 
             try {
                 $crawler = $client->request('GET', $url);
+
                 $nom = $crawler->filter('h1.page-title')->count() ? trim($crawler->filter('h1.page-title')->text()) : 'Nom inconnu';
-                $url_image = $crawler->filter('img[itemprop="image"]')->count() ? $crawler->filter('img[itemprop="image"]')->attr('src') : null;
                 $pays = $crawler->filter('.product.attribute.country .type')->count() ? trim($crawler->filter('.product.attribute.country .type')->text()) : 'Pays inconnu';
-                $prix_saq = $crawler->filter('.price')->count() ? trim($crawler->filter('.price')->text()) : 'Prix inconnu';
                 $format = $crawler->filter('.product.attribute.format .type')->count() ? trim($crawler->filter('.product.attribute.format .type')->text()) : 'Format inconnu';
+                $url_image = $crawler->filter('img[itemprop="image"]')->count() ? $crawler->filter('img[itemprop="image"]')->attr('src') : null;
+                $prix_saq = $crawler->filter('.price')->count() ? trim($crawler->filter('.price')->text()) : 'Prix inconnu';
+                $note_saq = $crawler->filter('.rating-result')->count() ? intval(preg_replace('/[^\d]/', '', $crawler->filter('.rating-result')->attr('title'))) : null;
+                $degre_alcool = $crawler->filter('strong[data-th="Degré d\'alcool"]')->count() ? str_replace(',', '.', preg_replace('/[^\d,\.]/', '', $crawler->filter('strong[data-th="Degré d\'alcool"]')->text())) : null;
+                $region = $crawler->filter('.product.attribute.region .type')->count() ? trim($crawler->filter('.product.attribute.region .type')->text()) : 'Région inconnue';
                 $type = $crawler->filter('.product.attribute.identity .type')->count() ? trim($crawler->filter('.product.attribute.identity .type')->text()) : 'Type inconnu';
 
                 $bouteilles[] = [
-                    'code_saq' => $code_saq,
                     'nom' => $nom,
                     'pays' => $pays,
-                    'prix_saq' => $this->nettoyerPrix($prix_saq),
-                    'url_image' => $url_image,
                     'format' => $format,
+                    'url_image' => $url_image,
+                    'prix_saq' => $this->nettoyerPrix($prix_saq),
+                    'code_saq' => $code_saq,
+                    'degre_alcool' => $degre_alcool,
+                    'note_saq' => $note_saq,
+                    'region' => $region,
                     'type' => $type,
 
                 ];

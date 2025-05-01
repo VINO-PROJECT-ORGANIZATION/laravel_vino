@@ -1,13 +1,13 @@
 .bouton {
-     max-width: 100px; 
-     max-height: 20px;
-    /* max-width: 60%;
-    max-height: 60%; */
     padding: 0px 5px;
     background-color: var(--couleur-principale);
     border-radius: var(--rayon-bouton);
     font-weight: 600;
     transition: all 0.3s ease-in-out;
+    margin-left: 6rem;
+    margin-top: 0.2rem;
+    max-width: 60%;
+    max-height: 60%;
 
     & a {
         text-decoration: none;
