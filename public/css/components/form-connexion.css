@@ -196,7 +196,7 @@ body{
 
 
 input[type="email"],
-input[type="password"]
+input[type="password"],input
 {
    
     font-family: var(--police-principale);
