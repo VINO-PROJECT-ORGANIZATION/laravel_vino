@@ -114,8 +114,8 @@
                 {{ __('Already registered?') }}
             </a>
 
-            
-            <x-primary-button class="ms-4 boutons touche">
+            <!-- ajout de l'attribut disabled -->
+            <x-primary-button class="ms-4 boutons touche" disabled> 
                 {{ __('CRÉER LE COMPTE') }}
             </x-primary-button>
           
