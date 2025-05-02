@@ -7,7 +7,7 @@
 
         <!-- Email Address -->
         <div class="mt-4">
-            <x-input-label for="email" :value="__('Email')" />
+            <x-input-label for="email" :value="__('COURRIEL')" />
             <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autocomplete="username" />
             <x-input-error :messages="$errors->get('email')" class="mt-2" />
         </div>
@@ -15,14 +15,14 @@
 
         <!-- Name -->
         <div>
-            <x-input-label for="name" :value="__('Name')" />
+            <x-input-label for="name" :value="__('NOM')" />
             <x-text-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
             <x-input-error :messages="$errors->get('name')" class="mt-2" />
         </div>
 
          <!-- Prenom -->
          <div>
-            <x-input-label for="name" :value="__('Name')" />
+            <x-input-label for="name" :value="__('PRENOM')" />
             <x-text-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
             <x-input-error :messages="$errors->get('name')" class="mt-2" />
         </div>
@@ -30,7 +30,7 @@
 
          <!-- Date de Naissance -->
          <div>
-            <x-input-label for="name" :value="__('Name')" />
+            <x-input-label for="date_naissance" :value="__('DATE DE NAISSANCE')" />
             <x-text-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
             <x-input-error :messages="$errors->get('name')" class="mt-2" />
         </div>
@@ -38,7 +38,7 @@
 
          <!-- Addresse -->
          <div>
-            <x-input-label for="name" :value="__('Name')" />
+            <x-input-label for="addresse" :value="__('ADDRESSE')" />
             <x-text-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
             <x-input-error :messages="$errors->get('name')" class="mt-2" />
         </div>
@@ -46,7 +46,7 @@
         
         <!-- Password -->
         <div class="mt-4">
-            <x-input-label for="password" :value="__('Password')" />
+            <x-input-label for="password" :value="__('MOT DE PASSE')" />
 
             <x-text-input id="password" class="block mt-1 w-full"
                             type="password"
@@ -58,7 +58,7 @@
 
         <!-- Confirm Password -->
         <div class="mt-4">
-            <x-input-label for="password_confirmation" :value="__('Confirm Password')" />
+            <x-input-label for="password_confirmation" :value="__('RÉPÉTER LE MOT DE PASSE')" />
 
             <x-text-input id="password_confirmation" class="block mt-1 w-full"
                             type="password"
@@ -73,7 +73,7 @@
             </a>
 
             <x-primary-button class="ms-4">
-                {{ __('Register') }}
+                {{ __('CRÉER LE COMPTE') }}
             </x-primary-button>
         </div>
     </form>
