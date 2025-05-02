@@ -32,8 +32,43 @@
     letter-spacing: 0%;
     text-transform: uppercase;
     color: #32343E;
+
+
+   
     
 
+}
+
+.conteneur_icone{
+
+    /* border: 1px solid yellowgreen; */
+    width: 100%;
+    display: flex;
+    position: relative;
+
+    & input{
+
+        /* border: 1px solid green; */
+        flex-basis: 100%;
+      
+    }
+
+}
+
+
+.icone{
+
+   
+    width: 8%;
+    position: absolute;
+    left: 91%;
+    top: 20%;
+   
+}
+
+.icone:hover{
+
+    cursor: pointer;
 }
 
 
