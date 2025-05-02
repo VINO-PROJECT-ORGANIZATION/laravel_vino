@@ -210,3 +210,22 @@ input[type="password"],input
     background-color: #F0F5FA;
     padding-left: 10px;
 }
+
+.boutons{
+
+    width: 100% ;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    margin-top: 10px;
+    /* border: 2px solid blue; */
+    border-radius: 12px;
+    background: var(--PRIMARY, #AA8443);
+    text-align: center;
+    text-transform: uppercase;
+    color: #181C2E;
+    font-family: var(--police-principale);
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+       
+}

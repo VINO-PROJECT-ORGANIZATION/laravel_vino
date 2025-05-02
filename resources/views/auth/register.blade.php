@@ -93,9 +93,12 @@
                 {{ __('Already registered?') }}
             </a>
 
-            <x-primary-button class="ms-4 bouton touche">
+            
+            <x-primary-button class="ms-4 boutons touche">
                 {{ __('CRÉER LE COMPTE') }}
             </x-primary-button>
+          
+            
         </div>
     </form>
 
