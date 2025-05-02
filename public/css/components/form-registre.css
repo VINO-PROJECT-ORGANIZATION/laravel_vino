@@ -1,0 +1,15 @@
+.balise{
+
+    border: 2px solid blueviolet;
+    height: 70vh;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 50px;
+    border-radius: 24px;
+}
+
+
+.invisible{
+
+    display: none;
+}
