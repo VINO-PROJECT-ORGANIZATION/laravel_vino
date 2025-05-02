@@ -1,0 +1,78 @@
+.balise{
+
+    
+    background-color: #fff;
+    height: 85vh;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 5px;
+    border-radius: 24px;
+    padding: 15px;
+
+    & .touche{
+
+     
+        margin-top: 25px;
+   
+    }
+}
+
+
+
+
+.contenant{
+
+    display: flex;
+    flex-direction: column;
+    margin-top: 8px;
+    font-family: var(--police-principale);
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-transform: uppercase;
+    color: #32343E;
+
+
+   
+    
+
+}
+
+.conteneur_icone{
+
+    
+    width: 100%;
+    display: flex;
+    position: relative;
+
+    & input{
+
+        
+        flex-basis: 100%;
+      
+    }
+
+}
+
+
+.icone{
+
+   
+    width: 8%;
+    position: absolute;
+    left: 91%;
+    top: 20%;
+   
+}
+
+.icone:hover{
+
+    cursor: pointer;
+}
+
+
+.invisible{
+
+    display: none;
+}
