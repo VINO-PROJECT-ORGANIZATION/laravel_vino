@@ -28,7 +28,7 @@
 
          <!-- Prenom -->
          <div>
-            <div class="contenant">
+            <div class="contenant invisible">
             <x-input-label for="prenom" :value="__('PRENOM')" />
             <x-text-input id="prenom" class="block mt-1 w-full" type="text" name="prenom" :value="old('prenom')" required autofocus autocomplete="prenom" />
             </div>
@@ -39,7 +39,7 @@
 
          <!-- Date de Naissance -->
          <div>
-            <div class="contenant">
+            <div class="contenant invisible">
             <x-input-label for="date_naissance" :value="__('DATE DE NAISSANCE')" />
             <x-text-input id="date_naissance" class="block mt-1 w-full" type="date" name="date_naissance" :value="old('date_naissance')" required autofocus autocomplete="date_naissance" />
             </div>
@@ -50,7 +50,7 @@
 
          <!-- Addresse -->
          <div>
-            <div class="contenant">
+            <div class="contenant invisible">
             <x-input-label for="addresse" :value="__('ADDRESSE')" />
             <x-text-input id="addresse" class="block mt-1 w-full" type="text" name="addresse" :value="old('addresse')" required autofocus autocomplete="addresse"  />
             </div>
