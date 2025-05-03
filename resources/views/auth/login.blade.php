@@ -29,7 +29,7 @@
                 type="password"
                 name="password"
                 required autocomplete="current-password" />
-            <div class="conteneur_logo">
+            <div class="conteneur_logo invisible">
 
             <!-- ajout de l'icone de visibilite -->
             <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 19 14" fill="none">
