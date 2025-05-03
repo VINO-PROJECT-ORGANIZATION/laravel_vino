@@ -11,7 +11,7 @@
 
     & .touche{
 
-     
+        
         margin-top: 25px;
    
     }
@@ -83,3 +83,10 @@
 
     display: none;
 }
+
+
+
+@media (min-width: 1200px) {
+ 
+    
+  }
