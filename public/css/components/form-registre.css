@@ -88,5 +88,8 @@
 
 @media (min-width: 1200px) {
  
-    
+   .icone{
+
+    width: 2%;
+   }   
   }
