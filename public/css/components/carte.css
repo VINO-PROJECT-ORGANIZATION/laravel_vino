@@ -161,13 +161,19 @@
     }   
 
 
+    .favori{
+
+            padding-left: 8rem;        
+    }
+
+
     .action{
 
        & .bouton{
 
         text-align: center;
-        margin-left: 11rem;
-        
+        margin-left: 18.8rem;
+
        }
     }
    }
