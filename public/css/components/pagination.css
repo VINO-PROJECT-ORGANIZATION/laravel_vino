@@ -1,0 +1,48 @@
+/* pagination.css */
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--espace-petit);
+    padding: var(--espace-moyen);
+    font-family: var(--police-principale);
+    list-style: none;
+}
+
+.pagination .page-link {
+    display: inline-block;
+    padding: 0.5rem 0.75rem;
+    background-color: var(--arriere-plan-bouton);
+    color: var(--texte-primaire);
+    border: 1px solid var(--bordure-claire);
+    border-radius: var(--rayon-bouton);
+    font-size: var(--taille-texte-petit);
+    text-decoration: none;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.pagination .page-link:hover {
+    background-color: var(--arriere-plan-bouton-survol);
+    color: var(--couleur-principale-survol);
+}
+
+.pagination .page-item.active .page-link {
+    background-color: var(--couleur-principale);
+    color: var(--texte-secondaire);
+    border-color: var(--couleur-principale);
+    cursor: default;
+}
+
+.pagination .page-item.disabled .page-link {
+    background-color: var(--arriere-plan);
+    color: var(--texte-info);
+    border-color: var(--bordure-claire);
+    cursor: not-allowed;
+}
+
+.pagination .page-link:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(170, 132, 67, 0.4);
+    /* focus doux */
+}

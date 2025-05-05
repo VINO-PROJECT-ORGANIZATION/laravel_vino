@@ -39,13 +39,26 @@
 
             border-radius: 10px;
             height: 15%;
-            background-color: var(--vin-rouge);
             position: absolute;
             z-index: 3;
             width: 100%;
             /* top: 5.8rem; */
             bottom: 1.2rem;
+
+            &.vin-rouge {
+                background-color: var(--vin-rouge);
+            }
+
+            &.vin-blanc {
+                background-color: var(--vin-blanc);
+            }
+
+            &.vin-rose {
+                background-color: var(--vin-rose);
+            }
         }
+
+
     }
 
     & .detail {
@@ -154,26 +167,26 @@
 
 
 @media (min-width: 1200px) {
- 
-    .note{
-    width: 30%;
-     
-    }   
 
+    .note {
+        width: 30%;
 
-    .favori{
-
-            padding-left: 8rem;        
     }
 
 
-    .action{
+    .favori {
 
-       & .bouton{
-
-        text-align: center;
-        margin-left: 18.8rem;
-
-       }
+        padding-left: 8rem;
     }
-   }
+
+
+    .action {
+
+        & .bouton {
+
+            text-align: center;
+            margin-left: 18.8rem;
+
+        }
+    }
+}
