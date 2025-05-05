@@ -32,9 +32,9 @@ class SAQScraperService
         $client = new Client();
         $codes_saq = [];
 
-        for ($page = 1; $page <= 2; $page++) {
+        for ($page = 1; $page <= 81; $page++) {
 
-            $url = "https://www.saq.com/fr/produits/vin?p=$page&product_list_limit=24";
+            $url = "https://www.saq.com/fr/produits/vin?p=$page&product_list_limit=96";
             $crawler = $client->request('GET', $url);
 
             $codes = $crawler->filter('.saq-code')->each(function ($node) {
