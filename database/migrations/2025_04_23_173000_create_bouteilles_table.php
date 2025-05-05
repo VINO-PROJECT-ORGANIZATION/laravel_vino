@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('bouteilles', function (Blueprint $table) {
             $table->id();
-            $table->string('nom');
+            $table->string('nom')->nullable();
             $table->string('pays')->nullable();
             $table->string('format')->nullable();
             $table->string('url_image')->nullable();
