@@ -8,4 +8,4 @@
         {{ $bouteilles->links('pagination::default') }}
     </div>
 </main>
-<x-footer></x-footer>
+<x-footer :pageCourante="$pageCourante"></x-footer>

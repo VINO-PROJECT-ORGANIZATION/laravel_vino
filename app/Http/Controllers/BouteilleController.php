@@ -15,12 +15,13 @@ class BouteilleController extends Controller
     {
         //afficher toutes les bouteilles
         $bouteilles = Bouteille::paginate(25);
+        $pageCourante = 'bouteilles';
 
         // return view('index', compact('bouteilles'));
 
 
         // tu avais oublie de mettre bouteilles.index pour afficher la page 
-        return view('bouteilles.index', compact('bouteilles'));
+        return view('bouteilles.index', compact('bouteilles', 'pageCourante'));
     }
 
     /**

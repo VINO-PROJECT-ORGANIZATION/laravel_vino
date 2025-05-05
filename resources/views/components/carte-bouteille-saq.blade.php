@@ -4,11 +4,11 @@
             <img src="{{$bouteille['url_image']}}" alt="bouteille">
         </div>
         <div class="plateau
-            @if($bouteille['type'] == 'Vin rouge') 
+            @if($bouteille['type'] == 'Vin rouge')
                 vin-rouge
-            @elseif($bouteille['type'] == 'Vin blanc') 
+            @elseif($bouteille['type'] == 'Vin blanc')
                 vin-blanc
-            @elseif($bouteille['type'] == 'Vin rosé') 
+            @elseif($bouteille['type'] == 'Vin rosé')
                 vin-rose
             @else
                 vin-rouge
