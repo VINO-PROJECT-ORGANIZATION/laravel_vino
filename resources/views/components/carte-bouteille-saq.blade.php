@@ -86,7 +86,7 @@
             </div>
 
 
-            <div class="bouton">
+            <div class="bouton bouton_cellier">
                 <a href="">
                     Ajouter à un cellier
                 </a>

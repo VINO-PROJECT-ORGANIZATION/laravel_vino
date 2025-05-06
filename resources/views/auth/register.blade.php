@@ -28,16 +28,7 @@
                 <x-input-error :messages="$errors->get('name')" class="mt-2" />
             </div>
 
-            <!-- Prenom -->
-            <div>
-                <div class="contenant">
-                    <x-input-label for="prenom" :value="__('PRENOM')" />
-                    <x-text-input id="prenom" class="block mt-1 w-full" type="text" name="prenom" :value="old('prenom')"
-                        required autofocus autocomplete="prenom" />
-                </div>
-
-                <x-input-error :messages="$errors->get('prenom')" class="mt-2" />
-            </div>
+        
          <!-- Prenom -->
          <div>
             <div class="contenant">
