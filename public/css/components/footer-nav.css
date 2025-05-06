@@ -11,7 +11,7 @@
     display: flex;
     overflow: hidden;
     z-index: 10;
-    overflow: hidden; 
+    overflow: hidden;
     z-index: 10;
 
     & div {
@@ -53,6 +53,10 @@
 
         }
 
+    }
+
+    & .active {
+        background-color: var(--arriere-plan-bouton-survol);
     }
 
     & div:hover {
