@@ -20,7 +20,8 @@
         <nav class="header__nav-sec">
             <div class="bouton bouton_nav">
                 <a href="{{ back()->getTargetUrl() }}" class="nav__link">
-                    < </a>
+                    <img src="./images/icons/back.svg" alt="icone">
+                     </a>
             </div>
             <div class="bouton bouton_nav">
                 <p> ... </p>
