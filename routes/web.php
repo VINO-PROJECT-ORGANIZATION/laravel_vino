@@ -34,11 +34,12 @@ Route::middleware('auth')->group(function () {
     Route::get('/bouteilles', [BouteilleController::class, 'index'])->name('bouteilles.index');
     Route::get('/bouteilles/{id}', [BouteilleController::class, 'show'])->name('bouteilles.show');
     //routes pour les celliers
-    Route::get('/celliers', function () {
-        return view('celliers/index');
-    });
+   
 });
 
+Route::get('/celliers', function () {
+    return view('celliers/index');
+});
 
 
 
