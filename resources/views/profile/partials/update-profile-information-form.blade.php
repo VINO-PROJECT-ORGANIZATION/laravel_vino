@@ -1,8 +1,8 @@
 <section class="update-profil-form">
-    <header>
-        <h2>{{ $user['prenom']." ".$user['name'] }}</h2>
+    <header class="profile-entete">
+        <h2 class="profile-entete-title">{{ $user['prenom']." ".$user['name'] }}</h2>
         <!-- à faire -->
-        <p># cellier(s) - 53 Bouteilles</p>
+        <p class="profile-entete-text"># cellier(s) - 53 Bouteilles</p>
     </header>
     <div class="conteneur">
         <form method="post" action="{{ route('profile.update') }}">

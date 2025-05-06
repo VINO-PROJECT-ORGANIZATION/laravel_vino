@@ -1,3 +1,5 @@
+/*----------Importation des polices externes (Google fonts)------------*/
+@import 'https://fonts.googleapis.com/css2?family=Sen:wght@400..800&display=swap';
 /* --- Importation des styles de bases --- */
 @import './base/reset.css';
 @import './base/boutons.css';
@@ -11,3 +13,4 @@
 @import './components/form-registre.css';
 @import './components/pagination.css';
 @import './components/update-profile-form.css';
+@import './components/profile-entete.css';
