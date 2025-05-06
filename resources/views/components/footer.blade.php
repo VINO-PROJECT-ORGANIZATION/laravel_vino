@@ -7,17 +7,21 @@
         <p>Celliers</p>
     </div>
 
-    <div class="@if($pageCourante == '') active @endif">
+    <div class="@if($pageCourante == 'bouteilles') active @endif">
+        <a href="{{ route('bouteilles.index') }}">
+
         <div class="conteneur">
             <img src="./images/icons/tirebouchon.svg" alt="icon">
         </div>
         <p>Bouteilles</p>
         </a>
+        
+        </a>
     </div>
 
-    <div class="@if($pageCourante == 'bouteilles') active @endif">
+    <div class="@if($pageCourante == '') active @endif">
         <!-- lien vers la page des bouteilles -->
-        <a href="{{ route('bouteilles.index') }}">
+        <a href="">
 
             <div class="conteneur">
                 <img src="./images/icons/loupe.svg" alt="icon">
@@ -35,7 +39,7 @@
         </a>
     </div>
 
-    </foote>
+    </footer>  
 
     </body>
 
