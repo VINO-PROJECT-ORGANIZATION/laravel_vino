@@ -29,7 +29,7 @@
          <!-- Prenom -->
          <div>
             <div class="contenant">
-            <x-input-label for="prenom" :value="__('PRENOM')" />
+            <x-input-label for="prenom" :value="__('PRÉNOM')" />
             <x-text-input id="prenom" class="block mt-1 w-full" type="text" name="prenom" :value="old('prenom')" required autofocus autocomplete="prenom" />
             </div>
             
