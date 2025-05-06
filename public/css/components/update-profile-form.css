@@ -1,0 +1,56 @@
+.update-profil-form {
+
+    padding: var(--espace-moyen);
+    margin-bottom: var(--espace-grand);
+
+
+    & header {
+        align-items: center;
+        margin-bottom: 1rem;
+    }
+
+    & .conteneur {
+
+        & form {
+            display: flex;
+            flex-direction: column;
+            gap: var(--espace-petit);
+
+            & section {
+                display: flex;
+                flex-direction: column;
+                gap: var(--espace-moyen);
+
+                & .section__sous-titre {
+                    display: flex;
+                    gap: var(--espace-moyen);
+
+                    &> :last-child {
+                        margin-left: auto;
+                        rotate: 180deg;
+                    }
+                }
+
+
+            }
+
+            & section+section {
+                margin-top: var(--espace-moyen);
+            }
+
+            & .groupe-input {
+                display: flex;
+                flex-direction: column;
+                gap: var(--espace-petit);
+            }
+        }
+    }
+
+    & .conteneur+.conteneur {
+        margin-top: var(--espace-grand);
+    }
+
+    &> :last-child {
+        margin-top: var(--espace-grand);
+    }
+}

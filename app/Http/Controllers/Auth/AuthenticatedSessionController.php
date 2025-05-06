@@ -30,7 +30,10 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerate();
 
-        return redirect()->intended(RouteServiceProvider::HOME);
+        // return redirect()->intended(RouteServiceProvider::HOME);
+
+        // redirige la route vers la page bouteille
+        return redirect()->route('bouteilles.index');
     }
 
     /**
