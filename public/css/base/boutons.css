@@ -4,7 +4,6 @@
     border-radius: var(--rayon-bouton);
     font-weight: 600;
     transition: all 0.3s ease-in-out;
-    margin-left: 6rem;
     margin-top: 0.2rem;
     max-width: 60%;
     max-height: 60%;
@@ -15,6 +14,12 @@
         font-size: 0.6rem;
         margin-left: 20%;
     }
+}
+
+
+.bouton_cellier{
+
+margin-left: 6rem;    
 }
 
 .bouton:hover {
