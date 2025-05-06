@@ -1,6 +1,8 @@
 .update-profil-form {
 
     padding: var(--espace-moyen);
+    margin-bottom: var(--espace-grand);
+
 
     & header {
         align-items: center;
@@ -12,7 +14,7 @@
         & form {
             display: flex;
             flex-direction: column;
-            gap: var(--espace-moyen);
+            gap: var(--espace-petit);
 
             & section {
                 display: flex;
@@ -32,11 +34,23 @@
 
             }
 
+            & section+section {
+                margin-top: var(--espace-moyen);
+            }
+
             & .groupe-input {
                 display: flex;
                 flex-direction: column;
-                gap: var(--espace-moyen);
+                gap: var(--espace-petit);
             }
         }
+    }
+
+    & .conteneur+.conteneur {
+        margin-top: var(--espace-grand);
+    }
+
+    &> :last-child {
+        margin-top: var(--espace-grand);
     }
 }
