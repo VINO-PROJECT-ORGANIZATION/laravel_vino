@@ -1,0 +1,42 @@
+.update-profil-form {
+
+    padding: var(--espace-moyen);
+
+    & header {
+        align-items: center;
+        margin-bottom: 1rem;
+    }
+
+    & .conteneur {
+
+        & form {
+            display: flex;
+            flex-direction: column;
+            gap: var(--espace-moyen);
+
+            & section {
+                display: flex;
+                flex-direction: column;
+                gap: var(--espace-moyen);
+
+                & .section__sous-titre {
+                    display: flex;
+                    gap: var(--espace-moyen);
+
+                    &> :last-child {
+                        margin-left: auto;
+                        rotate: 180deg;
+                    }
+                }
+
+
+            }
+
+            & .groupe-input {
+                display: flex;
+                flex-direction: column;
+                gap: var(--espace-moyen);
+            }
+        }
+    }
+}
