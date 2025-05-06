@@ -27,10 +27,12 @@
     </div>
 
     <div class="@if($pageCourante == 'celliers') active @endif">
-        <div class="conteneur">
-            <img src="./images/icons/user.svg" alt="icon">
-        </div>
-        <p>Profil</p>
+        <a href="{{ route('profile.edit') }}">
+            <div class="conteneur">
+                <img src="./images/icons/user.svg" alt="icon">
+            </div>
+            <p>Profil</p>
+        </a>
     </div>
 
     </foote>
