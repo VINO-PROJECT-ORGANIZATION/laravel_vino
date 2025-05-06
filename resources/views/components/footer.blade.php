@@ -35,7 +35,7 @@
         </a>
     </div>
 
-    </foote>
+    </footer>  
 
     </body>
 
