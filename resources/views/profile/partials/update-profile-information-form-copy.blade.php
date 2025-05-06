@@ -62,18 +62,25 @@
                     <label for="update_password_current_password">Mot de passe courrant</label>
                     <!-- afficher l'encien mot de passe -->
                     <input type="password" id="update_password_current_password" name="current_password">
+                    <x-input-error :messages="$errors->updatePassword->get('current_password')" />
                 </div>
                 <div class="groupe-input">
                     <label for="update_password_password">Nouveau mot de passe</label>
                     <input type="password" id="update_password_password" name="password" required>
+                    <x-input-error :messages="$errors->updatePassword->get('password')" />
                 </div>
                 <div class="groupe-input">
                     <label for="update_password_password_confirmation">Confirmer le mot de passe</label>
                     <input type="password" id="update_password_password_confirmation" name="password_confirmation"
                         required>
+                    <x-input-error :messages="$errors->updatePassword->get('password_confirmation')" />
                 </div>
             </section>
-            <input type="submit" value="Enregistrer" class="bouton danger">
+            <x-primary-button class="bouton">{{ __('Enregister') }}</x-primary-button>
+            @if (session('status') === 'password-updated')
+            <p x-data="{ show: true }" x-show="show" x-transition x-init="setTimeout(() => show = false, 2000)"
+                class="">{{ __('Enregirstré.') }}</p>
+            @endif
         </form>
     </div>
 </section>
