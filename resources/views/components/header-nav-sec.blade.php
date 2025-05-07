@@ -24,13 +24,13 @@
                     <img src="./images/icons/back.svg" alt="icone">
                      </a>
             </div>
-            <div class="bouton bouton_nav">
+            <div class="bouton bouton_nav" id="deconnecter">
                 <p> ... </p>
             </div>
         </nav>
 
 
-        <form method="POST" action="{{ route('logout') }}">
+        <form method="POST" action="{{ route('logout') }}" class="invisible">
         @csrf
         <!-- <a class="deconnexion" href="{{ route('logout') }}">Logout</a> -->
          <input type="submit" value="Deconnexion" class="deconnexion" >

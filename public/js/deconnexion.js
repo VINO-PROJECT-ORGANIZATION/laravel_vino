@@ -1,17 +1,21 @@
 
 
 
-let close = document.querySelector("button");
+export default function deconnecter(){
 
-let form = document.querySelector("form");
+    let deconnecter = document.querySelector("#deconnecter");
 
-console.log(close);
+    let form = document.querySelector("form");
+        
+    deconnecter.addEventListener("click",(e)=>{
+           
+       console.log(e.target.parentElement.parentElement.nextElementSibling);
+       e.target.parentElement.parentElement.nextElementSibling.classList.remove("invisible");
+        
+    }
+)
+}
 
 
-form.addEventListener("click",(e)=>{
+deconnecter();
 
-
-    e.preventDefault();
-    e.target.closest('form').submit();
-    console.log(e.target);
-})
