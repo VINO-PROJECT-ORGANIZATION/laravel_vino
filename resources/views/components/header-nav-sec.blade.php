@@ -11,6 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=WindSong:wght@400;500&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Sen:wght@400..800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
+    <script src="./js/deconnexion.js" type="module"></script>
     <title>à changer</title>
 
 </head>
@@ -23,10 +24,18 @@
                     <img src="./images/icons/back.svg" alt="icone">
                      </a>
             </div>
-            <div class="bouton bouton_nav">
+            <div class="bouton bouton_nav" id="deconnecter">
                 <p> ... </p>
             </div>
         </nav>
+
+
+        <form method="POST" action="{{ route('logout') }}" class="invisible">
+        @csrf
+
+         <input type="submit" value="Déconnexion" class="deconnexion" >
+        </form>
+
         <div class="recherche">
             <label for="requete" class="invisible">
             </label> 
@@ -47,5 +56,8 @@
                 <p>Options</p>
             </div>
         </div>
+
+
+        
 
     </header>
