@@ -2,6 +2,7 @@
     <header class="profile-entete">
         <h2 class="profile-entete-title">{{ $user['prenom']." ".$user['name'] }}</h2>
         <!-- à faire -->
+        <p>{{ $user['email'] }}</p>
         <p class="profile-entete-text"># cellier(s) - 53 Bouteille(s)</p>
     </header>
     <div class="conteneur">
