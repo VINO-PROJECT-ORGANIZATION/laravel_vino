@@ -1,0 +1,19 @@
+form{
+
+    /* border: 2px solid blue; */
+}
+
+.deconnexion{
+/* 
+    border: 1px solid red; */
+    width: 100%;
+    border-radius: 0;
+    background-color: var(--arriere-plan-bouton);
+}
+
+.deconnexion:hover{
+
+    cursor: pointer;
+    background-color: var(--arriere-plan-bouton-survol);
+  
+}

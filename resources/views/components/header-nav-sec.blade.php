@@ -28,6 +28,14 @@
                 <p> ... </p>
             </div>
         </nav>
+
+
+        <form method="POST" action="{{ route('logout') }}">
+        @csrf
+        <!-- <a class="deconnexion" href="{{ route('logout') }}">Logout</a> -->
+         <input type="submit" value="Deconnexion" class="deconnexion" >
+        </form>
+
         <div class="recherche">
             <label for="requete" class="invisible">
             </label> 
@@ -50,10 +58,6 @@
         </div>
 
 
-        <form method="POST" action="{{ route('logout') }}">
-        @csrf
-                <a class="deconnexion" href="{{ route('logout') }}">Logout</a>
-        </form>
         
 
     </header>
