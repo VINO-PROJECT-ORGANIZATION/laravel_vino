@@ -36,8 +36,12 @@
         </div>
 
         <div class="choix">
-            <div class="filtres"></div>
-            <div class="option"></div>
+            <div class="filtres">
+                <p>Filtres</p>
+            </div>
+            <div class="option">
+                <p>Options</p>
+            </div>
         </div>
 
     </header>
