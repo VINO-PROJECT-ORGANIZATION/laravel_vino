@@ -1,0 +1,12 @@
+.profile-entete{
+    border: 1px solid #D9D9D9;
+    padding: 20px;
+    border-radius: 25px;
+}
+.profile-entete-title{
+font-size: 20px;
+}
+.profile-entete-text{
+font-size: 14px;
+color: var(--texte-info);
+}
