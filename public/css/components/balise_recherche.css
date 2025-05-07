@@ -1,7 +1,7 @@
 .recherche{
 
 
-    border: 2px solid blue;
+   
     display: flex;
     position: relative;
     padding-left: 5px;
@@ -17,11 +17,36 @@
 
     & .contenant_loupe{
 
-        border: 2px solid orange;
+   
         width: 10%;
         height: 100%;
         position: absolute;
         left: 90%;
+
+        & img{
+
+            position: relative;
+            object-fit: contain;
+            top: 15%;
+            transform: rotate(90deg);
+            width: 60%;
+            filter: brightness(0) saturate(100%) invert(7%) sepia(33%) saturate(1557%) hue-rotate(197deg) brightness(91%) contrast(90%);
+        }
     
+    }
+}
+
+
+
+
+@media (min-width: 1200px) {
+
+    .contenant_loupe{
+
+        & img{
+
+            width: 100%;
+            height: 60%;
+        }
     }
 }

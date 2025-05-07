@@ -33,7 +33,7 @@
           
             
             <div class="contenant_loupe">
-                <img src="" alt="loupe">
+                <img src="./images/icons/Loupe.svg" alt="loupe">
             </div>
         </div>
 
