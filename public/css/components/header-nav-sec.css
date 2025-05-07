@@ -1,6 +1,8 @@
 .header__nav-sec {
     display: flex;
     justify-content: space-between;
+    padding-left: 5px;
+    padding-right: 5px;
 
 
     & a{
