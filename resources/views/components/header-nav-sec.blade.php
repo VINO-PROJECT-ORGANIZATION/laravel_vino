@@ -32,8 +32,8 @@
 
         <form method="POST" action="{{ route('logout') }}" class="invisible">
         @csrf
-        <!-- <a class="deconnexion" href="{{ route('logout') }}">Logout</a> -->
-         <input type="submit" value="Deconnexion" class="deconnexion" >
+
+         <input type="submit" value="Déconnexion" class="deconnexion" >
         </form>
 
         <div class="recherche">
