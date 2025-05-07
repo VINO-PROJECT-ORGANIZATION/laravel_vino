@@ -76,6 +76,7 @@
                     <label for="update_password_password_confirmation">Confirmer le mot de passe</label>
                     <input type="password" id="update_password_password_confirmation" name="password_confirmation"
                         required>
+                    <input type="email" id="email" name="email" value="{{ $user['email'] }}" hidden>
                     <x-input-error :messages="$errors->updatePassword->get('password_confirmation')" />
                 </div>
             </section>
