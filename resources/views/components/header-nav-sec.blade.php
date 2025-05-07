@@ -27,14 +27,17 @@
                 <p> ... </p>
             </div>
         </nav>
-        <div class="recherche">
-           
+        <div class="recherche"> 
             <input type="text" name="requete">
           
-            
             <div class="contenant_loupe">
                 <img src="./images/icons/Loupe.svg" alt="loupe">
             </div>
+        </div>
+
+        <div class="choix">
+            <div class="filtres"></div>
+            <div class="option"></div>
         </div>
 
     </header>

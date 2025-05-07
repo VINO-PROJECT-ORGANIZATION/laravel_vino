@@ -1,0 +1,27 @@
+.choix{
+
+    border: 2px solid red;
+    height: 10vh;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 5px;
+    padding-right: 5px;
+
+    & .filtres{
+
+        border: 2px solid rebeccapurple;
+        width: 30%;
+        height: 100%;
+        text-align: center;
+        border-radius: 30px;
+    }
+
+    & .option{
+
+        border: 2px solid orange;
+        width: 30%;
+        height: 100%;
+        text-align: center;
+        border-radius: 30px;
+    }
+}
