@@ -56,8 +56,8 @@
                 <div class="section__sous-titre">
                     <div class="section__icone-cercle">
                         <img src="./images/icons/courriel.svg" alt="courriel">
-                    <h3>Courriel & mot de passe</h3>
-                    <img src="./images/icons/back.svg" alt="chevron">
+                        <h3>Courriel & mot de passe</h3>
+                        <img src="./images/icons/back.svg" alt="chevron">
                     </div>
                     <div class="groupe-input">
                         <label for="email">Courriel</label>
@@ -65,7 +65,6 @@
                     </div>
                     <div class="groupe-input">
                         <label for="update_password_current_password">Mot de passe courrant</label>
-                        <!-- afficher l'encien mot de passe -->
                         <input type="password" id="update_password_current_password" name="current_password">
                         <x-input-error :messages="$errors->updatePassword->get('current_password')" />
                     </div>
