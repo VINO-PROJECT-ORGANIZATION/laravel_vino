@@ -2,6 +2,7 @@
     <header class="profile-entete">
         <h2 class="profile-entete-title">{{ $user['prenom']." ".$user['name'] }}</h2>
         <!-- à faire -->
+        <p>{{ $user['email'] }}</p>
         <p class="profile-entete-text"># cellier(s) - 53 Bouteille(s)</p>
     </header>
     <div class="conteneur">
@@ -56,30 +57,27 @@
                 <div class="section__sous-titre">
                     <div class="section__icone-cercle">
                         <img src="./images/icons/courriel.svg" alt="courriel">
-                    <h3>Courriel & mot de passe</h3>
+                    </div>
+                    <h3 class="section__sous-titre-texte">Mot de passe</h3>
                     <img src="./images/icons/back.svg" alt="chevron">
-                    </div>
-                    <div class="groupe-input">
-                        <label for="email">Courriel</label>
-                        <input type="email" id="email" name="email" value="{{ $user['email'] }}" readonly>
-                    </div>
-                    <div class="groupe-input">
-                        <label for="update_password_current_password">Mot de passe courrant</label>
-                        <!-- afficher l'encien mot de passe -->
-                        <input type="password" id="update_password_current_password" name="current_password">
-                        <x-input-error :messages="$errors->updatePassword->get('current_password')" />
-                    </div>
-                    <div class="groupe-input">
-                        <label for="update_password_password">Nouveau mot de passe</label>
-                        <input type="password" id="update_password_password" name="password" required>
-                        <x-input-error :messages="$errors->updatePassword->get('password')" />
-                    </div>
-                    <div class="groupe-input">
-                        <label for="update_password_password_confirmation">Confirmer le mot de passe</label>
-                        <input type="password" id="update_password_password_confirmation" name="password_confirmation"
-                            required>
-                        <x-input-error :messages="$errors->updatePassword->get('password_confirmation')" />
-                    </div>
+                </div>
+                <div class="groupe-input">
+                    <label for="update_password_current_password">Mot de passe courrant</label>
+                    <!-- afficher l'encien mot de passe -->
+                    <input type="password" id="update_password_current_password" name="current_password">
+                    <x-input-error :messages="$errors->updatePassword->get('current_password')" />
+                </div>
+                <div class="groupe-input">
+                    <label for="update_password_password">Nouveau mot de passe</label>
+                    <input type="password" id="update_password_password" name="password" required>
+                    <x-input-error :messages="$errors->updatePassword->get('password')" />
+                </div>
+                <div class="groupe-input">
+                    <label for="update_password_password_confirmation">Confirmer le mot de passe</label>
+                    <input type="password" id="update_password_password_confirmation" name="password_confirmation"
+                        required>
+                    <x-input-error :messages="$errors->updatePassword->get('password_confirmation')" />
+                </div>
             </section>
             <x-primary-button class="bouton">{{ __('Enregister') }}</x-primary-button>
             @if (session('status') === 'password-updated')
