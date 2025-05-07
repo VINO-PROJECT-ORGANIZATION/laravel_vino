@@ -31,7 +31,7 @@ body{
     & form{
 
         /* border: 1px solid saddlebrown; */
-
+        
       
 
         & .balise_courriel{
@@ -208,7 +208,7 @@ input[type="password"],input
     border-radius: 5px;
     height: 40px;
     background-color: #F0F5FA;
-    padding-left: 10px;
+    padding: 10px;
 }
 
 .boutons{
