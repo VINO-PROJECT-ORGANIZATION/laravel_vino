@@ -1,6 +1,6 @@
 <section class="update-profil-form">
     <header class="profile-entete">
-        <h2 class="profile-entete-title">{{ $user['prenom']." ".$user['name'] }}</h2>
+        <h1 class="profile-entete-title">{{ $user['prenom']." ".$user['name'] }}</h1>
         <!-- à faire -->
         <p>{{ $user['email'] }}</p>
         <p class="profile-entete-text"># cellier(s) - 53 Bouteille(s)</p>
@@ -14,8 +14,8 @@
                     <div class="section__icone-cercle">
                         <img src="./images/icons/user-profil.svg" alt="utilisateur">
                     </div>
-                    <h3 class="section__sous-titre-texte">Informations personnelles</h3>
-                    <img src="./images/icons/back.svg" alt="chevron">
+                    <h2 class="section__sous-titre-texte">Informations personnelles</h2>
+                    <img src="./images/icons/back.svg" alt="chevron utilisateur">
                 </div>
                 <div class="groupe-input">
                     <label for="nom">Nom</label>
@@ -34,10 +34,10 @@
             <section>
                 <div class="section__sous-titre">
                     <div class="section__icone-cercle">
-                        <img src="./images/icons/map.svg" alt="email">
+                        <img src="./images/icons/map.svg" alt="carte">
                     </div>
-                    <h3 class="section__sous-titre-texte">Adresse</h3>
-                    <img src="./images/icons/back.svg" alt="chevron">
+                    <h2 class="section__sous-titre-texte">Adresse</h2>
+                    <img src="./images/icons/back.svg" alt="chevron adresse">
                 </div>
                 <div class="groupe-input">
                     <label for="adresse">Adresse</label>
@@ -57,36 +57,36 @@
                 <div class="section__sous-titre">
                     <div class="section__icone-cercle">
                         <img src="./images/icons/courriel.svg" alt="courriel">
-                        <h3>Courriel & mot de passe</h3>
-                        <img src="./images/icons/back.svg" alt="chevron">
                     </div>
-                    <div class="groupe-input">
-                        <label for="email">Courriel</label>
-                        <input type="email" id="email" name="email" value="{{ $user['email'] }}" readonly>
-                    </div>
-                    <div class="groupe-input">
-                        <label for="update_password_current_password">Mot de passe courrant</label>
-                        <input type="password" id="update_password_current_password" name="current_password">
-                        <x-input-error :messages="$errors->updatePassword->get('current_password')" />
-                    </div>
-                    <div class="groupe-input">
-                        <label for="update_password_password">Nouveau mot de passe</label>
-                        <input type="password" id="update_password_password" name="password" required>
-                        <x-input-error :messages="$errors->updatePassword->get('password')" />
-                    </div>
-                    <div class="groupe-input">
-                        <label for="update_password_password_confirmation">Confirmer le mot de passe</label>
-                        <input type="password" id="update_password_password_confirmation" name="password_confirmation"
-                            required>
-                        <x-input-error :messages="$errors->updatePassword->get('password_confirmation')" />
-                    </div>
-                 </div> 
+                    <h2 class="section__sous-titre-texte">Courriel & mot de passe</h2>
+                    <img src="./images/icons/back.svg" alt="chevron mot de passe">
+                </div>
+                <div class="groupe-input">
+                    <label for="email" hidden>Courriel</label>
+                    <input type="email" id="email" name="email" value="{{ $user['email'] }}" hidden>
+                </div>
+                <div class="groupe-input">
+                    <label for="update_password_current_password">Mot de passe courrant</label>
+                    <input type="password" id="update_password_current_password" name="current_password">
+                    <x-input-error :messages="$errors->updatePassword->get('current_password')" />
+                </div>
+                <div class="groupe-input">
+                    <label for="update_password_password">Nouveau mot de passe</label>
+                    <input type="password" id="update_password_password" name="password" required>
+                    <x-input-error :messages="$errors->updatePassword->get('password')" />
+                </div>
+                <div class="groupe-input">
+                    <label for="update_password_password_confirmation">Confirmer le mot de passe</label>
+                    <input type="password" id="update_password_password_confirmation" name="password_confirmation"
+                        required>
+                    <x-input-error :messages="$errors->updatePassword->get('password_confirmation')" />
+                </div>
+                <x-primary-button class="bouton">{{ __('Enregister') }}</x-primary-button>
+                @if (session('status') === 'password-updated')
+                <p x-data="{ show: true }" x-show="show" x-transition x-init="setTimeout(() => show = false, 2000)"
+                    class="">{{ __('Enregirstré.') }}</p>
+                @endif
             </section>
-            <x-primary-button class="bouton">{{ __('Enregister') }}</x-primary-button>
-            @if (session('status') === 'password-updated')
-            <p x-data="{ show: true }" x-show="show" x-transition x-init="setTimeout(() => show = false, 2000)"
-                class="">{{ __('Enregirstré.') }}</p>
-            @endif
         </form>
     </div>
 </section>
