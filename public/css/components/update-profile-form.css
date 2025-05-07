@@ -1,5 +1,5 @@
 .update-profil-form {
-
+    background-color: var(--arriere-plan);
     padding: var(--espace-moyen);
     margin-bottom: var(--espace-grand);
 
@@ -10,11 +10,16 @@
     }
 
     & .conteneur {
+        padding: 20px;
+        border-radius: 25px;
+        background-color: var(--arriere-plan-gris-pale);
+
 
         & form {
             display: flex;
             flex-direction: column;
-            gap: var(--espace-petit);
+            gap: var(--espace-grand);
+
 
             & section {
                 display: flex;
@@ -23,14 +28,31 @@
 
                 & .section__sous-titre {
                     display: flex;
+                    align-items: center;
                     gap: var(--espace-moyen);
 
                     &> :last-child {
                         margin-left: auto;
                         rotate: 180deg;
                     }
+                    & .section__sous-titre-texte {
+                        font-weight: 400;
+                        font-size: 17px;
+                    }
                 }
-
+                & .section__icone-cercle{
+                    display: flex;
+                    justify-content: center;
+                    background-color: var(--arriere-plan);
+                    padding: 10px;
+                    border-radius: 50px;
+                    width: 40px;
+                    height: 40px;
+                    
+                    & img{
+                        max-width: 15px;
+                    }
+                }
 
             }
 
@@ -42,7 +64,27 @@
                 display: flex;
                 flex-direction: column;
                 gap: var(--espace-petit);
+
+                 & input, textarea {
+                    border: none;
+                    background-color: #fff;
+                    border-radius: 10px;
+                 }
+                 
+                 & label {
+                    text-transform: uppercase;
+                    font-size: 13px;
+                 }
+
             }
+           
+              & .bouton {
+                    border: none;
+                    height: 40px;
+                    width: 100%;
+                    max-width: 500px;
+                    text-transform: uppercase;
+                 }
         }
     }
 
