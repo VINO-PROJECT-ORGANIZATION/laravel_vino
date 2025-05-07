@@ -27,5 +27,14 @@
                 <p> ... </p>
             </div>
         </nav>
+        <div class="recherche">
+           
+            <input type="text" name="requete">
+          
+            
+            <div class="contenant_loupe">
+                <img src="" alt="loupe">
+            </div>
+        </div>
 
     </header>
