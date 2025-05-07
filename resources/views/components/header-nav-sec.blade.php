@@ -27,14 +27,18 @@
                 <p> ... </p>
             </div>
         </nav>
-        <div class="recherche"> 
-            <input type="text" name="requete">
+        <div class="recherche">
+            <label for="requete" class="invisible">
+            </label> 
+            <input type="text" name="requete" placeholder="Entrez un nom ...">
+           
           
             <div class="contenant_loupe">
                 <img src="./images/icons/Loupe.svg" alt="loupe">
             </div>
         </div>
 
+        <!-- cette section est actuellement cachée sur la page -->
         <div class="choix">
             <div class="filtres">
                 <p>Filtres</p>
