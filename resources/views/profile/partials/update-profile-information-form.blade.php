@@ -80,6 +80,7 @@
                             required>
                         <x-input-error :messages="$errors->updatePassword->get('password_confirmation')" />
                     </div>
+                 </div> 
             </section>
             <x-primary-button class="bouton">{{ __('Enregister') }}</x-primary-button>
             @if (session('status') === 'password-updated')
