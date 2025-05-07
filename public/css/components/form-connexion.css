@@ -200,7 +200,7 @@ input[type="password"],input
 {
    
     font-family: var(--police-principale);
-    color: #A0A5BA;
+    color: var(--texte-info);
     font-size: 14px;
     font-style: normal;
     font-weight: 400;
