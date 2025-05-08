@@ -28,8 +28,8 @@
                 </div>
 
                 <!-- Lien vers la page d'inscription -->
-                <div class="groupe-input">
-                    <p>Pas encore inscrit ? <a href="{{ route('register') }}">Créez un compte ici</a></p>
+                <div class="groupe-input balise-inscrire">
+                    <p>Pas encore inscrit ? </p><a href="{{ route('register') }}">Créez un compte ici</a>
                 </div>
             </form>
         </div>
