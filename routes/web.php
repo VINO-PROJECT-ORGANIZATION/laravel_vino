@@ -41,12 +41,15 @@ Route::middleware('auth')->group(function () {
     Route::post('/celliers', [CellierController::class, 'store'])->name('celliers.store');
     // routes pour les bouteilles dans cellier
     Route::prefix('cellier-bouteilles')->name('cellier_bouteilles.')->group(function () {
+        Route::delete('/{cellier_id}/{bouteille_id}', [BouteilleHasCellierController::class, 'destroy'])
+            ->name('destroy');
         Route::get('/', [BouteilleHasCellierController::class, 'index'])->name('index');
         Route::get('/create', [BouteilleHasCellierController::class, 'create'])->name('create');
         Route::post('/', [BouteilleHasCellierController::class, 'store'])->name('store');
         Route::get('/{id}/edit', [BouteilleHasCellierController::class, 'edit'])->name('edit');
         Route::put('/{id}', [BouteilleHasCellierController::class, 'update'])->name('update');
-        Route::delete('/{id}', [BouteilleHasCellierController::class, 'destroy'])->name('destroy');
+
+
         // Bouteilles dans un cellier
         Route::get('/cellier/{cellier_id}/bouteilles', [BouteilleHasCellierController::class, 'bouteillesDansCellier'])->name('cellier.bouteilles');
         // Bouteilles d’un utilisateur (tous ses celliers)
