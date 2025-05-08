@@ -9,7 +9,7 @@ body {
     display: flex;
     flex-direction: column;
     width: 100%;
-    padding: 20px;
+    padding: 50px 20px 20px;
     gap: var(--espace-grand);
 }
 
@@ -144,6 +144,7 @@ body {
             font-size: 14px;
             font-style: normal;
             font-weight: 700;
+            height: 40px;
         }
 
         & .boutons:hover {
@@ -158,6 +159,7 @@ body {
     /* border: 1px solid yellowgreen; */
     display: flex;
     justify-content: space-between;
+    max-width: 400px;
     margin-top: 30px;
     color: #646982;
     font-family: var(--police-principale);
@@ -165,10 +167,12 @@ body {
     font-style: normal;
     font-weight: 400;
     line-height: 24px;
+    max-width: 400px;
+    align-items: baseline;
 
     & a {
         color: #480e18;
-        text-align: center;
+        /* text-align: center; */
         font-family: var(--police-principale);
         font-size: 13px;
         font-style: normal;
