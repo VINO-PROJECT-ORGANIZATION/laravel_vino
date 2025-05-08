@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::create('bouteille_has_cellier', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('bouteille_id')->constrained('bouteilles')->onDelete('cascade');
+            $table->foreignId('cellier_id')->constrained('celliers')->onDelete('cascade');
+            $table->integer('quantite')->default(0);
+            $table->boolean('favoris')->default(false);
             $table->timestamps();
         });
     }
