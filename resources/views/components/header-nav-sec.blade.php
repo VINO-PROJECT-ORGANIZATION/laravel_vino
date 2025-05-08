@@ -48,14 +48,14 @@
         </div> -->
 
         <!-- cette section est actuellement cachée sur la page -->
-        <div class="choix">
+        <!-- <div class="choix">
             <div class="filtres">
                 <p>Filtres</p>
             </div>
             <div class="option">
                 <p>Options</p>
             </div>
-        </div>
+        </div> -->
 
     </header>
  
