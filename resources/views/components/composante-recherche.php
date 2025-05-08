@@ -1,3 +1,18 @@
+<div class="recherche">
+            <label for="requete" class="invisible">
+            </label> 
+            <input type="text" name="requete" placeholder="Entrez un nom ...">
+           
+          
+            <div class="contenant_loupe">
+                <img src="./images/icons/Loupe.svg" alt="loupe">
+            </div>
+</div>
+
+
+
+<!-- 
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -14,10 +29,10 @@
     <script src="./js/deconnexion.js" type="module"></script>
     <title>à changer</title>
 
-</head>
+</head> -->
 
-<body>
-    <header class="header__general">
+<!-- <body> -->
+<!-- <header class="header__general">
         <nav class="header__nav-sec">
             <div class="bouton bouton_nav">
                 <a href="{{ back()->getTargetUrl() }}" class="nav__link">
@@ -35,27 +50,4 @@
 
          <input type="submit" value="Déconnexion" class="deconnexion" >
         </form>
-
-        <!-- <div class="recherche">
-            <label for="requete" class="invisible">
-            </label> 
-            <input type="text" name="requete" placeholder="Entrez un nom ...">
-           
-          
-            <div class="contenant_loupe">
-                <img src="./images/icons/Loupe.svg" alt="loupe">
-            </div>
-        </div> -->
-
-        <!-- cette section est actuellement cachée sur la page -->
-        <div class="choix">
-            <div class="filtres">
-                <p>Filtres</p>
-            </div>
-            <div class="option">
-                <p>Options</p>
-            </div>
-        </div>
-
-    </header>
- 
+</header> -->
