@@ -2,6 +2,8 @@
     /* Couleurs principales */
     --couleur-principale: #AA8443;
     --couleur-principale-survol: #765823;
+    --couleur-secondaire: #480E18;
+    --couleur-secondaire-survol: #6E2632;
 
     /* Couleurs d’arrière-plan */
     --arriere-plan: #FFFFFF;
