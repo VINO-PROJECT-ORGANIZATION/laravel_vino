@@ -29,4 +29,9 @@ class Bouteille extends Model
 
         return floatval($prix);
     }
+
+    public function infoBouteille()
+    {
+        return $this->hasMany(BouteilleHasCellier::class);
+    }
 }
