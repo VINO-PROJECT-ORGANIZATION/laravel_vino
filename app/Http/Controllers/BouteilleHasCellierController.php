@@ -9,28 +9,28 @@ use App\Models\BouteilleHasCellier;
 
 class BouteilleHasCellierController extends Controller
 {
-    //page d'accueil de la liste des bouteilles dans les celliers
+    // Page d'accueil de la liste des bouteilles dans les celliers
     public function index()
     {
-        // page courante :
+        // Page courante :
         $pageCourante = 'bouteilleHasCellierIndex';
-        $bouteilles = Bouteille::all();
-        $celliers = Cellier::all();
-        $bouteilleHasCelliers = BouteilleHasCellier::all();
+        $bouteillesHasCelliers = BouteilleHasCellier::all();
 
-        return view('bouteille_has_cellier.index', compact('bouteilles', 'celliers', 'bouteilleHasCelliers', 'pageCourante'));
+        return view('bouteille_has_cellier.index', compact('bouteillesHasCelliers', 'pageCourante'));
     }
-    // page de création d'une bouteille dans un cellier
+
+    // Page de création d'une bouteille dans un cellier
     public function create()
     {
-        // page courante :
+        // Page courante :
         $pageCourante = 'bouteilleHasCellierCreate';
         $bouteilles = Bouteille::all();
         $celliers = Cellier::all();
 
         return view('bouteille_has_cellier.create', compact('bouteilles', 'celliers', 'pageCourante'));
     }
-    // fonction pour stocker une bouteille dans un cellier
+
+    // Fonction pour stocker une bouteille dans un cellier
     public function store(Request $request)
     {
         $request->validate([
@@ -40,71 +40,98 @@ class BouteilleHasCellierController extends Controller
             'favoris' => 'boolean',
         ]);
 
+        // Vérification si la bouteille est déjà dans ce cellier
+        $existing = BouteilleHasCellier::where('bouteille_id', $request->bouteille_id)
+            ->where('cellier_id', $request->cellier_id)
+            ->first();
+
+        if ($existing) {
+            return redirect()->back()->with('error', 'Cette bouteille est déjà dans ce cellier.');
+        }
+
+        // Création de l'enregistrement
         BouteilleHasCellier::create($request->all());
 
-        return redirect()->route('cellier_bouteilles.index')->with('success', 'Bouteille ajoutée au cellier avec succès.');
+        // Redirige vers la page du cellier spécifique après l'ajout
+        return redirect()->route('cellier_bouteilles.cellier.bouteilles', ['cellier_id' => $request->cellier_id])
+            ->with('success', 'Bouteille ajoutée au cellier avec succès.');
     }
-    // page d'édition d'une bouteille dans un cellier
-    public function edit($id)
+
+    // Page d'édition d'une bouteille dans un cellier
+    public function edit($cellier_id, $bouteille_id)
     {
-        // page courante :
+        // Page courante :
         $pageCourante = 'bouteilleHasCellierEdit';
-        $bouteilleHasCellier = BouteilleHasCellier::get($id);
+        $bouteilleHasCellier = BouteilleHasCellier::where('bouteille_id', $bouteille_id)
+            ->where('cellier_id', $cellier_id)
+            ->first();
+
         $bouteilles = Bouteille::all();
         $celliers = Cellier::all();
 
         return view('bouteille_has_cellier.edit', compact('bouteilleHasCellier', 'bouteilles', 'celliers', 'pageCourante'));
     }
-    // fonction pour mettre à jour une bouteille dans un cellier
-    public function update(Request $request, $id)
+
+    // Fonction pour mettre à jour une bouteille dans un cellier
+    public function update(Request $request, $cellier_id, $bouteille_id)
     {
         $request->validate([
-            'bouteille_id' => 'required|exists:bouteilles,id',
-            'cellier_id' => 'required|exists:celliers,id',
             'quantite' => 'required|integer|min:1',
             'favoris' => 'boolean',
         ]);
 
-        $bouteilleHasCellier = BouteilleHasCellier::get($id);
+        $bouteilleHasCellier = BouteilleHasCellier::where('bouteille_id', $bouteille_id)
+            ->where('cellier_id', $cellier_id)
+            ->first();
+
+        if (!$bouteilleHasCellier) {
+            return redirect()->route('cellier_bouteilles.index')->with('error', 'Cette bouteille n\'existe pas dans ce cellier.');
+        }
+
+        // Mise à jour
         $bouteilleHasCellier->update($request->all());
 
         return redirect()->route('cellier_bouteilles.index')->with('success', 'Bouteille mise à jour avec succès.');
     }
-    // fonction pour supprimer une bouteille dans un cellier
-    public function destroy($id)
-    {
-        $bouteilleHasCellier = BouteilleHasCellier::get($id);
-        $bouteilleHasCellier->delete();
 
-        return redirect()->route('cellier_bouteilles.index')->with('success', 'Bouteille supprimée du cellier avec succès.');
+    // Fonction pour supprimer une bouteille dans un cellier
+    public function destroy($cellier_id, $bouteille_id)
+    {
+        $deleted = BouteilleHasCellier::where('bouteille_id', $bouteille_id)
+            ->where('cellier_id', $cellier_id)
+            ->delete(); // <- ici : on supprime directement
+
+        if ($deleted) {
+            return redirect()->route('cellier_bouteilles.cellier.bouteilles', ['cellier_id' => $cellier_id])
+                ->with('success', 'Bouteille supprimée du cellier avec succès.');
+        } else {
+            return redirect()->route('cellier_bouteilles.cellier.bouteilles', ['cellier_id' => $cellier_id])
+                ->with('error', 'Cette bouteille n\'existe pas dans ce cellier.');
+        }
     }
+
     // Fonction pour montrer toutes les bouteilles d'un cellier
     public function bouteillesDansCellier($cellier_id)
     {
-        // page courante :
+        // Page courante :
         $pageCourante = 'bouteillesParCellier';
-        $bouteilles = BouteilleHasCellier::with('bouteille')
+        $bouteilles = BouteilleHasCellier::with(['bouteille', 'cellier'])
             ->where('cellier_id', $cellier_id)
             ->get();
 
-        return view('bouteille_has_cellier.par_cellier', compact('bouteilles', 'cellier_id', 'pageCourante'));
+        $cellier = Cellier::findOrFail($cellier_id);
+
+        return view('bouteille_has_cellier.par_cellier', compact('bouteilles', 'cellier_id', 'pageCourante', 'cellier'));
     }
+
     // Fonction pour montrer toutes les bouteilles de l'utilisateur
     public function bouteillesUtilisateur($user_id)
     {
-        // page courante :
+        // Page courante :
         $pageCourante = 'bouteillesParUtilisateur';
         $bouteillesUtilisateur = BouteilleHasCellier::with('bouteille')
             ->whereHas('cellier', function ($query) use ($user_id) {
                 $query->where('user_id', $user_id);
-            })
-            ->get();
-
-        $bouteilles = Bouteille::with('bouteilleHasCellier')
-            ->whereHas('bouteilleHasCellier', function ($query) use ($user_id) {
-                $query->whereHas('cellier', function ($query) use ($user_id) {
-                    $query->where('user_id', $user_id);
-                });
             })
             ->get();
 
