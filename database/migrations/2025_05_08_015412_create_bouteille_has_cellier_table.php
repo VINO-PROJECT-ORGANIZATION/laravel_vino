@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('bouteille_has_cellier', function (Blueprint $table) {
+        Schema::create('bouteille_has_celliers', function (Blueprint $table) {
             $table->foreignId('bouteille_id')->constrained('bouteilles')->onDelete('cascade');
             $table->foreignId('cellier_id')->constrained('celliers')->onDelete('cascade');
             $table->integer('quantite')->default(0);
@@ -25,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('bouteille_has_cellier');
+        Schema::dropIfExists('bouteille_has_celliers');
     }
 };
