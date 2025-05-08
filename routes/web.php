@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ScraperController;
 use App\Http\Controllers\BouteilleController;
+use App\Http\Controllers\CellierController;
 use Goutte\Client;
 
 /*
@@ -34,12 +35,11 @@ Route::middleware('auth')->group(function () {
     Route::get('/bouteilles', [BouteilleController::class, 'index'])->name('bouteilles.index');
     Route::get('/bouteilles/{id}', [BouteilleController::class, 'show'])->name('bouteilles.show');
     //routes pour les celliers
-   
+    Route::get('/celliers', [CellierController::class, 'index'])->name('celliers.index');
+    Route::get('/celliers/create', [CellierController::class, 'create'])->name('celliers.create');
+    Route::post('/celliers', [CellierController::class, 'store'])->name('celliers.store');
 });
 
-Route::get('/celliers', function () {
-    return view('celliers/index');
-});
 
 
 

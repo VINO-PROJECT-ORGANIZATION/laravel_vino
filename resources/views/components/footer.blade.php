@@ -1,10 +1,13 @@
 @props(['pageCourante'])
 <footer class="pied">
     <div class="@if($pageCourante == 'celliers') active @endif">
-        <div class=" conteneur">
-            <img src="./images/icons/celliers.svg" alt="celliers">
-        </div>
-        <p>Celliers</p>
+        <!-- lien vers la page des celliers -->
+        <a href="{{ route('celliers.index') }}">
+            <div class=" conteneur">
+                <img src="./images/icons/celliers.svg" alt="celliers">
+            </div>
+            <p>Celliers</p>
+        </a>
     </div>
 
     <div class="@if($pageCourante == '') active @endif">
@@ -15,14 +18,11 @@
             </div>
             <p>Bouteilles</p>
         </a>
-
-        </a>
     </div>
 
     <div class="@if($pageCourante == 'bouteilles') active @endif">
         <!-- lien vers la page des bouteilles -->
         <a href="{{ route('bouteilles.index') }}">
-
             <div class="conteneur">
                 <img src="./images/icons/loupe.svg" alt="loupe">
             </div>
