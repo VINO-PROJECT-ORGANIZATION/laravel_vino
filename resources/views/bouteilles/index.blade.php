@@ -1,4 +1,5 @@
 <x-header-nav-sec></x-header-nav-sec>
+
 <main>
     <h1>Résultats</h1>
     @foreach ($bouteilles as $bouteille)
