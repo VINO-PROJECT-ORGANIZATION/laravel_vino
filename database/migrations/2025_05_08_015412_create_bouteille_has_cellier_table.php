@@ -17,7 +17,7 @@ return new class extends Migration
             $table->integer('quantite')->default(0);
             $table->boolean('favoris')->default(false);
             // Contrainte d’unicité pour éviter les doublons
-            $table->unique(['bouteille_id', 'cellier_id']);
+            $table->primary(['bouteille_id', 'cellier_id']);
             $table->timestamps();
         });
     }
