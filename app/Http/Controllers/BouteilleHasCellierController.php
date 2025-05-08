@@ -9,6 +9,7 @@ use App\Models\BouteilleHasCellier;
 
 class BouteilleHasCellierController extends Controller
 {
+    //page d'accueil de la liste des bouteilles dans les celliers
     public function index()
     {
         // page courante :
@@ -19,6 +20,7 @@ class BouteilleHasCellierController extends Controller
 
         return view('bouteille_has_cellier.index', compact('bouteilles', 'celliers', 'bouteilleHasCelliers', 'pageCourante'));
     }
+    // page de création d'une bouteille dans un cellier
     public function create()
     {
         // page courante :
@@ -28,6 +30,7 @@ class BouteilleHasCellierController extends Controller
 
         return view('bouteille_has_cellier.create', compact('bouteilles', 'celliers', 'pageCourante'));
     }
+    // fonction pour stocker une bouteille dans un cellier
     public function store(Request $request)
     {
         $request->validate([
@@ -41,6 +44,7 @@ class BouteilleHasCellierController extends Controller
 
         return redirect()->route('bouteille_has_cellier.index')->with('success', 'Bouteille ajoutée au cellier avec succès.');
     }
+    // page d'édition d'une bouteille dans un cellier
     public function edit($id)
     {
         // page courante :
@@ -51,6 +55,7 @@ class BouteilleHasCellierController extends Controller
 
         return view('bouteille_has_cellier.edit', compact('bouteilleHasCellier', 'bouteilles', 'celliers', 'pageCourante'));
     }
+    // fonction pour mettre à jour une bouteille dans un cellier
     public function update(Request $request, $id)
     {
         $request->validate([
@@ -65,6 +70,7 @@ class BouteilleHasCellierController extends Controller
 
         return redirect()->route('bouteille_has_cellier.index')->with('success', 'Bouteille mise à jour avec succès.');
     }
+    // fonction pour supprimer une bouteille dans un cellier
     public function destroy($id)
     {
         $bouteilleHasCellier = BouteilleHasCellier::get($id);
@@ -72,7 +78,7 @@ class BouteilleHasCellierController extends Controller
 
         return redirect()->route('bouteille_has_cellier.index')->with('success', 'Bouteille supprimée du cellier avec succès.');
     }
-
+    // Fonction pour montrer toutes les bouteilles d'un cellier
     public function bouteillesDansCellier($cellier_id)
     {
         // page courante :
@@ -83,7 +89,6 @@ class BouteilleHasCellierController extends Controller
 
         return view('bouteille_has_cellier.par_cellier', compact('bouteilles', 'cellier_id', 'pageCourante'));
     }
-
     // Fonction pour montrer toutes les bouteilles de l'utilisateur
     public function bouteillesUtilisateur($user_id)
     {
