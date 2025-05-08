@@ -23,7 +23,7 @@
     <body class="font-sans text-gray-900 antialiased">
 
        <!-- structure de base pour le header de la page d'accueil -->
-        <header class="header__accueil">
+        <!-- <header class="header__accueil">
         <nav class="header__nav-sec">
             <div class="contenant_logo">                
                     <img src="./images/logo_vino.svg" alt="logo">
@@ -33,8 +33,9 @@
                 <img src="./images/icons/hamburger.svg" alt="icone">
             </div>
         </nav>       
-    </header>
+    </header> -->
 
+    <x-composante-header-accueil></x-composante-header-accueil>
     <div class="w-full sm:max-w-md mt-6 px-6 py-4 bg-white shadow-md overflow-hidden sm:rounded-lg">
                 {{ $slot }}
     </div>
