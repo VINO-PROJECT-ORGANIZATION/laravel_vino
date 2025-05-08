@@ -16,6 +16,8 @@ return new class extends Migration
             $table->foreignId('cellier_id')->constrained('celliers')->onDelete('cascade');
             $table->integer('quantite')->default(0);
             $table->boolean('favoris')->default(false);
+            // Contrainte d’unicité pour éviter les doublons
+            $table->unique(['bouteille_id', 'cellier_id']);
             $table->timestamps();
         });
     }
