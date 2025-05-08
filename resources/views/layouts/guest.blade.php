@@ -25,7 +25,7 @@
        <!-- structure de base pour le header de la page d'accueil -->
         <header class="header__accueil">
         <nav class="header__nav-sec">
-            <div class="bouton bouton_nav contenant_logo">                
+            <div class="contenant_logo">                
                     <img src="./images/logo_vino.svg" alt="logo">
 
             </div>
