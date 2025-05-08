@@ -40,7 +40,7 @@ body {
     gap: var(--espace-grand);
 
     & form {
-        /* border: 1px solid saddlebrown; */
+        
 
         & input,
         textarea {
@@ -51,7 +51,7 @@ body {
         }
 
         & .balise_courriel {
-            /* border: 2px solid red; */
+          
             display: flex;
             flex-direction: column;
             margin-top: 24px;
@@ -65,7 +65,7 @@ body {
         }
 
         & .balise_password {
-            /* border: 2px solid aquamarine; */
+            
             display: flex;
             flex-direction: column;
             margin-top: 20px;
@@ -89,7 +89,7 @@ body {
                 height: 40px;
                 left: 20.5rem;
                 top: 0.3rem;
-                /* border: 2px solid gray; */
+                
 
                 & svg {
                     margin-top: 0.5rem;
@@ -107,7 +107,7 @@ body {
         }
 
         & .balise_souvenir {
-            /* border: 2px solid blueviolet; */
+           
             display: flex;
             justify-content: space-between;
             margin-top: 30px;
@@ -156,7 +156,7 @@ body {
 }
 
 .balise-inscrire {
-    /* border: 1px solid yellowgreen; */
+   
     display: flex;
     justify-content: space-between;
     max-width: 400px;
@@ -172,7 +172,6 @@ body {
 
     & a {
         color: #480e18;
-        /* text-align: center; */
         font-family: var(--police-principale);
         font-size: 13px;
         font-style: normal;
@@ -203,7 +202,6 @@ input {
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
     margin-top: 10px;
-    /* border: 2px solid blue; */
     border-radius: 12px;
     background: var(--PRIMARY, #aa8443);
     text-align: center;
