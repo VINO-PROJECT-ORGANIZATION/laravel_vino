@@ -1,69 +1,75 @@
-body{
-
-    background-color: #F0F5FA;
+body {
+    background-color: #f0f5fa;
     width: 100vw;
     height: 100vh;
     margin: 0;
     padding: 0;
-   
+}
+.enregistrement-form-page {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 20px;
+    gap: var(--espace-grand);
 }
 
+.enregistrement-form,
+.enregistrement-form__container__contenu {
+    display: flex;
+    flex-direction: column;
+    gap: var(--espace-moyen);
+}
 
+.enregistrement-form__container__contenu p {
+    font-size: 14px;
+}
+.enregistrement-form__container__contenu a, .enregistrement-form__container__contenu a:visited {
+    font-weight: 600;
+    text-decoration: none;
+    color: var(--couleur-secondaire);
+}
+.enregistrement-form__container__contenu a:hover, .enregistrement-form__container__contenu a:active  {
+    color: var(--couleur-secondaire);
+}
 
-.balise-form{
-
-
-    /* border: 4px solid blue; */
-    position: absolute;
-    top: 116px;
-    /* left: 10%; */
+.balise-form {
     border-radius: 24px;
-    background: #FFF;
-    /* width: 346px;
-    height: 467px; */
+    background: #fff;
+    width: 100%;
+    padding: 20px;
+    gap: var(--espace-grand);
 
-    width: 90%;
-    height: 65%;
-    left: 1.5rem;
-    padding-left: 15px;
-    padding-right: 15px;
-
-    & form{
-
+    & form {
         /* border: 1px solid saddlebrown; */
-        
-      
 
-        & .balise_courriel{
+        & input,
+        textarea {
+            border: none;
+            background-color: var(--arriere-plan-gris-pale);
+            border-radius: 10px;
+            margin-top: 5px;
+        }
 
-
+        & .balise_courriel {
             /* border: 2px solid red; */
             display: flex;
             flex-direction: column;
             margin-top: 24px;
-            color: #32343E;
+            color: #32343e;
             font-family: var(--police-principale);
             font-size: 13px;
             font-style: normal;
             font-weight: 400;
             line-height: normal;
             text-transform: uppercase;
-
-         
-
-            & input{
-                margin-top: 5px;
-            }
         }
 
-        & .balise_password{
-
-
+        & .balise_password {
             /* border: 2px solid aquamarine; */
             display: flex;
             flex-direction: column;
-            margin-top:20px ;
-            color: #32343E;
+            margin-top: 20px;
+            color: #32343e;
             font-family: var(--police-principale);
             font-size: 13px;
             font-style: normal;
@@ -71,100 +77,84 @@ body{
             line-height: normal;
             text-transform: uppercase;
 
-
-            & .logo{
-
+            & .logo {
                 display: grid;
                 grid-template-columns: 100fr 1fr;
                 position: relative;
             }
 
-            & .conteneur_logo{
-
+            & .conteneur_logo {
                 position: absolute;
                 width: 40px;
                 height: 40px;
                 left: 20.5rem;
-                top:0.3rem;
+                top: 0.3rem;
                 /* border: 2px solid gray; */
 
-                & svg{
-
+                & svg {
                     margin-top: 0.5rem;
                     width: 30px;
                 }
             }
 
-
-            & .conteneur_logo:hover{
-
-              cursor: pointer;
+            & .conteneur_logo:hover {
+                cursor: pointer;
             }
 
-            & input{
+            & input {
                 margin-top: 5px;
             }
         }
 
-
-        & .balise_souvenir{
+        & .balise_souvenir {
             /* border: 2px solid blueviolet; */
             display: flex;
             justify-content: space-between;
             margin-top: 30px;
-            color: #7E8A97;
+            color: #7e8a97;
             font-family: var(--police-principale);
             font-size: 14px;
             font-style: normal;
             font-weight: 400;
             line-height: normal;
 
-            & a{
-
+            & a {
                 text-decoration: none;
                 font-family: var(--police-principale);
-                color: #480E18;
+                color: #480e18;
                 font-size: 14px;
                 font-style: normal;
                 font-weight: 400;
                 line-height: normal;
             }
-           
         }
 
-
-        & .boutons{
-
-            width: 100% ;
+        & .boutons {
+            width: 100%;
             padding-top: 0.5rem;
             padding-bottom: 0.5rem;
             margin-top: 10px;
-            /* border: 2px solid blue; */
+            border: none;
             border-radius: 12px;
-            background: var(--PRIMARY, #AA8443);
+            background: var(--PRIMARY, #aa8443);
             text-align: center;
             text-transform: uppercase;
-            color: #181C2E;
+            color: #181c2e;
             font-family: var(--police-principale);
             font-size: 14px;
             font-style: normal;
             font-weight: 700;
-               
         }
 
-        & .boutons:hover{
-
+        & .boutons:hover {
             background-color: var(--couleur-principale-survol);
             transition: all 0.3s ease-in-out;
             cursor: pointer;
         }
     }
-    
 }
 
-
-.balise-inscrire{
-
+.balise-inscrire {
     /* border: 1px solid yellowgreen; */
     display: flex;
     justify-content: space-between;
@@ -176,11 +166,8 @@ body{
     font-weight: 400;
     line-height: 24px;
 
-  
-
-    & a{
-
-        color: #480E18;
+    & a {
+        color: #480e18;
         text-align: center;
         font-family: var(--police-principale);
         font-size: 13px;
@@ -192,13 +179,9 @@ body{
     }
 }
 
-
-
-
 input[type="email"],
-input[type="password"],input
-{
-   
+input[type="password"],
+input {
     font-family: var(--police-principale);
     color: var(--texte-info);
     font-size: 14px;
@@ -207,25 +190,23 @@ input[type="password"],input
     line-height: normal;
     border-radius: 5px;
     height: 40px;
-    background-color: #F0F5FA;
+    background-color: #f0f5fa;
     padding: 10px;
 }
 
-.boutons{
-
-    width: 100% ;
+.boutons {
+    width: 100%;
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
     margin-top: 10px;
     /* border: 2px solid blue; */
     border-radius: 12px;
-    background: var(--PRIMARY, #AA8443);
+    background: var(--PRIMARY, #aa8443);
     text-align: center;
     text-transform: uppercase;
-    color: #181C2E;
+    color: #181c2e;
     font-family: var(--police-principale);
     font-size: 14px;
     font-style: normal;
     font-weight: 700;
-       
 }
