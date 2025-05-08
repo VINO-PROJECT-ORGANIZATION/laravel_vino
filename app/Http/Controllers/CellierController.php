@@ -4,8 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Cellier;
-use App\Models\User;
-use Illuminate\Support\Facades\Auth;
+use Illuminate\Validation\Rule;
 
 class CellierController extends Controller
 {
@@ -39,9 +38,18 @@ class CellierController extends Controller
     {
         //valider les données
         $request->validate([
-            'nom' => 'required|string|max:255|unique:celliers',
+            'nom' => [
+                'required',
+                'string',
+                'max:255',
+                // vérifier que le nom du cellier est unique pour l'utilisateur
+                Rule::unique('celliers')->where(function ($query) {
+                    return $query->where('user_id', auth()->id());
+                }),
+            ],
             'teinte' => 'nullable|string|max:255',
         ]);
+
 
         //créer le cellier
         $cellier = new Cellier();

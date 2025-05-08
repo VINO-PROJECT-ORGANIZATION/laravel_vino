@@ -94,12 +94,20 @@ class BouteilleHasCellierController extends Controller
     {
         // page courante :
         $pageCourante = 'bouteillesParUtilisateur';
-        $bouteilles = BouteilleHasCellier::with('bouteille')
+        $bouteillesUtilisateur = BouteilleHasCellier::with('bouteille')
             ->whereHas('cellier', function ($query) use ($user_id) {
                 $query->where('user_id', $user_id);
             })
             ->get();
 
-        return view('bouteille_has_cellier.BouteillesUtilisateur', compact('bouteilles', 'user_id', 'pageCourante'));
+        $bouteilles = Bouteille::with('bouteilleHasCellier')
+            ->whereHas('bouteilleHasCellier', function ($query) use ($user_id) {
+                $query->whereHas('cellier', function ($query) use ($user_id) {
+                    $query->where('user_id', $user_id);
+                });
+            })
+            ->get();
+
+        return view('bouteille_has_cellier.BouteillesUtilisateur', compact('bouteillesUtilisateur', 'user_id', 'pageCourante'));
     }
 }

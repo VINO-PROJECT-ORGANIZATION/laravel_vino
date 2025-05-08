@@ -4,7 +4,6 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Auth\LoginRequest;
-use App\Providers\RouteServiceProvider;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -17,7 +16,7 @@ class AuthenticatedSessionController extends Controller
      */
     public function create(): View
     {
-        $pageCourante = 'login';
+        $pageCourante = 'Connexion';
         return view('auth.login', compact('pageCourante'));
     }
 
@@ -33,7 +32,7 @@ class AuthenticatedSessionController extends Controller
         // return redirect()->intended(RouteServiceProvider::HOME);
 
         // redirige la route vers la page bouteille
-        return redirect()->route('bouteilles.index');
+        return redirect()->route('celliers.index')->with('success', 'Connexion réussie !');
     }
 
     /**
