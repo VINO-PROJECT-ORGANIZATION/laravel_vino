@@ -21,7 +21,8 @@
         <nav class="header__nav-sec">
             <div class="bouton bouton_nav">
                 <a href="{{ back()->getTargetUrl() }}" class="nav__link">
-                    <img src="./images/icons/back.svg" alt="icone">
+                    <img src="{{asset('images/icons/back.svg')}}" alt="icone">
+                    
                      </a>
             </div>
             <div class="bouton bouton_nav" id="deconnecter">
