@@ -26,7 +26,7 @@ class BouteilleHasCellier extends Model
 
     public function bouteille()
     {
-        return $this->belongsTo(Bouteille::class, 'bouteille_id');
+        return $this->belongsTo(Bouteille::class, foreignKey: 'bouteille_id');
     }
     public function cellier()
     {
@@ -39,5 +39,11 @@ class BouteilleHasCellier extends Model
     public function scopeQuantite($query)
     {
         return $query->where('quantite', '>', 0);
+    }
+
+    // Fonction pour obtenir le nombre total de bouteilles dans un cellier
+    public function scopeTotalBouteilles($query, $cellierId)
+    {
+        return $query->where('cellier_id', $cellierId)->sum('quantite');
     }
 }
