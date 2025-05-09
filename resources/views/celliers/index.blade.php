@@ -15,9 +15,15 @@
             @elseif ($cellier->teinte == '#FFD1DC') corail-pastel
             @elseif ($cellier->teinte == '#E5E5E5') gris-perle
          @endif">
-            <h2>{{ $cellier['nom'] }}</h2>
+
+            <a href="{{ route('cellier_bouteilles.cellier.bouteilles', ['cellier_id' => $cellier->id]) }}">
+                <h2>{{ $cellier['nom'] }}</h2>
+            </a>
+            {{ $quantiteBouteilles[$cellier->id] }} bouteilles
         </section>
         @endforeach
+        <!-- afficher le nombre de bouteille par cellier -->
+
     </div>
     <div class="container">
         <a href="{{ route('celliers.create') }}" class="btn btn-primary">Créer un cellier</a>
