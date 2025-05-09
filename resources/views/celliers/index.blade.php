@@ -1,10 +1,11 @@
 <x-header-nav-sec></x-header-nav-sec>
-<main>
+<main class="celliers-page">
     <h1>Mes celliers</h1>
     <div class="container">
         @foreach ($celliers as $cellier)
         <!-- TEST -->
-        <section class="carte-cellier @if ($cellier->teinte == '#F28B82') rouge-framboise
+        <section class="celliers-carte">
+            <div class="celliers-carte__image @if ($cellier->teinte == '#F28B82') rouge-framboise
             @elseif ($cellier->teinte == '#FBC4AB') rose-peche
             @elseif ($cellier->teinte == '#FDF6E3') blanc-vanille
             @elseif ($cellier->teinte == '#CDEAC0') sauge-pale
@@ -15,11 +16,13 @@
             @elseif ($cellier->teinte == '#FFD1DC') corail-pastel
             @elseif ($cellier->teinte == '#E5E5E5') gris-perle
          @endif">
-
+                <img src="{{asset('images/icons/celliers-icon-01.svg')}}" alt="Image de cellier" />
+            </div>
             <a href="{{ route('cellier_bouteilles.cellier.bouteilles', ['cellier_id' => $cellier->id]) }}">
-                <h2>{{ $cellier['nom'] }}</h2>
+                <h2 class="celliers-carte__titre">{{ $cellier['nom'] }}</h2>
             </a>
-            {{ $quantiteBouteilles[$cellier->id] }} bouteilles
+            <p class="celliers-carte__description">{{ $quantiteBouteilles[$cellier->id] }} bouteille(s)</p>
+            <!-- <div class="boutons">Ajouter une bouteille</div> -->
         </section>
         @endforeach
         <!-- afficher le nombre de bouteille par cellier -->
