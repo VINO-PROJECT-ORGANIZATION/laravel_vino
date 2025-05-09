@@ -1,8 +1,9 @@
 .rouge-framboise {
-    background-color: #EA889D;
+    background-color: #F28B82;
 }
+
 .rose-peche {
-    background-color: #F4B5BE;
+    background-color: #FBC4AB;
 }
 
 .blanc-vanille {
@@ -41,13 +42,15 @@
     display: flex;
     flex-direction: column;
     gap: var(--espace-grand);
-    padding: var(--espace-moyen)  var(--espace-moyen) 90px;
+    padding: var(--espace-moyen) var(--espace-moyen) 90px;
 }
+
 .celliers-page .container {
     display: flex;
     flex-direction: column;
     gap: var(--espace-grand);
 }
+
 .celliers-carte__image {
     display: flex;
     justify-content: center;
@@ -57,27 +60,32 @@
     border-radius: 1rem;
     object-fit: cover;
 }
+
 .celliers-carte__image img {
     max-width: 100px;
 }
+
 .celliers-carte__titre {
     font-size: var(--taille-titre);
     color: var(--texte-primaire);
     font-weight: 400;
 }
+
 .celliers-page a {
     text-decoration: none;
     color: var(--texte-primaire);
 }
+
 .celliers-carte__titre a:hover {
-    cursor:pointer
+    cursor: pointer
 }
+
 .celliers-carte__description {
     font-size: 14px;
     color: var(--texte-info);
 }
+
 .celliers-carte .boutons {
     max-width: 180px;
     font-size: 11px;
-    
 }
