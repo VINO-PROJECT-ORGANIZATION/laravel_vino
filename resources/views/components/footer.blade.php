@@ -4,7 +4,8 @@
         <!-- lien vers la page des celliers -->
         <a href="{{ route('celliers.index') }}">
             <div class=" conteneur">
-                <img src="./images/icons/celliers.svg" alt="celliers">
+                                
+                <img src="{{asset('images/icons/celliers.svg')}}" alt="celliers">
             </div>
             <p>Celliers</p>
         </a>
@@ -14,7 +15,8 @@
         <a href="">
 
             <div class="conteneur">
-                <img src="./images/icons/tirebouchon.svg" alt="tirebouchon">
+                
+                <img src="{{asset('images/icons/tirebouchon.svg')}}" alt="tirebouchon">
             </div>
             <p>Bouteilles</p>
         </a>
@@ -24,7 +26,7 @@
         <!-- lien vers la page des bouteilles -->
         <a href="{{ route('bouteilles.index') }}">
             <div class="conteneur">
-                <img src="./images/icons/loupe.svg" alt="loupe">
+                <img src="{{asset('images/icons/loupe.svg')}}" alt="loupe">
             </div>
             <p>Recherche</p>
         </a>
@@ -33,7 +35,8 @@
     <div class="@if($pageCourante == 'profil') active @endif">
         <a href="{{ route('profile.edit') }}">
             <div class="conteneur">
-                <img src="./images/icons/user.svg" alt="utilisateur">
+          
+                <img src="{{asset('images/icons/user.svg')}}" alt="utilisateur">
             </div>
             <p>Profil</p>
         </a>
