@@ -14,7 +14,7 @@ class BouteilleController extends Controller
     public function index()
     {
         //afficher toutes les bouteilles
-        $bouteilles = Bouteille::paginate(25);
+        $bouteilles = Bouteille::paginate(50);
         $pageCourante = 'bouteilles';
 
         // return view('index', compact('bouteilles'));
