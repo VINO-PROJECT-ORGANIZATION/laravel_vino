@@ -11,7 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=WindSong:wght@400;500&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Sen:wght@400..800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
-    <script src="./js/deconnexion.js" type="module"></script>
+    <script src="{{asset('js/deconnexion.js')}}" type="module"></script>
     <title>à changer</title>
 
 </head>
