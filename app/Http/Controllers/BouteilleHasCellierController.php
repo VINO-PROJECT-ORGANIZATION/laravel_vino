@@ -25,7 +25,8 @@ class BouteilleHasCellierController extends Controller
         // Page courante :
         $pageCourante = 'bouteilleHasCellierCreate';
         $bouteilles = Bouteille::all();
-        $celliers = Cellier::all();
+        // $les cellier de l'utilisateur
+        $celliers = Cellier::where('user_id', auth()->id())->get();
 
         return view('bouteille_has_cellier.create', compact('bouteilles', 'celliers', 'pageCourante'));
     }
