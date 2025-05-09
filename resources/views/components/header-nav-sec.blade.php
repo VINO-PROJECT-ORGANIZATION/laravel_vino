@@ -11,7 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=WindSong:wght@400;500&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Sen:wght@400..800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
-    <script src="./js/deconnexion.js" type="module"></script>
+    <script src="{{asset('js/deconnexion.js')}}" type="module"></script>
     <title>à changer</title>
 
 </head>
@@ -21,7 +21,8 @@
         <nav class="header__nav-sec">
             <div class="bouton bouton_nav">
                 <a href="{{ back()->getTargetUrl() }}" class="nav__link">
-                    <img src="./images/icons/back.svg" alt="icone">
+                    <img src="{{asset('images/icons/back.svg')}}" alt="icone">
+                    
                      </a>
             </div>
             <div class="bouton bouton_nav" id="deconnecter">
