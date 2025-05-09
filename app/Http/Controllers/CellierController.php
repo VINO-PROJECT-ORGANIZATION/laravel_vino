@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\BouteilleHasCellier;
 use Illuminate\Http\Request;
 use App\Models\Cellier;
 use Illuminate\Validation\Rule;
@@ -17,7 +18,16 @@ class CellierController extends Controller
         $pageCourante = 'celliers';
         //montrer la liste des celliers de l'utilisateur
         $celliers = Cellier::where('user_id', auth()->id())->get();
-        return view('celliers.index', compact('celliers', 'pageCourante'));
+
+        // utilisation de la fonction scopeTotalBouteilles pour obtenir le nombre total de bouteilles dans un cellier
+        $quantiteBouteilles = [];
+        foreach ($celliers as $cellier) {
+            $quantiteBouteilles[$cellier->id] = BouteilleHasCellier::totalBouteilles($cellier->id);
+        }
+
+
+
+        return view('celliers.index', compact('celliers', 'pageCourante', 'quantiteBouteilles'));
     }
 
     /**
