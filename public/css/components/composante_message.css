@@ -44,6 +44,29 @@
 }
 
 
+.confirmation{
+
+    border: 1px solid #E6EDD2;
+    background-color: #F4FAF0;
+    color: #99AA68;
+}
+
+.erreur{
+
+    border: 1px solid #EDD2D2;
+    background-color: #FAF0F0;
+    color: #AA6868;
+}
+
+.avertissement{
+
+    border: 1px solid #F1EEC8;
+    background: #FCFBE7;
+    color:#B0AE60;
+}
+
+
+
 
 @media (min-width: 1200px) {
 

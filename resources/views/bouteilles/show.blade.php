@@ -1,7 +1,7 @@
 <h1>hell not!!!</h1>
 <h1>hell yes!!!</h1>
 <x-header-nav-sec/>
- <div class="composante_message">
+ <div class="composante_message ">
         <div class="fermer">
             <p>X</p>
         </div>
