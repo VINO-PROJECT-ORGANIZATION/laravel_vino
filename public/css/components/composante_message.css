@@ -9,9 +9,6 @@
     margin-left: 5px;
     margin-right: 5px;
    
-
- 
-
     & .fermer{
 
     
@@ -38,13 +35,44 @@
 
        & .texte-message{
 
-    
     width: 81%;
     margin-top: 1.5rem;
     margin-left: 5%;
     font-size: 1rem;
     
-
-
     }
+}
+
+
+
+@media (min-width: 1200px) {
+
+
+    .composante_message{
+
+        width: 99%;
+      
+        & .fermer{
+
+            height: 30%;
+
+                & p {
+           
+            height: 100%;
+            margin-top: 0;
+            text-align: center;
+            font-size: 2rem;
+            }
+        }
+
+
+        & .texte-message {
+         
+            width: 81%;
+            margin-top: 0;
+            margin-left: 5%;
+            font-size: 2.4rem;
+        }
+    }
+    
 }
