@@ -1,0 +1,10 @@
+h1{
+
+    text-decoration: underline;
+}
+
+button[type="submit"]:disabled{
+
+   
+    opacity: 50%;
+}
