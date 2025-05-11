@@ -77,7 +77,7 @@
           
                 <!-- Soumettre le formulaire -->
                 <div class="groupe-input balise_courriel">
-                    <button type="submit" class="boutons btn btn-primary" disabled>Créer la bouteille</button>
+                    <button type="submit" class="boutons btn btn-primary" >Créer la bouteille</button>
                 </div>
           
             </form>

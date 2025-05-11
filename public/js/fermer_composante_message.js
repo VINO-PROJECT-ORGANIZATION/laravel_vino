@@ -7,10 +7,13 @@ const fermer = document.querySelector('.fermer');
 
 fermer.addEventListener('click',(e)=>{
 
-    e.target.parentElement.parentElement.classList.add("invisible");    
+    
+    e.target.parentElement.parentElement.classList.add("invisible");
+    
+    
 })
 
 }
 
-fermerMessage();
+//fermerMessage();
 
