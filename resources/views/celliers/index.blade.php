@@ -23,7 +23,16 @@
                 <h2 class="celliers-carte__titre">{{ $cellier['nom'] }}</h2>
             </a>
             <p class="celliers-carte__description">{{ $quantiteBouteilles[$cellier->id] }} bouteille(s)</p>
-            <!-- <div class="boutons">Ajouter une bouteille</div> -->
+            <!-- edition du cellier -->
+            <div class="celliers-carte__actions">
+                <a href="{{ route('celliers.edit', $cellier->id) }}" class="btn btn-secondary">Modifier</a>
+                <form method="POST" action="{{ route('celliers.destroy', $cellier->id) }}">
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit" class="btn btn-danger">Supprimer</button>
+                </form>
+            </div>
+            <!-- fin edition du cellier -->
         </section>
         @endforeach
         <!-- afficher le nombre de bouteille par cellier -->
