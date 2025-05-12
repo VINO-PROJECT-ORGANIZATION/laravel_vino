@@ -11,7 +11,7 @@
             <div class="groupe-input">
                 <label for="teinte">Teinte de fond</label>
                 <select name="teinte" id="teinte" required>
-                    <option value="0">Sélectionner une teinte</option>
+                    <option value="">Sélectionner une teinte</option>
                     <option value="#F28B82">Rouge Framboise pastel</option>
                     <option value="#FBC4AB">Rosé Pêche</option>
                     <option value="#FDF6E3">Blanc Vanille</option>
