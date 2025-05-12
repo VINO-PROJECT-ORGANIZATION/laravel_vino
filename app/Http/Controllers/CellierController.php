@@ -85,7 +85,12 @@ class CellierController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        //page courante
+        $pageCourante = 'celliers';
+        //montrer le formulaire d'édition d'un cellier
+        $cellier = Cellier::find($id);
+
+        return view('celliers.edit', compact('cellier', 'pageCourante'));
     }
 
     /**
@@ -93,7 +98,28 @@ class CellierController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        //valider les données
+        $request->validate([
+            'nom' => [
+                'required',
+                'string',
+                'max:255',
+                // vérifier que le nom du cellier est unique pour l'utilisateur
+                Rule::unique('celliers')->where(function ($query) use ($id) {
+                    return $query->where('user_id', auth()->id())->where('id', '<>', $id);
+                }),
+            ],
+            'teinte' => 'nullable|string|max:255',
+        ]);
+
+        //mettre à jour le cellier
+        $cellier = Cellier::find($id);
+        $cellier->nom = $request->nom;
+        $cellier->teinte = $request->teinte;
+        $cellier->save();
+
+        //redirection vers la liste des celliers
+        return redirect()->route('celliers.index')->with('success', 'Cellier mis à jour avec succès.');
     }
 
     /**
@@ -101,6 +127,11 @@ class CellierController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        //supprimer le cellier
+        $cellier = Cellier::find($id);
+        $cellier->delete();
+
+        //redirection vers la liste des celliers
+        return redirect()->route('celliers.index')->with('success', 'Cellier supprimé avec succès.');
     }
 }
