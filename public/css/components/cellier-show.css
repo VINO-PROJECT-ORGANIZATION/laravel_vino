@@ -1,0 +1,44 @@
+
+.cellier-page {
+    display: flex;
+    flex-direction: column;
+    gap: var(--espace-grand);
+    padding: var(--espace-moyen)  var(--espace-moyen) 90px;
+}
+.cellier-page .container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--espace-grand);
+}
+.cellier-carte__image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 200px;
+    border-radius: 1rem;
+    object-fit: cover;
+}
+.cellier-carte__image img {
+    max-width: 100px;
+}
+.cellier-carte__titre {
+    font-size: var(--taille-titre);
+    color: var(--texte-primaire);
+    font-weight: 400;
+}
+.cellier-page a {
+    text-decoration: none;
+    color: var(--texte-primaire);
+}
+.cellier-carte__titre a:hover {
+    cursor:pointer
+}
+.cellier-carte__description {
+    font-size: 14px;
+    color: var(--texte-info);
+}
+.cellier-carte .boutons {
+    font-size: 11px;
+    border: none;
+}

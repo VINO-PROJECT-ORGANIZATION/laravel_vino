@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\bouteille;
+use App\Models\Bouteille;
 
 use Illuminate\Http\Request;
 
