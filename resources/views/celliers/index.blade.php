@@ -5,7 +5,8 @@
         @foreach ($celliers as $cellier)
         <!-- TEST -->
         <section class="celliers-carte">
-            <div class="celliers-carte__image @if ($cellier->teinte == '#F28B82') rouge-framboise
+            <div class="celliers-carte__image
+            @if ($cellier->teinte == '#F28B82') rouge-framboise
             @elseif ($cellier->teinte == '#FBC4AB') rose-peche
             @elseif ($cellier->teinte == '#FDF6E3') blanc-vanille
             @elseif ($cellier->teinte == '#CDEAC0') sauge-pale
