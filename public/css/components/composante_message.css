@@ -1,0 +1,102 @@
+.composante_message{
+
+    border: 1px solid black;
+    width: 98%;
+    height: 20vh;
+    border-radius:10px ;
+    font-size: 2.7rem;
+    padding-bottom: 2%;
+    margin-left: 5px;
+    margin-right: 5px;
+    font-family: var(--police-principale);
+   
+    & .fermer{
+
+    
+    width: 10%;
+    height: 20%;
+    padding: 0;
+    margin-left: 90%;
+
+
+        & p {
+    
+    height: 100%;
+    margin-top: 0;
+    text-align: center;
+    font-size: 1.2rem;
+}
+    }
+
+    & .fermer:hover{
+
+        cursor: pointer;
+    }
+
+
+       & .texte-message{
+
+    width: 81%;
+    margin-top: 1.5rem;
+    margin-left: 5%;
+    font-size: 1rem;
+    
+    }
+}
+
+
+.confirmation{
+
+    border: 1px solid #E6EDD2;
+    background-color: #F4FAF0;
+    color: #99AA68;
+}
+
+.erreur{
+
+    border: 1px solid #EDD2D2;
+    background-color: #FAF0F0;
+    color: #AA6868;
+}
+
+.avertissement{
+
+    border: 1px solid #F1EEC8;
+    background: #FCFBE7;
+    color:#B0AE60;
+}
+
+
+
+
+@media (min-width: 1200px) {
+
+
+    .composante_message{
+
+        width: 99%;
+      
+        & .fermer{
+
+            height: 30%;
+
+                & p {
+           
+            height: 100%;
+            margin-top: 0;
+            text-align: center;
+            font-size: 2rem;
+            }
+        }
+
+
+        & .texte-message {
+         
+            width: 81%;
+            margin-top: 0;
+            margin-left: 5%;
+            font-size: 2.4rem;
+        }
+    }
+    
+}
