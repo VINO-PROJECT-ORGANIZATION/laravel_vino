@@ -19,9 +19,8 @@
 @import './components/modale_deconnexion.css';
 @import './components/cellier-index.css';
 @import './components/cellier-show.css';
+@import './components/cellier-edit.css';
+@import './components/cellier-create.css';
 @import './components/header-nav-accueil.css';
 @import './components/composante_message.css';
 @import './components/form-ajouter-bouteille.css';
-
-
-
