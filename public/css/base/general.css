@@ -7,13 +7,18 @@ body {
     position: relative;
     margin-bottom: 60px;
     font-family: "sen", sans-serif;
-    font-weight:400;
-    font-style:normal;
+    font-weight: 400;
+    font-style: normal;
 }
 
 main {
     padding-bottom: 75px;
+    max-width: 600px;
+    padding: 2rem;
+    border-radius: var(--rayon-carte);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
+
 h1 {
     font-size: 1.5em;
     color: var(--texte-primaire);
