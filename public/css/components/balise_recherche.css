@@ -23,6 +23,7 @@
         height: 100%;
         position: absolute;
         left: 90%;
+        background-color: #E8EDF1;
 
         & img{
 

@@ -1,13 +1,16 @@
 <div class="recherche">
-            <label for="requete" class="invisible">
+            <form action="">
+                <label for="requete" class="invisible">
             </label> 
             <input type="text" name="requete" placeholder="Entrez un nom ...">
            
           
-            <div class="contenant_loupe">
+            <button class="contenant_loupe">
                 <img src="{{asset('images/icons/Loupe.svg')}}" alt="loupe">
                 
-            </div>
+            </button>
+            </form>
+            
 </div>
 
 
