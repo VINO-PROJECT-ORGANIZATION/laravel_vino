@@ -5,7 +5,8 @@
            
           
             <div class="contenant_loupe">
-                <img src="./images/icons/Loupe.svg" alt="loupe">
+                <img src="{{asset('images/icons/Loupe.svg')}}" alt="loupe">
+                
             </div>
 </div>
 

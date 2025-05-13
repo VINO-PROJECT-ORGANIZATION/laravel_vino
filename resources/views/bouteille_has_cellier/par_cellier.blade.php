@@ -1,4 +1,6 @@
 <x-header-nav-sec />
+<x-composante-recherche />
+<x-composante-header-accueil />
 <main class="cellier-page">
 
     <div class="container">
