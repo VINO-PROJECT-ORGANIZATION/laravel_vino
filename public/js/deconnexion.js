@@ -9,8 +9,8 @@ export default function deconnecter(){
         
     deconnecter.addEventListener("click",(e)=>{
            
-       console.log(e.target.parentElement.parentElement.nextElementSibling);
-       e.target.parentElement.parentElement.nextElementSibling.classList.toggle("invisible");
+    // correction je ferme le form 
+       form.classList.toggle("invisible");
         
     }
 )
