@@ -19,8 +19,8 @@
 
         <!-- Format de la bouteille -->
         <div class="groupe-input balise_courriel">
-            <label for="pays">Format de la bouteille</label>
-            <input type="text" id="pays" name="pays" required autofocus>
+            <label for="format">Format de la bouteille</label>
+            <input type="text" id="format" name="format" required autofocus>
             <x-input-error :messages="$errors->get('pays')" />
         </div>
 
@@ -45,7 +45,7 @@
             <x-input-error :messages="$errors->get('type')" />
         </div> -->
 
-<!-- Type de vin de la bouteille, à changer pour une liste déroulante -->
+        <!-- Type de vin de la bouteille, à changer pour une liste déroulante -->
         <div class="groupe-input balise_courriel">
             <label for="type">Type de vin</label>
             <select id="type" name="type" required>
@@ -56,12 +56,31 @@
             </select>
             <x-input-error :messages="$errors->get('type')" />
         </div>
+        <!-- <p>Date('mY')$bouteille->id</p> -->
+
+        <!--display date in format YYYYMMDDms-->
+        <!-- <p>{{ date('ymdms') }}</p> -->
+
+        <!-- Option 01 - code saq unique généré par la date et l'heure -->
+        <!-- {{ $code_saq_unique = date('ymdms') }} -->
+
+        <!-- display user id -->
+        <p>{{ $user_id = Auth::user()->id }}</p>
 
         <!-- Bouteille personnalisée -->
         <div class="groupe-input balise_courriel ">
-            <label for="personnalise hidden">Bouteille personnalisée</label>
-            <input type="checkbox" id="personnalise" name="personnalise" hidden value="1"> 
+            <label for="code_saq" hidden>Code SAQ</label>
+            <input type="text" id="code_saq" name="code_saq" hidden value="{{ $code_saq }}">
         </div>
+
+        <!-- comment valider que personne ne le fait en même temps? -->
+
+
+        <!-- Bouteille personnalisée -->
+        <!-- <div class="groupe-input balise_courriel ">
+            <label for="personnalise" hidden>Bouteille personnalisée</label>
+            <input type="checkbox" id="personnalise" name="personnalise" hidden value="1">
+        </div> -->
 
         <!-- Quantité de bouteille -->
         <!-- <div class="groupe-input">
@@ -71,8 +90,8 @@
         </div> -->
 
 
-                <button type="submit">Créer</button>
-            </div>
+        <button type="submit">Créer</button>
+        </div>
     </form>
 </main>
 <x-footer :pageCourante="$pageCourante" />

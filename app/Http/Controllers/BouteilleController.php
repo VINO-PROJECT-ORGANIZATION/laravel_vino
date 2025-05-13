@@ -32,7 +32,15 @@ class BouteilleController extends Controller
         //page courante
         $pageCourante = 'bouteilles';
         //montrer le formulaire de création d'une bouteille
-        return view('bouteilles.create', compact('pageCourante'));
+
+        // display user id
+        $user_id = auth()->id();
+        do {
+            $code_saq = now()->format('ymdHis') . $user_id;
+        } while (\App\Models\Bouteille::where('code_saq', $code_saq)->exists());
+    
+
+        return view('bouteilles.create', compact('pageCourante', 'code_saq'));
     }
 
     /**
@@ -40,7 +48,41 @@ class BouteilleController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // dump($_POST);
+        // exit;
+        // ajouter une bouteille provenant du formulaire de la page bouteilles.create
+
+        // do {
+        //     $code_saq = now()->format('ymdHis') . auth()->id();
+        // } while (\App\Models\Bouteille::where('code_saq', $code_saq)->exists());
+        //combine the current date and the user id to create a unique code_saq
+
+        $validee = $request->validate([
+            'nom' => 'required|string|max:255',
+            'pays' => 'required|string|max:255',
+            'format' => 'required|string|max:255',
+            'degre_alcool' => 'required|string|max:255',
+            'region' => 'required|string|max:255',
+            'type' => 'required|string|max:255',
+            'code_saq' => 'required|string|max:255',
+        ]);
+        // Créer une nouvelle bouteille
+        $bouteille = new Bouteille();
+        $bouteille->nom = $request->nom;
+        $bouteille->pays = $request->pays;
+        $bouteille->format = $request->format;
+        $bouteille->degre_alcool = $request->degre_alcool;
+        $bouteille->region = $request->region;
+        $bouteille->type = $request->type;
+        $bouteille->code_saq = $request->code_saq;
+        $bouteille->save();
+
+        // $validee['code_saq'] = $code_saq;
+
+        // Bouteille::create($validee);
+        
+        // rediriger vers la page de la bouteille
+        return redirect()->route('bouteilles.index')->with('success', 'Bouteille created successfully');
     }
 
     /**
