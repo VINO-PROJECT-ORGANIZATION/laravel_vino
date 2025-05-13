@@ -1,14 +1,3 @@
-/* Conteneur principal */
-main {
-    max-width: 600px;
-    margin: 2rem auto;
-    padding: 2rem;
-    background-color: var(--arriere-plan-gris-pale);
-    border-radius: var(--rayon-carte);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-    font-family: var(--police-principale);
-}
-
 /* Titre */
 main h1 {
     font-size: var(--taille-titre);
