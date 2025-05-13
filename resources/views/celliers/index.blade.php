@@ -1,5 +1,5 @@
 <x-header-nav-sec></x-header-nav-sec>
-<main class="celliers-page">
+<main>
     <h1>Mes celliers</h1>
     <div class="container">
         @foreach ($celliers as $cellier)
@@ -25,7 +25,7 @@
             <p class="celliers-carte__description">{{ $quantiteBouteilles[$cellier->id] }} bouteille(s)</p>
             <!-- edition du cellier -->
             <div class="celliers-carte__actions">
-                <a href="{{ route('celliers.edit', $cellier->id) }}" class="btn btn-secondary">Modifier</a>
+                <a href="{{ route('celliers.edit', $cellier->id) }}">Modifier</a>
                 <form method="POST" action="{{ route('celliers.destroy', $cellier->id) }}">
                     @csrf
                     @method('DELETE')
@@ -39,10 +39,10 @@
 
     </div>
     <div class="container">
-        <a href="{{ route('celliers.create') }}" class="btn btn-primary">Créer un cellier</a>
+        <a href="{{ route('celliers.create') }}">Créer un cellier</a>
     </div>
     <div class="container">
-        <a href="{{ route('bouteilles.index') }}" class="btn btn-primary">Ajouter des bouteilles</a>
+        <a href="{{ route('bouteilles.index') }}">Ajouter des bouteilles</a>
     </div>
 
 </main>

@@ -1,6 +1,6 @@
 <x-header-nav-sec />
 <main>
-    <div>
+    <div class="edit_cellier">
         <h1>Modifier le cellier</h1>
         <form method="POST" action="{{ route('celliers.update', $cellier->id) }}">
             @csrf
@@ -29,7 +29,7 @@
         </form>
     </div>
     @if ($errors->any())
-    <div>
+    <div class="erreurs">
         <ul>
             @foreach ($errors->all() as $error)
             <li>{{ $error }}</li>
