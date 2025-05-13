@@ -38,13 +38,6 @@
     background-color: #E5E5E5;
 }
 
-.celliers-page {
-    display: flex;
-    flex-direction: column;
-    gap: var(--espace-grand);
-    padding: var(--espace-moyen) var(--espace-moyen) 90px;
-}
-
 .celliers-page .container {
     display: flex;
     flex-direction: column;
