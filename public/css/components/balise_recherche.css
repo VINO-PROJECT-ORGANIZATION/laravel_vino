@@ -11,7 +11,7 @@
 
     & input{
 
-        width: 100%;
+        width: 100vw;
         border-radius: 30px;
         background-color: #E8EDF1;
     }
@@ -22,16 +22,19 @@
         width: 10%;
         height: 100%;
         position: absolute;
-        left: 90%;
+        left: 86%;
         background-color: #E8EDF1;
+        border: 0;
+        border-top: 1px solid black;
+        /* border-bottom: 1px solid black; */
 
         & img{
 
             position: relative;
             object-fit: contain;
-            top: 15%;
+            top: 5%;
             transform: rotate(90deg);
-            width: 60%;
+            width: 80%;
             filter: brightness(0) saturate(100%) invert(7%) sepia(33%) saturate(1557%) hue-rotate(197deg) brightness(91%) contrast(90%);
         }
     
