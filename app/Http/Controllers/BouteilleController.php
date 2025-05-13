@@ -20,7 +20,6 @@ class BouteilleController extends Controller
         // return view('index', compact('bouteilles'));
 
 
-        // tu avais oublie de mettre bouteilles.index pour afficher la page 
         return view('bouteilles.index', compact('bouteilles', 'pageCourante'));
     }
 
@@ -33,9 +32,13 @@ class BouteilleController extends Controller
         $pageCourante = 'bouteilles';
         //montrer le formulaire de création d'une bouteille
 
-        // display user id
+        // récupérer l'ID de l'utilisateur authentifié
         $user_id = auth()->id();
+
+        // Boucle pour générer un code unique
+        // Vérifier si le code existe déjà dans la base de données
         do {
+            //Combiner la date, l'heure, la minute et les secondes actuelles avec l'ID de l'utilisateur pour créer un code unique
             $code_saq = now()->format('ymdHis') . $user_id;
         } while (\App\Models\Bouteille::where('code_saq', $code_saq)->exists());
     
@@ -48,14 +51,7 @@ class BouteilleController extends Controller
      */
     public function store(Request $request)
     {
-        // dump($_POST);
-        // exit;
-        // ajouter une bouteille provenant du formulaire de la page bouteilles.create
-
-        // do {
-        //     $code_saq = now()->format('ymdHis') . auth()->id();
-        // } while (\App\Models\Bouteille::where('code_saq', $code_saq)->exists());
-        //combine the current date and the user id to create a unique code_saq
+               
 
         $validee = $request->validate([
             'nom' => 'required|string|max:255',
@@ -77,9 +73,6 @@ class BouteilleController extends Controller
         $bouteille->code_saq = $request->code_saq;
         $bouteille->save();
 
-        // $validee['code_saq'] = $code_saq;
-
-        // Bouteille::create($validee);
         
         // rediriger vers la page de la bouteille
         return redirect()->route('bouteilles.index')->with('success', 'Bouteille created successfully');
