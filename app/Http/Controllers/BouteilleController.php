@@ -29,7 +29,10 @@ class BouteilleController extends Controller
      */
     public function create()
     {
-        //
+        //page courante
+        $pageCourante = 'bouteilles';
+        //montrer le formulaire de création d'une bouteille
+        return view('bouteilles.create', compact('pageCourante'));
     }
 
     /**

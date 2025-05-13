@@ -34,6 +34,12 @@ Route::middleware('auth')->group(function () {
     Route::get('/test-saq', [ScraperController::class, 'index']);
     //routes pour les bouteilles
     Route::get('/bouteilles', [BouteilleController::class, 'index'])->name('bouteilles.index');
+    Route::get('/bouteilles/creer', [BouteilleController::class, 'create'])->name('bouteilles.create');
+    Route::post('/bouteilles', [BouteilleController::class, 'store'])->name('bouteilles.store');
+    Route::get('/bouteilles/{id}/edit', [BouteilleController::class, 'edit'])->name('bouteilles.edit');
+    Route::put('/bouteilles/{id}', [BouteilleController::class, 'update'])->name('bouteilles.update');
+    Route::delete('/bouteilles/{id}', [BouteilleController::class, 'destroy'])->name('bouteilles.destroy');
+    
     Route::get('/bouteilles/{id}', [BouteilleController::class, 'show'])->name('bouteilles.show');
     //routes pour les celliers
     Route::get('/celliers', [CellierController::class, 'index'])->name('celliers.index');
