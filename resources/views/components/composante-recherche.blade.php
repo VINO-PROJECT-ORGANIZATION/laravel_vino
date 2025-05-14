@@ -1,11 +1,11 @@
 <div class="recherche">
-            <form action="">
+            <form action="" class = "form-recherche-cellier" id="form-recherche-cellier">
                 <label for="requete" class="invisible">
             </label> 
-            <input type="text" name="requete" placeholder="Entrez un nom ...">
+            <input type="text" name="requete" placeholder="Entrez un nom ..." id="input-recherche-cellier">
            
           
-            <button class="contenant_loupe">
+            <button type="submit" id="bouton-recherche-cellier"  class="contenant_loupe">
                 <img src="{{asset('images/icons/Loupe.svg')}}" alt="loupe">
                 
             </button>

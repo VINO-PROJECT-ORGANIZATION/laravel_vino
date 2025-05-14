@@ -2,6 +2,20 @@
 <x-composante-recherche />
 
 <main class="cellier-page">
+            
+            <section>
+                    <div> 
+                        <h2>Recherche de : "..."</h2>
+                        <p><span>0</span> résultats trouvés</p>
+                        <ul>Désolé, aucun résultat trouvé.
+                            <li>Essayez une autre recherche</li>
+                            <li>Ou retourner à la page de la liste des bouteilles</li>
+                        </ul>
+                        <a href="" class="">Tous les résultats</a>
+                    </div>
+
+
+
 
     <div class="container">
 

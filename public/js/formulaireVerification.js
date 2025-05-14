@@ -36,4 +36,4 @@ class Formulaire{
 
 }
 
-new Formulaire();
+//new Formulaire();

@@ -14,5 +14,5 @@ fermer.addEventListener('click',(e)=>{
 
 }
 
-fermerMessage();
+//fermerMessage();
 
