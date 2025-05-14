@@ -28,9 +28,9 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
-    Route::get('/profils', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profils', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profils', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    Route::get('/profil', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profil', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profil', [ProfileController::class, 'destroy'])->name('profile.destroy');
     Route::get('/recup-bouteille', [ScraperController::class, 'index']);
     //routes pour les bouteilles
     Route::get('/bouteilles', [BouteilleController::class, 'index'])->name('bouteilles.index');
