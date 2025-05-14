@@ -5,8 +5,7 @@
     font-weight: 600;
     transition: all 0.3s ease-in-out;
     margin-top: 0.2rem;
-    max-width: 60%;
-    max-height: 60%;
+    padding: var(--espace-petit) var(--espace-moyen);
 
     & a {
         text-decoration: none;
@@ -17,9 +16,9 @@
 }
 
 
-.bouton_cellier{
+.bouton_cellier {
 
-margin-left: 6rem;    
+    margin-left: 6rem;
 }
 
 .bouton:hover {
@@ -43,4 +42,31 @@ margin-left: 6rem;
 
 .bouton_nav:hover {
     background-color: var(--arriere-plan-bouton-survol);
+}
+
+.bouton-danger {
+    background-color: var(--couleur-danger);
+    color: var(--texte-secondaire);
+}
+
+.bouton-danger:hover {
+    background-color: var(--couleur-danger-survol);
+}
+
+.bouton-success {
+    background-color: var(--couleur-succes);
+    color: var(--texte-secondaire);
+}
+
+.bouton-success:hover {
+    background-color: var(--couleur-succes-survol);
+}
+
+.bouton-warning {
+    background-color: var(--couleur-warning);
+    color: var(--texte-secondaire);
+}
+
+.bouton-warning:hover {
+    background-color: var(--couleur-warning-survol);
 }
