@@ -2,6 +2,7 @@
 <x-composante-recherche />
 
 <main class="cellier-page">
+     <p></p>
             
             @if($reponses->isEmpty())
             <section>
