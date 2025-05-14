@@ -4,7 +4,6 @@ main h1 {
     font-weight: var(--poids-texte-gras);
     color: var(--texte-primaire);
     margin-bottom: var(--espace-grand);
-    text-align: center;
 }
 
 /* Groupe d'entrée */
@@ -42,6 +41,5 @@ main h1 {
 
 /* Bouton */
 .container {
-    text-align: center;
     margin-top: var(--espace-grand);
 }
