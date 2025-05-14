@@ -1,7 +1,6 @@
 /* Conteneur principal */
 main>.edit_cellier {
     max-width: 600px;
-    margin: 2rem auto;
     padding: 2rem;
     background-color: var(--arriere-plan-gris-pale);
     border-radius: var(--rayon-carte);
@@ -15,7 +14,6 @@ main h1 {
     font-weight: var(--poids-texte-gras);
     color: var(--texte-primaire);
     margin-bottom: var(--espace-grand);
-    text-align: center;
 }
 
 /* Groupe d'entrée */
