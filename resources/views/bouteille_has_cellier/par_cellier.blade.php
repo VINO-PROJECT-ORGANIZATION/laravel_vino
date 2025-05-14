@@ -3,9 +3,10 @@
 
 <main class="cellier-page">
             
+            @if($reponses->isEmpty())
             <section>
                     <div> 
-                        <h2>Recherche de : "..."</h2>
+                        <h2>Recherche de : "{{ $query }}"</h2>
                         <p><span>0</span> résultats trouvés</p>
                         <ul>Désolé, aucun résultat trouvé.
                             <li>Essayez une autre recherche</li>
@@ -14,7 +15,13 @@
                         <a href="" class="">Tous les résultats</a>
                     </div>
 </section>
-
+@else
+    @foreach($reponses as $reponse)
+    <div>
+    <h3>{{ $reponse->nom }}</h3>
+    </div>
+    @endforeach
+@endif
 
 
     <div class="container">
