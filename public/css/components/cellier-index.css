@@ -38,10 +38,11 @@
     background-color: #E5E5E5;
 }
 
-.celliers-page .container {
+.celliers-carte__actions {
     display: flex;
-    flex-direction: column;
-    gap: var(--espace-grand);
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--espace-petit);
 }
 
 .celliers-carte__image {
