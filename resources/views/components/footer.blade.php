@@ -15,7 +15,7 @@
         <div class="conteneur">
             <a href="">
                 <img src="{{asset('images/icons/tirebouchon.svg')}}" alt="tirebouchon">
-                <span>Mes Bouteilles</span>
+                <span>Mes bouteilles</span>
             </a>
         </div>
     </div>
