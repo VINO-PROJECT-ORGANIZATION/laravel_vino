@@ -41,8 +41,6 @@
 .celliers-carte__actions {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    gap: var(--espace-petit);
 }
 
 .celliers-carte__image {
@@ -82,4 +80,8 @@
 .celliers-carte .boutons {
     max-width: 180px;
     font-size: 11px;
+}
+
+.celliers-carte+.celliers-carte {
+    margin-top: var(--espace-moyen);
 }
