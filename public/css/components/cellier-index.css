@@ -38,17 +38,9 @@
     background-color: #E5E5E5;
 }
 
-.celliers-page {
+.celliers-carte__actions {
     display: flex;
-    flex-direction: column;
-    gap: var(--espace-grand);
-    padding: var(--espace-moyen) var(--espace-moyen) 90px;
-}
-
-.celliers-page .container {
-    display: flex;
-    flex-direction: column;
-    gap: var(--espace-grand);
+    justify-content: space-between;
 }
 
 .celliers-carte__image {
@@ -88,4 +80,8 @@
 .celliers-carte .boutons {
     max-width: 180px;
     font-size: 11px;
+}
+
+.celliers-carte+.celliers-carte {
+    margin-top: var(--espace-moyen);
 }

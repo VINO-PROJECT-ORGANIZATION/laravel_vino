@@ -25,6 +25,14 @@
 
 
     <div class="container">
+        <div class="celliers-carte__actions">
+            <a href="{{ route('celliers.edit', $cellier->id) }}" class="bouton bouton-warning">Modifier</a>
+            <form method="POST" action="{{ route('celliers.destroy', $cellier->id) }}">
+                @csrf
+                @method('DELETE')
+                <button type="submit" class="bouton bouton-danger">Supprimer</button>
+            </form>
+        </div>
 
         <section class="cellier-carte">
             <div class="cellier-carte__image @if ($cellier->teinte == '#F28B82') rouge-framboise
@@ -47,16 +55,11 @@
 
             <!-- afficher le nombre de bouteille par cellier -->
 
-
-
-
-
-
             <h1 class="celliers-carte__titre">{{ $cellier->nom }}</h1>
             <!-- example de bouteilles par cellier -->
             @foreach ($bouteilles as $bouteille)
+            <x-carte-bouteille-saq :bouteille="$bouteille->bouteille" />
             <div class="bouteille-cellier">
-                <p>{{ $bouteille->bouteille->nom }}</p>
                 <p>Quantité: {{ $bouteille->quantite }}</p>
             </div>
             <!-- formulaire pour suprimer une bouteille -->

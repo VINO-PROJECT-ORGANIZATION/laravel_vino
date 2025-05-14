@@ -1,0 +1,62 @@
+/* Conteneur principal */
+main>.edit_cellier {
+    max-width: 600px;
+    padding: 2rem;
+    background-color: var(--arriere-plan-gris-pale);
+    border-radius: var(--rayon-carte);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    font-family: var(--police-principale);
+}
+
+/* Titre */
+main h1 {
+    font-size: var(--taille-titre);
+    font-weight: var(--poids-texte-gras);
+    color: var(--texte-primaire);
+    margin-bottom: var(--espace-grand);
+}
+
+/* Groupe d'entrée */
+.groupe-input {
+    margin-bottom: var(--espace-moyen);
+}
+
+/* Label */
+.groupe-input label {
+    display: block;
+    font-size: var(--taille-label);
+    color: var(--texte-primaire);
+    margin-bottom: var(--espace-petit);
+    font-weight: var(--poids-texte-gras);
+}
+
+/* Input et Select */
+.groupe-input input,
+.groupe-input select {
+    width: 100%;
+    padding: var(--espace-petit);
+    font-size: var(--taille-texte);
+    border: 1px solid var(--bordure-claire);
+    border-radius: var(--rayon-bouton);
+    background-color: var(--arriere-plan);
+    color: var(--texte-primaire);
+    transition: border-color 0.3s ease;
+}
+
+.groupe-input input:focus,
+.groupe-input select:focus {
+    border-color: var(--couleur-principale);
+    outline: none;
+}
+
+/* Affichage des erreurs  */
+.erreurs {
+    max-width: 600px;
+    margin: 1rem auto 0;
+    color: red;
+    font-size: var(--taille-texte-petit);
+    background-color: #ffe6e6;
+    padding: 1rem;
+    border: 1px solid #ffb3b3;
+    border-radius: var(--rayon-bouton);
+}

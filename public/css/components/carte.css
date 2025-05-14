@@ -1,46 +1,37 @@
 .carte {
-
-
     border-bottom: 1px solid black;
     margin-top: 10px;
     margin-left: 10px;
     margin-right: 10px;
-    height: 20vh;
+    height: 90px;
     display: flex;
-    
 
     & .contenant {
-
-        
         width: 25%;
         height: 100%;
         position: relative;
 
         & .contenant_img {
-
-            
-            height: 85%;
+            height: 95%;
             z-index: 6;
             position: relative;
 
             & img {
-
                 position: absolute;
                 width: 100%;
                 height: 100%;
                 object-fit: contain;
-
+                bottom: 15px;
             }
         }
 
         & .plateau {
-
             border-radius: 10px;
-            height: 15%;
+            height: 15px;
             position: absolute;
             z-index: 3;
             width: 100%;
-            bottom: 1.2rem;
+            bottom: 15px;
 
             &.vin-rouge {
                 background-color: var(--vin-rouge);
@@ -54,121 +45,90 @@
                 background-color: var(--vin-rose);
             }
         }
-
-
     }
 
     & .detail {
-        
         width: 75%;
 
         & .description {
-
-            
             height: 60%;
-            display: grid;
-            grid-template-columns: 4fr 1fr;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            justify-content: space-between;
+            gap: 15px;
+        
 
             & .desc {
-
-                
-
                 & h3 {
-
-                
                     font-family: var(--police-principale);
-                    font-style: normal;
-                    font-weight: 400;
+                    font-weight: 600;
                     text-transform: capitalize;
-                    font-size: 0.80rem;
-                    line-height: normal;
-                    word-spacing: 100%;
-
+                    font-size: 0.8rem;
+                    min-height: 2lh;
+                    line-height: 1rem;
                 }
-
 
                 & .texte {
-
-                    
                     font-family: var(--police-principale);
-                    font-size: 0.60rem;
+                    font-size: 0.8rem;
                     font-style: normal;
                     font-weight: 400;
-                    margin-top: 0.77rem;
-                    color: #5C5F69;
+                    color: #5c5f69;
+                    line-height: 1rem;
+                    
                 }
-
             }
 
             & .favori {
-
-                
+                width: 35px;
+                flex-shrink: 0;
                 & .fav {
-
-                    margin-top: 0.3rem;
-                    margin-left: 1.2rem;
-                    width: 40px;
-                    height: 40px;
-
+                    /* margin-top: 0.3rem; */
+                    /* margin-left: 1.2rem; */
+                    width: 100%;
+                    height: auto;
                 }
             }
         }
 
         & .action {
-
-            
             height: 40%;
             display: grid;
             grid-template-columns: 1fr 3fr;
 
             & .note {
-
-                
                 height: 40%;
                 display: grid;
                 grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-                margin-left: 0.5rem;
-                margin-top: 0.6rem;
+                /* margin-left: 0.5rem;
+                margin-top: 0.6rem; */
 
                 & div {
-
-                   
                     position: relative;
 
                     & .etoile {
-
-                        fill: #FFAA2A;
+                        fill: #ffaa2a;
                     }
                 }
             }
-
         }
     }
 }
 
-
-
 @media (min-width: 1200px) {
-
     .note {
         width: 30%;
-
     }
 
-
     .favori {
-
         padding-left: 8rem;
     }
 
-
     .action {
-
         & .bouton {
-
             text-align: center;
             margin-left: 18.8rem;
-
         }
     }
 }

@@ -1,0 +1,45 @@
+/* Titre */
+main h1 {
+    font-size: var(--taille-titre);
+    font-weight: var(--poids-texte-gras);
+    color: var(--texte-primaire);
+    margin-bottom: var(--espace-grand);
+}
+
+/* Groupe d'entrée */
+.groupe-input {
+    margin-bottom: var(--espace-moyen);
+}
+
+/* Label */
+.groupe-input label {
+    display: block;
+    font-size: var(--taille-label);
+    color: var(--texte-primaire);
+    margin-bottom: var(--espace-petit);
+    font-weight: var(--poids-texte-gras);
+}
+
+/* Input & Select */
+.groupe-input input,
+.groupe-input select {
+    width: 100%;
+    padding: var(--espace-petit);
+    font-size: var(--taille-texte);
+    border: 1px solid var(--bordure-claire);
+    border-radius: var(--rayon-bouton);
+    background-color: var(--arriere-plan);
+    color: var(--texte-primaire);
+    transition: border-color 0.3s ease;
+}
+
+.groupe-input input:focus,
+.groupe-input select:focus {
+    border-color: var(--couleur-principale);
+    outline: none;
+}
+
+/* Bouton */
+.container {
+    margin-top: var(--espace-grand);
+}
