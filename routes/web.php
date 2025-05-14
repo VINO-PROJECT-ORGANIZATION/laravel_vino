@@ -6,7 +6,7 @@ use App\Http\Controllers\ScraperController;
 use App\Http\Controllers\BouteilleController;
 use App\Http\Controllers\BouteilleHasCellierController;
 use App\Http\Controllers\CellierController;
-use Goutte\Client;
+use App\Http\Controllers\WelcomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,18 +19,16 @@ use Goutte\Client;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [WelcomeController::class, 'welcome'])->name('accueil');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
-    Route::get('/profils', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profils', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profils', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    Route::get('/profil', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profil', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profil', [ProfileController::class, 'destroy'])->name('profile.destroy');
     Route::get('/recup-bouteille', [ScraperController::class, 'index']);
     //routes pour les bouteilles
     Route::get('/bouteilles', [BouteilleController::class, 'index'])->name('bouteilles.index');
