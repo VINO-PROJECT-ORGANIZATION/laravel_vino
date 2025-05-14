@@ -7,7 +7,7 @@
             @if($reponses->isEmpty())
             <section>
                     <div> 
-                        <h2>Recherche de : "{{ $query }}"</h2>
+                        <h2>Recherche de : ""</h2>
                         <p><span>0</span> résultats trouvés</p>
                         <ul>Désolé, aucun résultat trouvé.
                             <li>Essayez une autre recherche</li>

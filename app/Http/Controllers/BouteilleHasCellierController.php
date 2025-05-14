@@ -126,12 +126,10 @@ class BouteilleHasCellierController extends Controller
 
         $cellier = Cellier::findOrFail($cellier_id);
 
-        $reponses = BouteilleHasCellier::select()->join('bouteilles','bouteille_id','=','bouteilles.id')->where('nom' , 'like', "%{$demande}%")->get();
+        $reponses = BouteilleHasCellier::select()->where('cellier_id', $cellier_id)->join('bouteilles','bouteille_id','=','bouteilles.id')->where('nom' , 'like', "%{$demande}%")->get();
 
         session()->put('id_cellier',$cellier_id);
-        // echo ($cellier_id);
-        // die();
-
+        
         return view('bouteille_has_cellier.par_cellier', compact('bouteilles', 'cellier_id', 'pageCourante', 'cellier','reponses'));
     }
 
