@@ -1,16 +1,8 @@
-h1{
-
-    text-decoration: underline;
-}
-
-button[type="submit"]:disabled{
-
-   
+button[type="submit"]:disabled {
     opacity: 50%;
 }
 
-.desactive{
-
-      opacity: 50%;
-      pointer-events: none; 
+.desactive {
+    opacity: 50%;
+    pointer-events: none;
 }
