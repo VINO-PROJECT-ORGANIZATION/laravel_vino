@@ -45,19 +45,3 @@ main h1 {
     text-align: center;
     margin-top: var(--espace-grand);
 }
-
-.container button {
-    padding: var(--espace-petit) var(--espace-grand);
-    font-size: var(--taille-texte);
-    font-weight: var(--poids-texte-gras);
-    color: var(--texte-secondaire);
-    background-color: var(--couleur-principale);
-    border: none;
-    border-radius: var(--rayon-bouton);
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.container button:hover {
-    background-color: var(--couleur-principale-survol);
-}
