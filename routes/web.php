@@ -6,7 +6,7 @@ use App\Http\Controllers\ScraperController;
 use App\Http\Controllers\BouteilleController;
 use App\Http\Controllers\BouteilleHasCellierController;
 use App\Http\Controllers\CellierController;
-use Goutte\Client;
+use App\Http\Controllers\WelcomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,9 +19,7 @@ use Goutte\Client;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [WelcomeController::class, 'welcome'])->name('accueil');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
