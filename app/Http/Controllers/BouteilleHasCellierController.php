@@ -130,7 +130,7 @@ class BouteilleHasCellierController extends Controller
 
         session()->put('id_cellier',$cellier_id);
         
-        return view('bouteille_has_cellier.par_cellier', compact('bouteilles', 'cellier_id', 'pageCourante', 'cellier','reponses'));
+        return view('bouteille_has_cellier.par_cellier', compact('bouteilles', 'cellier_id', 'pageCourante', 'cellier','reponses','demande'));
     }
 
     // Fonction pour montrer toutes les bouteilles de l'utilisateur
