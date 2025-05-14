@@ -24,5 +24,6 @@
 @import './components/header-nav-accueil.css';
 @import './components/composante_message.css';
 @import './components/form-ajouter-bouteille.css';
+@import './components/slider-cellier.css';
 /* --- Importation des styles de pages spécifiques --- */
 @import './pages/recherche-page.css';
