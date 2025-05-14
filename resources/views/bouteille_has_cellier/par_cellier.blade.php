@@ -32,16 +32,11 @@
 
             <!-- afficher le nombre de bouteille par cellier -->
 
-
-
-
-
-
             <h1 class="celliers-carte__titre">{{ $cellier->nom }}</h1>
             <!-- example de bouteilles par cellier -->
             @foreach ($bouteilles as $bouteille)
+            <x-carte-bouteille-saq :bouteille="$bouteille->bouteille" />
             <div class="bouteille-cellier">
-                <p>{{ $bouteille->bouteille->nom }}</p>
                 <p>Quantité: {{ $bouteille->quantite }}</p>
             </div>
             <!-- formulaire pour suprimer une bouteille -->
