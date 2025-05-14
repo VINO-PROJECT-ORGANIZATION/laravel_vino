@@ -51,25 +51,6 @@ main h1 {
     outline: none;
 }
 
-/* Bouton de soumission */
-button[type="submit"] {
-    display: inline-block;
-    padding: var(--espace-petit) var(--espace-grand);
-    font-size: var(--taille-texte);
-    font-weight: var(--poids-texte-gras);
-    color: var(--texte-secondaire);
-    background-color: var(--couleur-principale);
-    border: none;
-    border-radius: var(--rayon-bouton);
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    margin-top: var(--espace-moyen);
-}
-
-button[type="submit"]:hover {
-    background-color: var(--couleur-principale-survol);
-}
-
 /* Affichage des erreurs  */
 .erreurs {
     max-width: 600px;

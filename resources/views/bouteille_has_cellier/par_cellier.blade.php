@@ -2,6 +2,14 @@
 <main class="cellier-page">
 
     <div class="container">
+        <div class="celliers-carte__actions">
+            <a href="{{ route('celliers.edit', $cellier->id) }}" class="bouton bouton-warning">Modifier</a>
+            <form method="POST" action="{{ route('celliers.destroy', $cellier->id) }}">
+                @csrf
+                @method('DELETE')
+                <button type="submit" class="bouton bouton-danger">Supprimer</button>
+            </form>
+        </div>
 
         <section class="cellier-carte">
             <div class="cellier-carte__image @if ($cellier->teinte == '#F28B82') rouge-framboise

@@ -5,6 +5,16 @@
     --couleur-secondaire: #480E18;
     --couleur-secondaire-survol: #6E2632;
 
+    /* Couleurs d'erreur */
+    --couleur-danger: #FF4D4D;
+    --couleur-danger-survol: #FF1A1A;
+    --couleur-succes: #4CAF50;
+    --couleur-succes-survol: #388E3C;
+    --couleur-info: #2196F3;
+    --couleur-info-survol: #1976D2;
+    --couleur-warning: #FF9800;
+    --couleur-warning-survol: #F57C00;
+
     /* Couleurs d’arrière-plan */
     --arriere-plan: #FFFFFF;
     --arriere-plan-gris-pale: #F6F8FA;
@@ -50,4 +60,3 @@
     --rayon-carte: 1rem;
     --taille-icone: 1.5rem;
 }
-
