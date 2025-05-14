@@ -112,8 +112,13 @@ class BouteilleHasCellierController extends Controller
     }
 
     // Fonction pour montrer toutes les bouteilles d'un cellier
-    public function bouteillesDansCellier($cellier_id)
+    public function bouteillesDansCellier($cellier_id, Request $request)
     {
+
+        $query = $request->input('requete');
+        $reponses = Bouteille::where('nom' , 'like', "%{$query}%")->orWhere('format','like',"%{$query}%")->get();
+      
+         
         // Page courante :
         $pageCourante = 'bouteillesParCellier';
         $bouteilles = BouteilleHasCellier::with(['bouteille', 'cellier'])
@@ -122,7 +127,9 @@ class BouteilleHasCellierController extends Controller
 
         $cellier = Cellier::findOrFail($cellier_id);
 
-        return view('bouteille_has_cellier.par_cellier', compact('bouteilles', 'cellier_id', 'pageCourante', 'cellier'));
+
+
+        return view('bouteille_has_cellier.par_cellier', compact('bouteilles', 'cellier_id', 'pageCourante', 'cellier','reponses','query'));
     }
 
     // Fonction pour montrer toutes les bouteilles de l'utilisateur

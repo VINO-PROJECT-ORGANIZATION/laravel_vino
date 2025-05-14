@@ -31,7 +31,7 @@
         </nav>
 
 
-        <form method="POST" action="{{ route('logout') }}" class="invisible">
+        <form method="POST" id="form-deconnexion" action="{{ route('logout') }}" class="invisible">
         @csrf
 
          <input type="submit" value="Déconnexion" class="deconnexion" >

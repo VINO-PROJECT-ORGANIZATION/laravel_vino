@@ -7,10 +7,9 @@ const fermer = document.querySelector('.fermer');
 
 fermer.addEventListener('click',(e)=>{
 
-    
-    e.target.parentElement.parentElement.classList.add("invisible");
-    
-    
+    // correction je ferme la boite composante_message
+    composante_message.classList.add("invisible");
+        
 })
 
 }
