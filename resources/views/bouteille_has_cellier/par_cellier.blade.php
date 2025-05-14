@@ -13,7 +13,7 @@
                         </ul>
                         <a href="" class="">Tous les résultats</a>
                     </div>
-
+</section>
 
 
 

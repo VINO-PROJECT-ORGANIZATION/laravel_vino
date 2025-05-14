@@ -26,7 +26,7 @@
         background-color: #E8EDF1;
         border: 0;
         border-top: 1px solid black;
-        /* border-bottom: 1px solid black; */
+        
 
         & img{
 
@@ -38,6 +38,11 @@
             filter: brightness(0) saturate(100%) invert(7%) sepia(33%) saturate(1557%) hue-rotate(197deg) brightness(91%) contrast(90%);
         }
     
+    }
+
+    .contenant_loupe:hover{
+
+        cursor: pointer;
     }
 }
 
