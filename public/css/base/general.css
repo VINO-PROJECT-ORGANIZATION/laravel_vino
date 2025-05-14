@@ -12,11 +12,15 @@ body {
 }
 
 main {
+    display: flex;
+    flex-direction: column;
     max-width: 600px;
-    padding: 2rem;
-    padding-bottom: 75px;
+    padding: var(--espace-moyen);
     border-radius: var(--rayon-carte);
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    min-height: calc(100dvh - 70px - 40px);
+    margin: 0 auto;
+
 }
 
 h1 {
