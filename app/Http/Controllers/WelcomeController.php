@@ -13,17 +13,19 @@ class WelcomeController extends Controller
 {
     public function welcome()
     {
-        //page courante
         $pageCourante = 'accueil';
-        //utilisateur authentifié
         $user = auth()->user();
-        // les cellier de l'utilisateur
-        $celliers = Cellier::where('user_id', $user->id)->get();
-        // utilisation de la fonction scopeTotalBouteilles pour obtenir le nombre total de bouteilles dans un cellier
+
+        $celliers = collect();
         $quantiteBouteilles = [];
-        foreach ($celliers as $cellier) {
-            $quantiteBouteilles[$cellier->id] = BouteilleHasCellier::totalBouteilles($cellier->id);
+
+        if ($user) {
+            $celliers = Cellier::where('user_id', $user->id)->get();
+            foreach ($celliers as $cellier) {
+                $quantiteBouteilles[$cellier->id] = BouteilleHasCellier::totalBouteilles($cellier->id);
+            }
         }
+
         return view('welcome', compact('pageCourante', 'user', 'celliers', 'quantiteBouteilles'));
     }
 }
