@@ -55,6 +55,9 @@ Route::middleware('auth')->group(function () {
         Route::post('/', [BouteilleHasCellierController::class, 'store'])->name('store');
         Route::get('/{id}/edit', [BouteilleHasCellierController::class, 'edit'])->name('edit');
         Route::put('/{id}', [BouteilleHasCellierController::class, 'update'])->name('update');
+        //route pour changer la quantité d'une bouteille dans un cellier
+        Route::put('/{cellier_id}/{bouteille_id}/quantite', [BouteilleHasCellierController::class, 'changerQuantite'])
+            ->name('update.quantite');
 
 
         // Bouteilles dans un cellier
