@@ -173,7 +173,7 @@ class BouteilleHasCellierController extends Controller
         $request->validate([
             'quantite' => 'required|integer|min:1',
         ]);
-        $request->quantite = (int)$request->quantite;
+        // $request->quantite = (int)$request->quantite;
 
         // dd($request->quantite);
         // Récupérer l'enregistrement correspondant dans la table 'BouteilleHasCellier'
