@@ -41,6 +41,7 @@
 .celliers-carte__actions {
     display: flex;
     justify-content: space-between;
+    margin-bottom: var(--espace-petit);
 }
 
 .celliers-carte__image {

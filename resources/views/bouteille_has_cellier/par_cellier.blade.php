@@ -19,7 +19,20 @@
         </div>
     </section>
     @else
+    <section>
+        <!-- liens pour modifier & supprimer un cellier -->
+        <div class="celliers-carte__actions">
+            <a href="{{ route('celliers.edit', ['id' => $cellier->id]) }}" class="bouton">Modifier le cellier</a>
+            <form action="{{ route('celliers.destroy', ['id' => $cellier->id]) }}" method="POST"
+                onsubmit="return confirm('Voulez-vous vraiment supprimer ce cellier ?');">
+                @csrf
+                @method('DELETE')
+                <button type="submit" class="bouton">Supprimer le cellier</button>
+            </form>
 
+        </div>
+
+    </section>
     <section class="cellier-carte">
         <div class="cellier-carte__image @if ($cellier->teinte == '#F28B82') rouge-framboise
                 @elseif ($cellier->teinte == '#FBC4AB') rose-peche

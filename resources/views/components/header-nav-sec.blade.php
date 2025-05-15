@@ -22,8 +22,8 @@
             <div class="bouton bouton_nav">
                 <a href="{{ back()->getTargetUrl() }}" class="nav__link">
                     <img src="{{asset('images/icons/back.svg')}}" alt="icone">
-                    
-                     </a>
+
+                </a>
             </div>
             <div class="bouton bouton_nav" id="deconnecter">
                 <p> ... </p>
@@ -32,10 +32,9 @@
 
 
         <form method="POST" id="form-deconnexion" action="{{ route('logout') }}" class="invisible">
-        @csrf
+            @csrf
 
-         <input type="submit" value="Déconnexion" class="deconnexion" >
+            <input type="submit" value="Déconnexion" class="deconnexion">
         </form>
 
     </header>
- 
