@@ -116,8 +116,7 @@ class BouteilleHasCellierController extends Controller
     {
 
         $demande = $request->input('requete');
-        // $reponses = Bouteille::where('nom' , 'like', "%{$query}%")->orWhere('format','like',"%{$query}%")->get();
- 
+        
         // Page courante :
         $pageCourante = 'bouteillesParCellier';
         $bouteilles = BouteilleHasCellier::with(['bouteille', 'cellier'])
