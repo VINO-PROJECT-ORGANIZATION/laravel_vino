@@ -44,21 +44,11 @@
         </div>
         @foreach ($reponses as $reponse)
         <x-carte-bouteille-saq :bouteille="$reponse->bouteille" />
-        <div class="bouteille-cellier">
-            <p>Quantité: {{ $reponse->quantite }}</p>
-        </div>
+        <x-formulaire-quantite-bouteille :reponse="$reponse" />
 
-        <!-- formulaire pour suprimer une bouteille -->
-        <form method="POST"
-            action="{{ route('cellier_bouteilles.destroy', ['cellier_id' => $reponse->cellier_id, 'bouteille_id' => $reponse->bouteille_id]) }}">
-            @csrf
-            @method('DELETE')
-            <button type="submit" class="boutons">Consommer une bouteille</button>
-        </form>
     </section>
     @endforeach
     @endif
     @endif
-    </container>
 </main>
 <x-footer :pageCourante="$pageCourante" />
