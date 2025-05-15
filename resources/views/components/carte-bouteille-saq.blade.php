@@ -23,7 +23,7 @@
                 <h3>{{ $bouteille['nom'] }}</h3>
                 <div class="texte">
                     <p>{{$bouteille['type']}} | {{$bouteille['format']}} | {{$bouteille['pays']}}</p>
-                    <p>{{$bouteille['code_saq']}}</p>
+                    <p>Code SAQ {{$bouteille['code_saq']}}</p>
                 </div>
             </div>
 
