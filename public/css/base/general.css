@@ -1,5 +1,6 @@
 body {
-    background-color: var(--arriere-plan);
+    /* background-color: var(--arriere-plan); */
+    background-color: #ffffff;
     min-width: 100%;
     min-height: 100%;
     margin: 0;
@@ -19,6 +20,7 @@ main {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
     min-height: calc(100dvh - 70px - 40px);
     margin: 0 auto;
+    background-color: #ffffff;
 }
 
 h1 {
