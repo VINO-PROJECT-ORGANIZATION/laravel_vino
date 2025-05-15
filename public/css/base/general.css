@@ -21,9 +21,9 @@ main {
     min-height: calc(100dvh - 70px - 40px);
     margin: 0 auto;
     background-color: #ffffff;
-}
 
-h1 {
-    font-size: 1.5em;
-    color: var(--texte-primaire);
+    & h1 {
+        font-size: 1.5em;
+        color: var(--texte-primaire);
+    }
 }
