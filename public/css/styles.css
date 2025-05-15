@@ -25,5 +25,6 @@
 @import './components/composante_message.css';
 @import './components/form-ajouter-bouteille.css';
 @import './components/sliders.css';
+@import './components/formulaire-quantite.css';
 /* --- Importation des styles de pages spécifiques --- */
 @import './pages/recherche-page.css';
