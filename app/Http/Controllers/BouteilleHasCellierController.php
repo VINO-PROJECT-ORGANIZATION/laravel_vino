@@ -114,22 +114,24 @@ class BouteilleHasCellierController extends Controller
     // Fonction pour montrer toutes les bouteilles d'un cellier
     public function bouteillesDansCellier($cellier_id, Request $request)
     {
-
         $demande = $request->input('requete');
-        
+
         // Page courante :
         $pageCourante = 'bouteillesParCellier';
+        // bouteilles dans le cellier de l'utilisateur
         $bouteilles = BouteilleHasCellier::with(['bouteille', 'cellier'])
             ->where('cellier_id', $cellier_id)
             ->get();
+        // dd($bouteilles);
 
         $cellier = Cellier::findOrFail($cellier_id);
 
-        $reponses = BouteilleHasCellier::select()->where('cellier_id', $cellier_id)->join('bouteilles','bouteille_id','=','bouteilles.id')->where('nom' , 'like', "%{$demande}%")->orWhere('format','like',"%{$demande}%")->orWhere('pays','like',"%{$demande}%")->orWhere('type','like',"%{$demande}%")->get();
+        $reponses = BouteilleHasCellier::select()->where('cellier_id', $cellier_id)->join('bouteilles', 'bouteille_id', '=', 'bouteilles.id')->where('nom', 'like', "%{$demande}%")->orWhere('format', 'like', "%{$demande}%")->orWhere('pays', 'like', "%{$demande}%")->orWhere('type', 'like', "%{$demande}%")->get();
 
-        session()->put('id_cellier',$cellier_id);
-        
-        return view('bouteille_has_cellier.par_cellier', compact('bouteilles', 'cellier_id', 'pageCourante', 'cellier','reponses','demande'));
+        // dd($reponses->first());
+        session()->put('id_cellier', $cellier_id);
+
+        return view('bouteille_has_cellier.par_cellier', compact('bouteilles', 'cellier_id', 'pageCourante', 'cellier', 'reponses', 'demande'));
     }
 
     // Fonction pour montrer toutes les bouteilles de l'utilisateur
@@ -144,5 +146,34 @@ class BouteilleHasCellierController extends Controller
             ->get();
 
         return view('bouteille_has_cellier.BouteillesUtilisateur', compact('bouteillesUtilisateur', 'user_id', 'pageCourante'));
+    }
+
+    //fonction pour changer le nombre de bouteilles dans un cellier
+    public function changerQuantite(Request $request, $cellier_id, $bouteille_id)
+    {
+        // Validation de la quantité
+        $request->validate([
+            'quantite' => 'required|integer|min:1',
+        ]);
+        $request->quantite = (int)$request->quantite;
+
+        // dd($request->quantite);
+        // Récupérer l'enregistrement correspondant dans la table 'BouteilleHasCellier'
+        $bouteilleHasCellier = BouteilleHasCellier::where('cellier_id', $cellier_id)
+            ->where('bouteille_id', $bouteille_id)
+            ->first();
+
+        if (!$bouteilleHasCellier) {
+            return redirect()->back()->with('error', 'Cette bouteille n\'existe pas dans ce cellier.');
+        }
+
+        // Mise à jour de la quantité
+        $bouteilleHasCellier = BouteilleHasCellier::where('cellier_id', $cellier_id)
+            ->where('bouteille_id', $bouteille_id)
+            ->update(['quantite' => $request->quantite]);
+
+
+        return redirect()->route('cellier_bouteilles.cellier.bouteilles', ['cellier_id' => $cellier_id])
+            ->with('success', 'La quantité a été mise à jour.');
     }
 }
