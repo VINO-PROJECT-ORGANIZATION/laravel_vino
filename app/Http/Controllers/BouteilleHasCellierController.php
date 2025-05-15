@@ -116,8 +116,7 @@ class BouteilleHasCellierController extends Controller
     {
 
         $demande = $request->input('requete');
-        // $reponses = Bouteille::where('nom' , 'like', "%{$query}%")->orWhere('format','like',"%{$query}%")->get();
- 
+        
         // Page courante :
         $pageCourante = 'bouteillesParCellier';
         $bouteilles = BouteilleHasCellier::with(['bouteille', 'cellier'])
@@ -126,7 +125,7 @@ class BouteilleHasCellierController extends Controller
 
         $cellier = Cellier::findOrFail($cellier_id);
 
-        $reponses = BouteilleHasCellier::select()->where('cellier_id', $cellier_id)->join('bouteilles','bouteille_id','=','bouteilles.id')->where('nom' , 'like', "%{$demande}%")->get();
+        $reponses = BouteilleHasCellier::select()->where('cellier_id', $cellier_id)->join('bouteilles','bouteille_id','=','bouteilles.id')->where('nom' , 'like', "%{$demande}%")->orWhere('format','like',"%{$demande}%")->orWhere('pays','like',"%{$demande}%")->orWhere('type','like',"%{$demande}%")->get();
 
         session()->put('id_cellier',$cellier_id);
         
