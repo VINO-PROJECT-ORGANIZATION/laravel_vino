@@ -1,14 +1,14 @@
 <div class="carte">
     <div class="contenant">
         <div class="contenant_img">
-            <img src="{{$bouteille['url_image']}}" alt="bouteille">
+            <img src="{{$bouteille->url_image}}" alt="bouteille">
         </div>
         <div class="plateau
-            @if($bouteille['type'] == 'Vin rouge')
+            @if($bouteille->type == 'Vin rouge')
                 vin-rouge
-            @elseif($bouteille['type'] == 'Vin blanc')
+            @elseif($bouteille->type == 'Vin blanc')
                 vin-blanc
-            @elseif($bouteille['type'] == 'Vin rosé')
+            @elseif($bouteille->type == 'Vin rosé')
                 vin-rose
             @else
                 vin-rouge
@@ -20,10 +20,10 @@
     <div class="detail">
         <div class="description">
             <div class="desc">
-                <h3>{{ $bouteille['nom'] }}</h3>
+                <h3>{{ $bouteille->nom }}</h3>
                 <div class="texte">
-                    <p>{{$bouteille['type']}} | {{$bouteille['format']}} | {{$bouteille['pays']}}</p>
-                    <p>Code SAQ {{$bouteille['code_saq']}}</p>
+                    <p>{{$bouteille->type}} | {{$bouteille->format}} | {{$bouteille->pays}}</p>
+                    <p>Code SAQ {{$bouteille->code_saq}}</p>
                 </div>
             </div>
 
@@ -45,7 +45,7 @@
                 <!-- Calcul de la note -->
                 @php
                 // Récupération de la note, avec une valeur par défaut de 0 si NULL
-                $note = $bouteille['note_saq'] ?? 0;
+                $note = $bouteille->note_saq ?? 0;
 
                 // Si la note est entre 0 et 100, on la normalise pour les étoiles
                 // Le maximum est 5 étoiles, chaque étoile représentant 20 points
@@ -81,7 +81,7 @@
 
 
             <div class="espace-bouton">
-                <a class="bouton" href="{{ route('cellier_bouteilles.create', ['id' => $bouteille['id']]) }}">
+                <a class="bouton" href="{{ route('cellier_bouteilles.create', ['id' => $bouteille->id]) }}">
                     Ajouter au cellier
                 </a>
             </div>
