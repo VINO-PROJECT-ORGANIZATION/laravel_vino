@@ -18,13 +18,13 @@
         </div>
         <!-- le id de la bouteille est dans l'url .../cellier-bouteilles/create?id=? -->
 
-        <div class="groupe-input">
+        <div class="groupe-input" hidden>
             <label for="bouteille_id">Bouteille</label>
             <input type="text" name="bouteille_id" id="bouteille_id" value="{{ $_GET["id"] }}" readonly>
-            <x-input-error :messages="$errors->get('bouteille_id')" />
-            <div class="groupe-input">
-                <button type="submit">Ajouter</button>
-            </div>
+        </div>
+        <div class="groupe-input">
+            <button type="submit" class="boutons">Ajouter</button>
+        </div>
     </form>
 </main>
 <x-footer :pageCourante="$pageCourante" />
