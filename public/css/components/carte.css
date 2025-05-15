@@ -1,14 +1,15 @@
 .carte {
-    border-bottom: 2px solid #EBEBEB;
-    padding: 10;
-    height: 05px;
+    border-bottom: 2px solid #ebebeb;
+    padding: 10px 0;
+    height: 145px;
     display: flex;
     gap: 10px;
 
     & .contenant {
-        width: 25%;
+        flex-basis: 20%;
         height: 100%;
         position: relative;
+        margin-top: 0;
 
         & .contenant_img {
             height: 100%;
@@ -20,17 +21,17 @@
                 width: 100%;
                 height: 100%;
                 object-fit: contain;
-                bottom: 15px;
+                bottom: 0;
             }
         }
 
         & .plateau {
             border-radius: 20px;
-            height: 17px;
+            height: 18px;
             position: absolute;
             z-index: 3;
             width: 100%;
-            bottom: 10px;
+            bottom: 0;
 
             &.vin-rouge {
                 background-color: var(--vin-rouge);
@@ -47,7 +48,10 @@
     }
 
     & .detail {
-        width: 75%;
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
 
         & .description {
             display: flex;
@@ -59,23 +63,24 @@
             & .desc {
                 display: flex;
                 flex-direction: column;
+                gap: 7px;
 
                 & h3 {
                     font-family: var(--police-principale);
                     font-weight: 600;
                     text-transform: capitalize;
-                    font-size: 0.8rem;
+                    font-size: 0.95rem;
                     min-height: 2lh;
-                    line-height: 1rem;
+                    line-height: 1.15rem;
                 }
 
                 & .texte {
                     font-family: var(--police-principale);
-                    font-size: 0.8rem;
+                    font-size: 0.82rem;
                     font-style: normal;
                     font-weight: 400;
                     color: #5c5f69;
-                    line-height: 1rem;
+                    line-height: 1.1rem;
                 }
             }
 
@@ -103,7 +108,7 @@
                 grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
                 flex-grow: 1;
                 flex-shrink: 0;
-                flex-basis: 30px;
+                flex-basis: 40px;
                 align-self: center;
 
                 /* margin-left: 0.5rem;
@@ -123,11 +128,11 @@
                 flex-grow: 3.5;
 
                 & .bouton {
-                    min-width: 130px;
+                    min-width: 125px;
                     max-width: 180px;
-                    width: 75%;
+                    width: 60%;
                     font-size: 0.8rem;
-                    height: 26px;
+                    height: 25px;
                     margin: 0;
                     padding: var(--espace-petit);
                     display: flex;

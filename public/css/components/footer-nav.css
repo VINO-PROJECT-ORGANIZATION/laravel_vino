@@ -1,6 +1,6 @@
 .pied {
-    border: 1px solid var(--bordure-claire);
-    background-color: var(--fond-navigation);
+    /* border: 1px solid var(--bordure-claire); */
+    background-color: #fff;;
     border-radius: 24px 24px 0px 0px;
     height: 70px;
     position: sticky;
