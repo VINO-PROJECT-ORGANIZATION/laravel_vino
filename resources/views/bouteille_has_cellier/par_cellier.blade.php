@@ -19,7 +19,10 @@
         </div>
     </section>
     @else
+    <section>
+        <!-- lien pour modifier ou supprimer un cellier -->
 
+    </section>
     <section class="cellier-carte">
         <div class="cellier-carte__image @if ($cellier->teinte == '#F28B82') rouge-framboise
                 @elseif ($cellier->teinte == '#FBC4AB') rose-peche
