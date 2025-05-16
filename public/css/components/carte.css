@@ -21,7 +21,7 @@
                 width: 100%;
                 height: 100%;
                 object-fit: contain;
-                bottom: 0;
+                bottom: -3px;
             }
         }
 
@@ -33,17 +33,7 @@
             width: 100%;
             bottom: 0;
 
-            &.vin-rouge {
-                background-color: var(--vin-rouge);
-            }
-
-            &.vin-blanc {
-                background-color: var(--vin-blanc);
-            }
-
-            &.vin-rose {
-                background-color: var(--vin-rose);
-            }
+           
         }
     }
 
@@ -143,6 +133,18 @@
             }
         }
     }
+}
+
+.vin-rouge {
+    background-color: var(--vin-rouge);
+}
+
+.vin-blanc {
+    background-color: var(--vin-blanc);
+}
+
+.vin-rose {
+    background-color: var(--vin-rose);
 }
 
 @media (min-width: 1200px) {

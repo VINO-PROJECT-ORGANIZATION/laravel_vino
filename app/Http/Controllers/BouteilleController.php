@@ -110,7 +110,12 @@ class BouteilleController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        //page courante
+        $pageCourante = 'bouteilles';
+        //montrer le formulaire d'édition d'un bouteille
+        $bouteille = Bouteille::find($id);
+
+        return view('bouteilles.edit', compact('bouteille', 'pageCourante'));
     }
 
     /**
