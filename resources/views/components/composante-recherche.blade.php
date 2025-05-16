@@ -1,9 +1,9 @@
 @props(['pageCourante'])
 <div class="recherche">
 
-    @if($pageCourante == 'celliers')
+    @if($pageCourante === 'bouteillesParCellier')
     <form action="{{ route('cellier_bouteilles.cellier.bouteilles', ['cellier_id' => session('id_cellier')]) }}"
-        method="GET" class="form-recherche-cellier @if($pageCourante == 'celliers') active @endif" id="form-recherche-cellier" >
+        method="GET" class="form-recherche-cellier" id="form-recherche-cellier" >
         <label for="requete" class="invisible">
         </label>
         <input type="text" name="requete" placeholder="Entrez un nom ..." id="input-recherche-cellier"
