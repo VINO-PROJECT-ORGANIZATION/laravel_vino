@@ -143,6 +143,7 @@ class BouteilleHasCellierController extends Controller
                 $query->where('nom', 'like', "%{$demande}%")
                     ->orWhere('format', 'like', "%{$demande}%")
                     ->orWhere('pays', 'like', "%{$demande}%")
+                    ->orWhere('code_saq', 'like', "%{$demande}%")
                     ->orWhere('type', 'like', "%{$demande}%");
             })
             ->get();
