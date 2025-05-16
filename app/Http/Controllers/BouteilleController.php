@@ -11,16 +11,34 @@ class BouteilleController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        //afficher toutes les bouteilles
+
+        $demande = $request->input('requete');
+       // if ($demande == ' '){
+
+            //afficher toutes les bouteilles
         $bouteilles = Bouteille::paginate(50);
         $pageCourante = 'bouteilles';
+
+         
+        $reponses = Bouteille::where('nom' , 'like', "%{$demande}%")->orWhere('format','like',"%{$demande}%")->get();
+
+       // }
+        //afficher toutes les bouteilles
+        // $bouteilles = Bouteille::paginate(50);
+        // $pageCourante = 'bouteilles';
+
+         
+        // $reponses = Bouteille::where('nom' , 'like', "%{$demande}%")->orWhere('format','like',"%{$demande}%")->get();
+
+        
+        
 
         // return view('index', compact('bouteilles'));
 
 
-        return view('bouteilles.index', compact('bouteilles', 'pageCourante'));
+        return view('bouteilles.index', compact('bouteilles', 'pageCourante','demande','reponses'));
     }
 
     /**
