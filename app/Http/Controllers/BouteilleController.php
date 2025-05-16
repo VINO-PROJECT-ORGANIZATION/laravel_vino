@@ -15,27 +15,29 @@ class BouteilleController extends Controller
     {
 
         $demande = $request->input('requete');
-       
 
-            //afficher toutes les bouteilles
+
+        //afficher toutes les bouteilles
         $bouteilles = Bouteille::paginate(50);
         $pageCourante = 'bouteilles';
 
 
-          $reponses = Bouteille::select()->where(function ($query) use ($demande){
+        $reponses = Bouteille::select()->where(function ($query) use ($demande) {
 
             $query->where('nom', 'like', "%{$demande}%")
-                    ->orWhere('format', 'like', "%{$demande}%")
-                    ->orWhere('pays', 'like', "%{$demande}%")
-                    ->orWhere('code_saq', 'like', "%{$demande}%")
-                    ->orWhere('type', 'like', "%{$demande}%");
-          })->get();
+                ->orWhere('format', 'like', "%{$demande}%")
+                ->orWhere('pays', 'like', "%{$demande}%")
+                ->orWhere('code_saq', 'like', "%{$demande}%")
+                ->orWhere('type', 'like', "%{$demande}%");
+        })->paginate(50);
+        //pagination sur la réponse
 
-        
+
+
         // return view('index', compact('bouteilles'));
 
 
-        return view('bouteilles.index', compact('bouteilles', 'pageCourante','demande','reponses'));
+        return view('bouteilles.index', compact('bouteilles', 'pageCourante', 'demande', 'reponses'));
     }
 
     /**
@@ -56,7 +58,7 @@ class BouteilleController extends Controller
             //Combiner la date, l'heure, la minute et les secondes actuelles avec l'ID de l'utilisateur pour créer un code unique
             $code_saq = now()->format('ymdHis') . $user_id;
         } while (\App\Models\Bouteille::where('code_saq', $code_saq)->exists());
-    
+
 
         return view('bouteilles.create', compact('pageCourante', 'code_saq'));
     }
@@ -66,7 +68,7 @@ class BouteilleController extends Controller
      */
     public function store(Request $request)
     {
-               
+
 
         $validee = $request->validate([
             'nom' => 'required|string|max:255',
@@ -88,7 +90,7 @@ class BouteilleController extends Controller
         $bouteille->code_saq = $request->code_saq;
         $bouteille->save();
 
-        
+
         // rediriger vers la page de la bouteille
         return redirect()->route('bouteilles.index')->with('success', 'Bouteille created successfully');
     }
