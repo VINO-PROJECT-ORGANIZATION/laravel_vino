@@ -1,5 +1,5 @@
 <x-header-nav-sec />
-<x-composante-recherche />
+<x-composante-recherche :pageCourante="$pageCourante" />
 
 <main class="cellier-page">
 
