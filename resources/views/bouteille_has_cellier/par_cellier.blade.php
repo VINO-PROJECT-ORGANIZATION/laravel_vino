@@ -22,12 +22,13 @@
     <section>
         <!-- liens pour modifier & supprimer un cellier -->
         <div class="celliers-carte__actions">
-            <a href="{{ route('celliers.edit', ['id' => $cellier->id]) }}" class="bouton">Modifier le cellier</a>
+            <a href="{{ route('celliers.edit', ['id' => $cellier->id]) }}" class="bouton bouton-warning">Modifier le
+                cellier</a>
             <form action="{{ route('celliers.destroy', ['id' => $cellier->id]) }}" method="POST"
                 onsubmit="return confirm('Voulez-vous vraiment supprimer ce cellier ?');">
                 @csrf
                 @method('DELETE')
-                <button type="submit" class="bouton">Supprimer le cellier</button>
+                <button type="submit" class="bouton bouton-danger">Supprimer le cellier</button>
             </form>
 
         </div>
