@@ -7,7 +7,7 @@
     @if (empty($query))
 
   
-    @if($reponses->isEmpty())
+    @if($bouteilles->isEmpty())
     
     <section>
         <div>
@@ -22,8 +22,8 @@
 
 
     <h1>Résultats</h1>
-    @foreach ($reponses as $reponse)
-    <x-carte-bouteille-saq :bouteille="$reponse"></x-carte-bouteille-saq>
+    @foreach ($bouteilles as $bouteille)
+    <x-carte-bouteille-saq :bouteille="$bouteille"></x-carte-bouteille-saq>
     @endforeach
 
     <div class="pagination">

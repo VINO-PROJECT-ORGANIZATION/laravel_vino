@@ -15,27 +15,31 @@ class BouteilleController extends Controller
     {
 
         $demande = $request->input('requete');
-       
+        if($demande == ''){
 
-            //afficher toutes les bouteilles
-        $bouteilles = Bouteille::paginate(50);
-        $pageCourante = 'bouteilles';
+            $bouteilles = Bouteille::paginate(15);
+        }
+        else{
 
-
-          $reponses = Bouteille::select()->where(function ($query) use ($demande){
+            $bouteilles = Bouteille::select()->where(function ($query) use ($demande){
 
             $query->where('nom', 'like', "%{$demande}%")
                     ->orWhere('format', 'like', "%{$demande}%")
                     ->orWhere('pays', 'like', "%{$demande}%")
                     ->orWhere('code_saq', 'like', "%{$demande}%")
                     ->orWhere('type', 'like', "%{$demande}%");
-          })->get();
+          })->paginate(15);
 
-        
+        }
+
+    
+            //afficher toutes les bouteilles
+        // $bouteilles = Bouteille::paginate(50);
+        $pageCourante = 'bouteilles';
+
         // return view('index', compact('bouteilles'));
 
-
-        return view('bouteilles.index', compact('bouteilles', 'pageCourante','demande','reponses'));
+        return view('bouteilles.index', compact('bouteilles', 'pageCourante','demande'));
     }
 
     /**
