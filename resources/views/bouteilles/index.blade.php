@@ -27,7 +27,7 @@
     @endforeach
 
     <div class="pagination">
-        {{ $bouteilles->links('pagination::default') }}
+        {{ $bouteilles->withQueryString()->links('pagination::default') }}
     </div>
     @endif
     @endif

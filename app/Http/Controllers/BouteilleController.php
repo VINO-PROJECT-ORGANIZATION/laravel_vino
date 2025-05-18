@@ -17,7 +17,7 @@ class BouteilleController extends Controller
         $demande = $request->input('requete');
         if($demande == ''){
 
-            $bouteilles = Bouteille::paginate(15);
+            $bouteilles = Bouteille::paginate(5);
         }
         else{
 
@@ -28,7 +28,7 @@ class BouteilleController extends Controller
                     ->orWhere('pays', 'like', "%{$demande}%")
                     ->orWhere('code_saq', 'like', "%{$demande}%")
                     ->orWhere('type', 'like', "%{$demande}%");
-          })->paginate(15);
+          })->paginate(5)->withQueryString();
 
         }
 
