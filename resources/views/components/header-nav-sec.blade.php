@@ -38,3 +38,25 @@
         </form>
 
     </header>
+    <!-- boite de message d'erreurs -->
+    @if ($errors->any())
+    <div class="boiteAlerte error" role="alert">
+        {{ session('error') }}
+        <button type="button" class="close-btn" aria-label="Close">×</button>
+    </div>
+    @endif
+    <!-- boite de message de succès -->
+    @if (session('success'))
+    <div class="boiteAlerte success" role="alert">
+        {{ session('success') }}
+        <button type="button" class="close-btn">x</button>
+    </div>
+    @endif
+    <script>
+        // Fermeture des alertes lorsque le bouton de fermeture est cliqué
+        document.querySelectorAll('.close-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                this.closest('.boiteAlerte').style.display = 'none';
+            });
+        });
+    </script>
