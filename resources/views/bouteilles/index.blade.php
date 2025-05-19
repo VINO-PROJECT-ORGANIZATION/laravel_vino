@@ -1,5 +1,5 @@
 <x-header-nav-sec></x-header-nav-sec>
-<x-composante-recherche :pageCourante="$pageCourante" />
+<x-composante-recherche :pageCourante="$pageCourante" :pays="$pays" />
 
 <main class="recherche-page">
 
