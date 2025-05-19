@@ -31,10 +31,10 @@
                     align-items: center;
                     gap: var(--espace-moyen);
 
-                    &> :last-child {
+                    /* &> :last-child {
                         margin-left: auto;
                         rotate: 180deg;
-                    }
+                    } */
                     & .section__sous-titre-texte {
                         font-weight: 400;
                         font-size: 17px;
