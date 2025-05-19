@@ -3,7 +3,6 @@
         <h1 class="profile-entete-title">{{ $user['prenom']." ".$user['name'] }}</h1>
         <!-- à faire -->
         <p>{{ $user['email'] }}</p>
-        <p class="profile-entete-text"># cellier(s) - 53 Bouteille(s)</p>
     </header>
     <div class="conteneur">
         <form method="post" action="{{ route('profile.update') }}">
@@ -15,7 +14,7 @@
                         <img src="./images/icons/user-profil.svg" alt="utilisateur">
                     </div>
                     <h2 class="section__sous-titre-texte">Informations personnelles</h2>
-                    <img src="./images/icons/back.svg" alt="chevron utilisateur">
+                    
                 </div>
                 <div class="groupe-input">
                     <label for="nom">Nom</label>
@@ -37,7 +36,7 @@
                         <img src="./images/icons/map.svg" alt="carte">
                     </div>
                     <h2 class="section__sous-titre-texte">Adresse</h2>
-                    <img src="./images/icons/back.svg" alt="chevron adresse">
+                    
                 </div>
                 <div class="groupe-input">
                     <label for="adresse">Adresse</label>
@@ -59,7 +58,7 @@
                         <img src="./images/icons/courriel.svg" alt="courriel">
                     </div>
                     <h2 class="section__sous-titre-texte">Courriel & mot de passe</h2>
-                    <img src="./images/icons/back.svg" alt="chevron mot de passe">
+                    
                 </div>
                 <div class="groupe-input">
                     <label for="email" hidden>Courriel</label>
