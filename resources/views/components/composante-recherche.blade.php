@@ -6,7 +6,7 @@
         method="GET" class="form-recherche-cellier" id="form-recherche-cellier" >
         <label for="requete" class="invisible">
         </label>
-        <input type="text" name="requete" placeholder="Entrez un nom ..." id="input-recherche-cellier"
+        <input type="text" name="requete" placeholder="Faire une recherche..." id="input-recherche-cellier"
             value="{{ old('requete', $query ?? '')}}">
 
 
@@ -20,7 +20,7 @@
         method="GET" class="form-recherche-cellier " id="form-recherche-cellier">
         <label for="requete" class="invisible">
         </label>
-        <input type="text" name="requete" placeholder="Entrez un nom ..." id="input-recherche-cellier"
+        <input type="text" name="requete" placeholder="Faire une recherche..." id="input-recherche-cellier"
             value="{{ old('requete', $query ?? '')}}">
 
 
