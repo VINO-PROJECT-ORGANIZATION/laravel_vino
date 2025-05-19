@@ -65,7 +65,14 @@ Route::middleware('auth')->group(function () {
         // Bouteilles d’un utilisateur (tous ses celliers)
         Route::get('/utilisateur/{user_id}/bouteilles', [BouteilleHasCellierController::class, 'bouteillesUtilisateur'])->name('utilisateur.bouteilles');
     });
+
+
 });
+
+// Route::get('/password/forgot', [ProfileController::class, 'forgot'])->name('user.forgot');
+// Route::post('/password/forgot', [ProfileController::class, 'email'])->name('user.email');
+// Route::get('/password/reset/{user}/{token}', [ProfileController::class, 'reset'])->name('user.reset');
+// Route::put('/password/reset/{user}/{token}', [ProfileController::class, 'resetUpdate'])->name('user.reset.update');
 
 
 

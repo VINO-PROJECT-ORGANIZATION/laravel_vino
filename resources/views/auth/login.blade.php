@@ -14,6 +14,7 @@
                     <input type="email" id="email" name="email" required autofocus>
                     <x-input-error :messages="$errors->get('email')" />
                 </div>
+               
 
                 <!-- Mot de passe -->
                 <div class="groupe-input balise_password">
@@ -22,6 +23,10 @@
                     <x-input-error :messages="$errors->get('password')" />
                 </div>
 
+                <!-- Lien vers la page d'inscription -->
+                <div class="groupe-input balise-inscrire">
+                    <p></p><a href="{{ route('password.request') }}">Mot de passe oublié</a>
+                </div>
                 <!-- Soumettre le formulaire -->
                 <div class="groupe-input">
                     <button type="submit" class="boutons btn btn-primary">Se connecter</button>
