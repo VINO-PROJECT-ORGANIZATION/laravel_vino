@@ -1,14 +1,14 @@
 <x-header-nav-sec></x-header-nav-sec>
-<x-composante-recherche :pageCourante="$pageCourante"/>
+<x-composante-recherche :pageCourante="$pageCourante" />
 
 <main class="recherche-page">
 
 
-    @if (empty($query))
+    <!-- @if (empty($query)) -->
 
-  
-    @if($bouteilles->isEmpty())
-    
+
+    @if($reponses->isEmpty())
+
     <section>
         <div>
             <h2>Recherche de : "{{$demande}}"</h2>
@@ -16,7 +16,7 @@
             <p>Essayez une autre recherche</p>
         </div>
     </section>
-@else
+    @else
 
 
     <h1>Résultats</h1>
@@ -25,9 +25,11 @@
     @endforeach
 
     <div class="pagination">
-        {{ $bouteilles->withQueryString()->links('pagination::default') }}
+
+        {{ $reponses->links('pagination::default') }}
+
     </div>
     @endif
-    @endif
+    <!-- @endif -->
 </main>
 <x-footer :pageCourante="$pageCourante"></x-footer>
