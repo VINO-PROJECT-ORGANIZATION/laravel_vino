@@ -5,27 +5,12 @@
 
     @if (empty($query))
 
-
-    @if($reponses->isEmpty())
-    <section>
-        <div>
-            <h2>Recherche de : "{{$demande}}"</h2>
-            <ul>Désolé, aucun résultat trouvé.
-                <li>Essayez une autre recherche</li>
-                <br>
-                <a href="{{ route('cellier_bouteilles.cellier.bouteilles', ['cellier_id' => session('id_cellier')]) }}"
-                    class="bouton">Retour au cellier</a>
-            </ul>
-        </div>
-    </section>
-    @else
     <section>
         <!-- liens pour modifier & supprimer un cellier -->
         <div class="celliers-carte__actions">
             <a href="{{ route('celliers.edit', ['id' => $cellier->id]) }}" class="bouton bouton-warning">Modifier le
                 cellier</a>
-            <form action="{{ route('celliers.destroy', ['id' => $cellier->id]) }}" method="POST"
-                onsubmit="return confirm('Voulez-vous vraiment supprimer ce cellier ?');">
+            <form action="{{ route('celliers.destroy', ['id' => $cellier->id]) }}" method="POST">
                 @csrf
                 @method('DELETE')
                 <button type="submit" class="bouton bouton-danger">Supprimer le cellier</button>
@@ -56,6 +41,19 @@
             <a href="{{ route('cellier_bouteilles.cellier.bouteilles', ['cellier_id' => session('id_cellier')]) }}">Tous
                 les resultats</a>
         </div>
+        @if($reponses->isEmpty())
+        <section>
+            <div>
+                <h2>Recherche de : "{{$demande}}"</h2>
+                <ul>Désolé, aucun résultat trouvé.
+                    <li>Essayez une autre recherche</li>
+                    <br>
+                    <a href="{{ route('cellier_bouteilles.cellier.bouteilles', ['cellier_id' => session('id_cellier')]) }}"
+                        class="bouton">Retour au cellier</a>
+                </ul>
+            </div>
+        </section>
+        @else
         @foreach ($reponses as $reponse)
         <x-carte-bouteille-saq :bouteille="$reponse->bouteille" />
         <x-formulaire-quantite-bouteille :reponse="$reponse" />
