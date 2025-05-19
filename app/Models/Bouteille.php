@@ -17,6 +17,7 @@ class Bouteille extends Model
         'degre_alcool',
         'note_saq',
         'region',
+        'user_id',
         'type',
     ];
     use HasFactory;
@@ -33,5 +34,10 @@ class Bouteille extends Model
     public function infoBouteille()
     {
         return $this->hasMany(BouteilleHasCellier::class);
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
     }
 }

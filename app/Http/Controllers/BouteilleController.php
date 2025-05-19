@@ -78,6 +78,7 @@ class BouteilleController extends Controller
             'region' => 'required|string|max:255',
             'type' => 'required|string|max:255',
             'code_saq' => 'required|string|max:255',
+            'user_id' => 'required|integer',
         ]);
         // Créer une nouvelle bouteille
         $bouteille = new Bouteille();
@@ -92,7 +93,7 @@ class BouteilleController extends Controller
 
 
         // rediriger vers la page de la bouteille
-        return redirect()->route('bouteilles.index')->with('success', 'Bouteille created successfully');
+        return redirect()->route('bouteilles.index')->with('success', 'La bouteille a été ajoutée avec succès');
     }
 
     /**
@@ -102,7 +103,7 @@ class BouteilleController extends Controller
     {
         $bouteille = Bouteille::find($id);
         if (!$bouteille) {
-            return redirect()->route('dashboard')->with('error', 'Bouteille not found');
+            return redirect()->route('dashboard')->with('error', 'La bouteille n\'existe pas');
         }
         return view('bouteilles.show', compact('bouteille'));
     }

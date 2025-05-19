@@ -3,7 +3,7 @@
 
     @if($pageCourante === 'bouteillesParCellier')
     <form action="{{ route('cellier_bouteilles.cellier.bouteilles', ['cellier_id' => session('id_cellier')]) }}"
-        method="GET" class="form-recherche-cellier" id="form-recherche-cellier" >
+        method="GET" class="form-recherche-cellier" id="form-recherche-cellier">
         <label for="requete" class="invisible">
         </label>
         <input type="text" name="requete" placeholder="Faire une recherche..." id="input-recherche-cellier"
@@ -15,9 +15,9 @@
 
         </button>
     </form>
-@else
-<form action="{{ route('bouteilles.index') }}"
-        method="GET" class="form-recherche-cellier " id="form-recherche-cellier">
+    @else
+    <form action="{{ route('bouteilles.index') }}" method="GET" class="form-recherche-cellier "
+        id="form-recherche-cellier">
         <label for="requete" class="invisible">
         </label>
         <input type="text" name="requete" placeholder="Faire une recherche..." id="input-recherche-cellier"
@@ -29,6 +29,6 @@
 
         </button>
     </form>
-@endif
-   
+    @endif
+
 </div>

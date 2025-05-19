@@ -23,6 +23,7 @@ return new class extends Migration
             $table->integer('note_saq')->nullable();
             $table->string('region')->nullable();
             $table->string('type')->nullable();
+            $table->foreignId('user_id')->constrained()->onDelete('cascade'); // user_id
             $table->timestamps();
         });
     }
