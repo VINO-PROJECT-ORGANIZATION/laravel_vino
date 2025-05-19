@@ -13,36 +13,30 @@ class BouteilleController extends Controller
      */
     public function index(Request $request)
     {
-
         $demande = $request->input('requete');
+        $pageCourante = 'bouteilles';
 
-        if($demande == ''){
+        if (empty($demande)) {
+            // Si pas de demande, on affiche toutes les bouteilles
+            $bouteilles = Bouteille::paginate(50);
+            $reponses = null;  // Pas de résultats de recherche
+        } else {
+            // Si une demande est présente, on affiche les résultats de recherche
+            $reponses = Bouteille::where(function ($query) use ($demande) {
+                $query->where('nom', 'like', "%{$demande}%")
+                    ->orWhere('format', 'like', "%{$demande}%")
+                    ->orWhere('pays', 'like', "%{$demande}%")
+                    ->orWhere('code_saq', 'like', "%{$demande}%")
+                    ->orWhere('type', 'like', "%{$demande}%");
+            })->paginate(50);
 
-            $bouteilles = Bouteille::paginate(5);
+            // On ne définit pas $bouteilles car la recherche remplace cette variable
+            $bouteilles = $reponses;
         }
-        else{
 
-
-        $reponses = Bouteille::select()->where(function ($query) use ($demande) {
-
-            $query->where('nom', 'like', "%{$demande}%")
-                ->orWhere('format', 'like', "%{$demande}%")
-                ->orWhere('pays', 'like', "%{$demande}%")
-                ->orWhere('code_saq', 'like', "%{$demande}%")
-                ->orWhere('type', 'like', "%{$demande}%");
-        })->paginate(50);
-        //pagination sur la réponse
-
-
-
-        // return view('index', compact('bouteilles'));
-
-
-        // return view('index', compact('bouteilles'));
-
-
-        return view('bouteilles.index', compact('bouteilles', 'pageCourante', 'demande', 'reponses'));
+        return view('bouteilles.index', compact('pageCourante', 'demande', 'reponses', 'bouteilles'));
     }
+
 
     /**
      * Show the form for creating a new resource.
