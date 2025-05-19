@@ -28,7 +28,7 @@
             <input type="text" id="user_id" name="user_id" value="{{ Auth::user()->id }}" hidden>
         </div>
         <div class="container">
-            <button type="submit" class="btn btn-primary">Créer</button>
+            <button type="submit" class="bouton">Créer</button>
         </div>
     </form>
 </main>
