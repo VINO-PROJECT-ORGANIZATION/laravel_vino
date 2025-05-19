@@ -55,7 +55,7 @@
         </section>
         @else
         @foreach ($reponses as $reponse)
-        <x-carte-bouteille-saq :bouteille="$reponse->bouteille" />
+        <x-carte-bouteille-saq :bouteille="$reponse->bouteille" :pageCourante="$pageCourante" :reponse="$reponse" />
         <x-formulaire-quantite-bouteille :reponse="$reponse" />
 
     </section>
