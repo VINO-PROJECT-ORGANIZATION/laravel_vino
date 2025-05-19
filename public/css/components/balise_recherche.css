@@ -18,13 +18,12 @@
 
     & .contenant_loupe{
 
-   
         width: 10%;
         height: 100%;
         position: absolute;
-        left: 86%;
-        background-color: #E8EDF1;
-        border: 0;
+        left: 90.7%;
+        background-color: var( --arriere-plan-gris-pale);
+        border-radius: 0 30px 30px 0;
         border-top: 1px solid black;
         
 
@@ -34,7 +33,7 @@
             object-fit: contain;
             top: 5%;
             transform: rotate(90deg);
-            width: 80%;
+            width: 100%;
             filter: brightness(0) saturate(100%) invert(7%) sepia(33%) saturate(1557%) hue-rotate(197deg) brightness(91%) contrast(90%);
         }
     
