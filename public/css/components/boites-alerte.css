@@ -1,0 +1,44 @@
+/* Style général des boîtes */
+.boiteAlerte {
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 5px;
+    position: relative;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    max-width: 600px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Boîte d'erreur */
+.boiteAlerte.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+/* Boîte de succès */
+.boiteAlerte.success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+/* Bouton de fermeture */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 20px;
+    font-weight: bold;
+    color: inherit;
+    cursor: pointer;
+}
+
+/* Effet au survol du bouton */
+.close-btn:hover {
+    color: #888;
+}
