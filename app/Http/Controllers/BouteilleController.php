@@ -14,30 +14,55 @@ class BouteilleController extends Controller
     public function index(Request $request)
     {
         $demande = $request->input('requete');
+
+
+        // champs de filtre
+        $type = $request->input('type');
+        $format = $request->input('format');
+
         if ($demande == '') {
+            $bouteilles = Bouteille::query();
 
-            $bouteilles = Bouteille::paginate(5);
+            // Appliquer les filtres si présents
+            if ($type) {
+                $bouteilles->where('type', $type);
+            }
+
+            if ($format) {
+                $bouteilles->where('format', $format);
+            }
+
+
+            $bouteilles = $bouteilles->paginate(50);
         } else {
+            $champs = ['nom', 'format', 'pays', 'type'];
+            $bouteilles = Bouteille::where(function ($query) use ($demande, $champs) {
+                foreach ($champs as $champ) {
+                    $query->orWhere($champ, 'like', "%{$demande}%");
+                }
+            });
 
-            $bouteilles = Bouteille::select()->where(function ($query) use ($demande) {
+            // Appliquer les filtres après la recherche textuelle
+            if ($type) {
+                $bouteilles->where('type', $type);
+            }
 
-                $query->where('nom', 'like', "%{$demande}%")
-                    ->orWhere('format', 'like', "%{$demande}%")
-                    ->orWhere('pays', 'like', "%{$demande}%")
-                    ->orWhere('code_saq', 'like', "%{$demande}%")
-                    ->orWhere('type', 'like', "%{$demande}%");
-            })->paginate(50)->withQueryString();
+            if ($format) {
+                $bouteilles->where('format', $format);
+            }
+
+
+            $bouteilles = $bouteilles->paginate(50)->withQueryString();
         }
 
+        $pays = Bouteille::trouveNomDePays();
+        // dd($pays);
 
-        //afficher toutes les bouteilles
-        // $bouteilles = Bouteille::paginate(50);
         $pageCourante = 'bouteilles';
 
-        // return view('index', compact('bouteilles'));
-
-        return view('bouteilles.index', compact('bouteilles', 'pageCourante', 'demande'));
+        return view('bouteilles.index', compact('bouteilles', 'pageCourante', 'demande', 'pays'));
     }
+
 
 
     /**

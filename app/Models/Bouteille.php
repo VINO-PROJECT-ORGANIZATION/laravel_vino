@@ -40,4 +40,9 @@ class Bouteille extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    public static function trouveNomDePays()
+    {
+        return self::select('pays')->distinct()->pluck('pays');
+    }
 }
