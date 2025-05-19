@@ -12,22 +12,22 @@
     <section>
         <div>
             <h2>Recherche de : "{{$demande}}"</h2>
-            <ul>Désolé, aucun résultat trouvé.
-                <li>Essayez une autre recherche</li>
-                <br>
-            </ul>
+            <p>Désolé, aucun résultat trouvé.</p>
+            <p>Essayez une autre recherche</p>
         </div>
     </section>
     @else
 
 
     <h1>Résultats</h1>
-    @foreach ($reponses as $reponse)
-    <x-carte-bouteille-saq :bouteille="$reponse"></x-carte-bouteille-saq>
+    @foreach ($bouteilles as $bouteille)
+    <x-carte-bouteille-saq :bouteille="$bouteille"></x-carte-bouteille-saq>
     @endforeach
 
     <div class="pagination">
+
         {{ $reponses->links('pagination::default') }}
+
     </div>
     @endif
     <!-- @endif -->

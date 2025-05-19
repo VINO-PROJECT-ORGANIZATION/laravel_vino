@@ -16,10 +16,11 @@ class BouteilleController extends Controller
 
         $demande = $request->input('requete');
 
+        if($demande == ''){
 
-        //afficher toutes les bouteilles
-        $bouteilles = Bouteille::paginate(50);
-        $pageCourante = 'bouteilles';
+            $bouteilles = Bouteille::paginate(5);
+        }
+        else{
 
 
         $reponses = Bouteille::select()->where(function ($query) use ($demande) {
@@ -32,6 +33,9 @@ class BouteilleController extends Controller
         })->paginate(50);
         //pagination sur la réponse
 
+
+
+        // return view('index', compact('bouteilles'));
 
 
         // return view('index', compact('bouteilles'));
