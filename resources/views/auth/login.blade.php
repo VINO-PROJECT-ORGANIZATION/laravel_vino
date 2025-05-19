@@ -11,10 +11,10 @@
                 <!-- Email -->
                 <div class="groupe-input balise_courriel">
                     <label for="email">Courriel</label>
-                    <input type="email" id="email" name="email" required autofocus>
+                    <input type="email" id="email" name="email" required>
                     <x-input-error :messages="$errors->get('email')" />
                 </div>
-               
+
 
                 <!-- Mot de passe -->
                 <div class="groupe-input balise_password">
