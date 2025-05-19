@@ -5,6 +5,7 @@ body {
     margin: 0;
     padding: 0;
 }
+
 .enregistrement-form-page {
     display: flex;
     flex-direction: column;
@@ -23,12 +24,16 @@ body {
 .enregistrement-form__container__contenu p {
     font-size: 14px;
 }
-.enregistrement-form__container__contenu a, .enregistrement-form__container__contenu a:visited {
+
+.enregistrement-form__container__contenu a,
+.enregistrement-form__container__contenu a:visited {
     font-weight: 600;
     text-decoration: none;
     color: var(--couleur-secondaire);
 }
-.enregistrement-form__container__contenu a:hover, .enregistrement-form__container__contenu a:active  {
+
+.enregistrement-form__container__contenu a:hover,
+.enregistrement-form__container__contenu a:active {
     color: var(--couleur-secondaire);
 }
 
@@ -40,7 +45,7 @@ body {
     gap: var(--espace-grand);
 
     & form {
-        
+
 
         & input,
         textarea {
@@ -51,7 +56,7 @@ body {
         }
 
         & .balise_courriel {
-          
+
             display: flex;
             flex-direction: column;
             margin-top: 24px;
@@ -65,7 +70,7 @@ body {
         }
 
         & .balise_password {
-            
+
             display: flex;
             flex-direction: column;
             margin-top: 20px;
@@ -89,7 +94,7 @@ body {
                 height: 40px;
                 left: 20.5rem;
                 top: 0.3rem;
-                
+
 
                 & svg {
                     margin-top: 0.5rem;
@@ -107,7 +112,7 @@ body {
         }
 
         & .balise_souvenir {
-           
+
             display: flex;
             justify-content: space-between;
             margin-top: 30px;
@@ -156,7 +161,7 @@ body {
 }
 
 .balise-inscrire {
-   
+
     display: flex;
     justify-content: space-between;
     max-width: 400px;
@@ -192,7 +197,7 @@ input {
     font-weight: 400;
     line-height: normal;
     border-radius: 5px;
-    height: 40px;
+    max-height: 40px;
     background-color: #f0f5fa;
     padding: 10px;
 }
