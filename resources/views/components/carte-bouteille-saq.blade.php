@@ -27,17 +27,16 @@
                 </div>
             </div>
 
-            <div class="favori">
-                <!-- à ajouter à la table de jointure -->
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 26 25" fill="none" class="fav">
-                    <path
-                        d="M13.3134 0.5C20.0677 0.500217 25.4999 5.70381 25.4999 12.0703C25.4996 18.4366 20.0675 23.6394 13.3134 23.6396C6.559 23.6396 1.12613 18.4367 1.12585 12.0703C1.12585 5.70368 6.55883 0.5 13.3134 0.5Z"
-                        fill="white" stroke="#DFDFDF" />
-                    <path
-                        d="M16.8897 9.19953C16.6831 9.00408 16.4377 8.84903 16.1676 8.74324C15.8975 8.63746 15.608 8.58301 15.3157 8.58301C15.0234 8.58301 14.7339 8.63746 14.4638 8.74324C14.1937 8.84903 13.9484 9.00408 13.7417 9.19953L13.3128 9.60498L12.8839 9.19953C12.4664 8.80491 11.9002 8.58321 11.3099 8.58321C10.7195 8.58321 10.1533 8.80491 9.73584 9.19953C9.31839 9.59415 9.08386 10.1294 9.08386 10.6875C9.08386 11.2455 9.31839 11.7808 9.73584 12.1754L10.1647 12.5808L13.3128 15.5567L16.4608 12.5808L16.8897 12.1754C17.0965 11.98 17.2605 11.7481 17.3724 11.4928C17.4843 11.2375 17.5419 10.9638 17.5419 10.6875C17.5419 10.4111 17.4843 10.1375 17.3724 9.88216C17.2605 9.62686 17.0965 9.3949 16.8897 9.19953Z"
-                        fill="#980A20" />
-                </svg>
-            </div>
+            @if ($pageCourante == 'bouteillesParCellier')
+            <!-- bouton de supression de la bouteille du cellier -->
+            <form method="POST"
+                action="{{ route('cellier_bouteilles.destroy', ['cellier_id' => $reponse->cellier_id, 'bouteille_id' => $reponse->bouteille_id]) }}">
+                @csrf
+                @method('DELETE')
+                <button type="submit" class="bouton-danger">X</button>
+            </form>
+
+            @endif
         </div>
         <div class="action">
             <div class="note">
