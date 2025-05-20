@@ -16,6 +16,10 @@ class WelcomeController extends Controller
         $pageCourante = 'accueil';
         $user = auth()->user();
 
+        if (!$user) {
+            return redirect()->route('login');
+        }
+
         $celliers = collect();
         $quantiteBouteilles = [];
 
