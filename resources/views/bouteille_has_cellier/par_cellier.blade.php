@@ -1,9 +1,7 @@
 <x-header-nav-sec />
-<x-composante-recherche :pageCourante="$pageCourante" />
+<x-composante-recherche :pageCourante="$pageCourante" :pays="$listePays" />
 
 <main class="cellier-page">
-
-    @if (empty($query))
 
     <section>
         <!-- liens pour modifier & supprimer un cellier -->
@@ -41,26 +39,23 @@
             <a href="{{ route('cellier_bouteilles.cellier.bouteilles', ['cellier_id' => session('id_cellier')]) }}">Tous
                 les resultats</a>
         </div>
-        @if($reponses->isEmpty())
-        <section>
-            <div>
-                <h2>Recherche de : "{{$demande}}"</h2>
-                <ul>Désolé, aucun résultat trouvé.
-                    <li>Essayez une autre recherche</li>
-                    <br>
-                    <a href="{{ route('cellier_bouteilles.cellier.bouteilles', ['cellier_id' => session('id_cellier')]) }}"
-                        class="bouton">Retour au cellier</a>
-                </ul>
-            </div>
-        </section>
-        @else
-        @foreach ($reponses as $reponse)
+        @if($bouteilles->isEmpty())
+    <section>
+        <div>
+            <h2>Recherche de : "{{$demande}}"</h2>
+            <ul>Désolé, aucun résultat trouvé.
+                <li>Essayez une autre recherche</li>
+                <br>
+                <a href="{{ route('cellier_bouteilles.cellier.bouteilles', ['cellier_id' => session('id_cellier')]) }}"
+                    class="bouton">Retour au cellier</a>
+            </ul>
+        </div>
+    </section>
+@else
+    @foreach ($bouteilles as $reponse)
         <x-carte-bouteille-saq :bouteille="$reponse->bouteille" :pageCourante="$pageCourante" :reponse="$reponse" />
         <x-formulaire-quantite-bouteille :reponse="$reponse" />
-
-    </section>
     @endforeach
-    @endif
-    @endif
+@endif
 </main>
 <x-footer :pageCourante="$pageCourante" />

@@ -44,7 +44,7 @@
                     <option value="250 ml" @if(request('format')=="250 ml" ) selected @endif>250 ml</option>
                     <option value="375 ml" @if(request('format')=="375 ml" ) selected @endif>375 ml</option>
                     <option value="500 ml" @if(request('format')=="500 ml" ) selected @endif>500 ml</option>
-                    <option value="620 ml" @if(request('format')=="650 ml" ) selected @endif>620 ml</option>
+                    <option value="620 ml" @if(request('format')=="620 ml" ) selected @endif>620 ml</option>
                     <option value="700 ml" @if(request('format')=="700 ml" ) selected @endif>700 ml</option>
                     <option value="750 ml" @if(request('format')=="750 ml" ) selected @endif>750 ml</option>
                     <option value="1 L" @if(request('format')=="1 L" ) selected @endif>1 L</option>
