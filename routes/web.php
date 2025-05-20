@@ -21,10 +21,6 @@ use App\Http\Controllers\WelcomeController;
 
 Route::get('/', [WelcomeController::class, 'welcome'])->name('accueil');
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
-
 Route::middleware('auth')->group(function () {
     Route::get('/profil', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profil', [ProfileController::class, 'update'])->name('profile.update');
@@ -65,8 +61,6 @@ Route::middleware('auth')->group(function () {
         // Bouteilles d’un utilisateur (tous ses celliers)
         Route::get('/utilisateur/{user_id}/bouteilles', [BouteilleHasCellierController::class, 'bouteillesUtilisateur'])->name('utilisateur.bouteilles');
     });
-
-
 });
 
 // Route::get('/password/forgot', [ProfileController::class, 'forgot'])->name('user.forgot');
