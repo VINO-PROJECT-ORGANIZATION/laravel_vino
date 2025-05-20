@@ -1,6 +1,6 @@
 /* Titre */
 main h1 {
-    font-size: var(--taille-titre);
+    font-size: var(--taille-titre-page);
     font-weight: var(--poids-texte-gras);
     color: var(--texte-primaire);
     margin-bottom: var(--espace-grand);
