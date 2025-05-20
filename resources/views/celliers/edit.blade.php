@@ -10,7 +10,7 @@
                 <input type="text" id="nom" name="nom" value="{{ old('nom', $cellier->nom) }}" required>
             </div>
             <div class="groupe-input">
-                <label for="" />
+                <label for="teinte">Teinte de fond</label>
                 <select name="teinte" id="teinte" required>
                     <option value="{{ $cellier->teinte }}" selected>{{ $cellier->teinte }}</option>
                     <option value="#F28B82" class="rouge-framboise">Rouge Framboise pastel</option>

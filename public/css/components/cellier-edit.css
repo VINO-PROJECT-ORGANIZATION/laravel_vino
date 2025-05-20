@@ -1,10 +1,10 @@
 /* Conteneur principal */
 main>.edit_cellier {
     max-width: 600px;
-    padding: 2rem;
-    background-color: var(--arriere-plan-gris-pale);
-    border-radius: var(--rayon-carte);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    /* padding: 2rem; */
+    /* background-color: var(--arriere-plan-gris-pale); */
+    /* border-radius: var(--rayon-carte);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); */
     font-family: var(--police-principale);
 }
 
