@@ -33,7 +33,7 @@
                 action="{{ route('cellier_bouteilles.destroy', ['cellier_id' => $reponse->cellier_id, 'bouteille_id' => $reponse->bouteille_id]) }}">
                 @csrf
                 @method('DELETE')
-                <button type="submit" class="bouton-danger">X</button>
+                <button type="submit" class="bouton-danger"><i class="fa fa-trash-o"></i></button>
             </form>
 
             @endif

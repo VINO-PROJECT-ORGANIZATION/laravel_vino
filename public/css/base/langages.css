@@ -44,6 +44,7 @@
 
     /*--- Typographie ---*/
     --police-principale: 'Sen', sans-serif;
+    --taille-titre-page: 1.5rem;
     --taille-titre: 1.25rem;
     --taille-texte: 1rem;
     --taille-texte-petit: 0.875rem;

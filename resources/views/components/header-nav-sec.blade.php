@@ -27,7 +27,7 @@
                 </a>
             </div>
             <div class="header__nav-sec__logo">
-                <a href="{{ route('celliers.index') }}">
+                <a href="{{ route('accueil') }}">
                     <img src="{{asset('images/logo_vino.svg')}}" alt="logo">
                 </a>
             </div>
