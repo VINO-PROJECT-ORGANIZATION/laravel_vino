@@ -3,41 +3,34 @@
     position: relative;
     padding-left: 5px;
     padding-right: 5px;
-    margin-top: 10px;
+    max-width: 600px;
+    margin: 10px auto;
 
-
-    & input {
+    /* & input {
 
         width: 80%;
         border-radius: 30px;
         background-color: #E8EDF1;
-    }
+    } */
 
-    & .contenant_loupe {
+    /* & .contenant_loupe {
 
         width: 90%;
         height: 100%;
         background-color: var(--arriere-plan-gris-pale);
         border-radius: 0 30px 30px 0;
-        border-top: 1px solid black;
+        border-top: 1px solid black; */
 
-
-        & img {
-
-            position: relative;
-            object-fit: contain;
-            top: 5%;
-            transform: rotate(90deg);
-            width: 70%;
-            filter: brightness(0) saturate(100%) invert(7%) sepia(33%) saturate(1557%) hue-rotate(197deg) brightness(91%) contrast(90%);
-        }
-
+    & img {
+        transform: rotate(90deg);
+        width: 70%;
+        filter: brightness(0) saturate(100%) invert(7%) sepia(33%)
+            saturate(1557%) hue-rotate(197deg) brightness(91%) contrast(34%);
     }
+}
 
-    .contenant_loupe:hover {
-
-        cursor: pointer;
-    }
+.contenant_loupe:hover {
+    cursor: pointer;
 }
 
 .filtres {
@@ -45,16 +38,66 @@
     justify-content: space-between;
 
     & .groupe-input {
-
         display: flex;
         flex-direction: column;
         align-items: center;
     }
 }
 
+.recherche .champ-recherche {
+    display: flex;
+    flex-direction: row;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: var(--arriere-plan);
+    border: 1px solid var(--bordure-claire);
+}
+.recherche form {
+    width: 100%;
+}
+.recherche .form-recherche-cellier {
+}
 
-
-
+.champ-recherche input {
+    border: none;
+    flex-grow: 1;
+    background-color: transparent;
+}
+.champ-recherche input:hover,
+.champ-recherche input:active,
+.champ-recherche input:focus,
+.champ-recherche input:focus-visible {
+    border: none;
+    outline: none;
+}
+.recherche .contenant_loupe {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 0;
+    flex-shrink: 1;
+    flex-basis: 50px;
+    padding: 10px;
+    border: none;
+    background-color: transparent;
+}
+.recherche .filtres {
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+    gap: 10px;
+}
+.recherche .filtres .groupe-input {
+    flex-grow: 1;
+}
+.recherche .filtres label {
+    display: none;
+}
+.recherche .groupe-input select {
+    font-size: 14px;
+    color: var(--texte-info);
+}
+/* 
 @media (min-width: 1200px) {
 
     .contenant_loupe {
@@ -65,4 +108,4 @@
             height: 60%;
         }
     }
-}
+} */
