@@ -8,13 +8,12 @@ main>.edit_cellier {
     font-family: var(--police-principale);
 }
 
-/* Titre */
-main h1 {
-    font-size: var(--taille-titre);
-    font-weight: var(--poids-texte-gras);
-    color: var(--texte-primaire);
-    margin-bottom: var(--espace-grand);
+.edit_cellier form {
+    display: flex;
+    flex-direction: column;
 }
+
+
 
 /* Groupe d'entrée */
 .groupe-input {
