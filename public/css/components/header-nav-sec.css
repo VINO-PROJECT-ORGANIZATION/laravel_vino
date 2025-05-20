@@ -4,6 +4,8 @@
     padding: 10px var(--espace-moyen);
     background-color: var(--arriere-plan);
     align-items: center;
+    max-width: 600px;
+    margin: 0 auto;
 
     & a {
         display: flex;

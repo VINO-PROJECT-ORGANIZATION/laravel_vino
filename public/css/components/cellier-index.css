@@ -37,8 +37,7 @@
 .gris-perle {
     background-color: #e5e5e5;
 }
-.celliers-carte {
-}
+
 .celliers-carte__actions {
     display: flex;
     /* justify-content: space-between; */
@@ -61,9 +60,9 @@
 }
 
 .celliers-carte__titre {
-    font-size: var(--taille-titre);
+    font-size: var(--taille-titre-page);
     color: var(--texte-primaire);
-    font-weight: 400;
+    font-weight: var(--poids-texte-gras);
 }
 
 .celliers-page, .cellier-page {
@@ -103,8 +102,7 @@
     font-size:1.5rem;
 }
 .celliers-carte__actions .bouton:hover {
-    background-color: var(--arriere-plan-bouton-hover);
-    /* color: var(--texte-primaire); */
+    background-color: var(--arriere-plan-bouton-survol);
 }
 .celliers-carte__actions .bouton img {
     width: auto;
