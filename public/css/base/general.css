@@ -31,3 +31,6 @@ main {
         color: var(--texte-primaire);
     }
 }
+input[type="submit" i] {
+    border: none;
+}
