@@ -1,47 +1,49 @@
 .rouge-framboise {
-    background-color: #F28B82;
+    background-color: #f28b82;
 }
 
 .rose-peche {
-    background-color: #FBC4AB;
+    background-color: #fbc4ab;
 }
 
 .blanc-vanille {
-    background-color: #FDF6E3;
+    background-color: #fdf6e3;
 }
 
 .sauge-pale {
-    background-color: #CDEAC0;
+    background-color: #cdeac0;
 }
 
 .lavande-brume {
-    background-color: #E6E6FA;
+    background-color: #e6e6fa;
 }
 
 .menthe-douce {
-    background-color: #D1F2EB;
+    background-color: #d1f2eb;
 }
 
 .bleu-ciel {
-    background-color: #AEDFF7;
+    background-color: #aedff7;
 }
 
 .champagne-pale {
-    background-color: #FFF1D0;
+    background-color: #fff1d0;
 }
 
 .corail-pastel {
-    background-color: #FFD1DC;
+    background-color: #ffd1dc;
 }
 
 .gris-perle {
-    background-color: #E5E5E5;
+    background-color: #e5e5e5;
 }
-
+.celliers-carte {
+}
 .celliers-carte__actions {
     display: flex;
-    justify-content: space-between;
+    /* justify-content: space-between; */
     margin-bottom: var(--espace-petit);
+    gap: var(--espace-moyen);
 }
 
 .celliers-carte__image {
@@ -64,13 +66,12 @@
     font-weight: 400;
 }
 
-.celliers-page a {
-    text-decoration: none;
-    color: var(--texte-primaire);
+.celliers-page {
+    gap: var(--espace-moyen);
 }
 
 .celliers-carte__titre a:hover {
-    cursor: pointer
+    cursor: pointer;
 }
 
 .celliers-carte__description {
@@ -82,7 +83,29 @@
     max-width: 180px;
     font-size: 11px;
 }
+.celliers-page .container {
+    flex-grow: 1;
+    margin: 0;
+}
+.celliers-carte__actions .bouton {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-size: var(--taille-label);
+    background-color: var(--arriere-plan-bouton);
+    padding: var(--espace-petit);
+    gap: var(--espace-petit);
+}
+.celliers-carte__actions .bouton:hover {
+    background-color: var(--arriere-plan-bouton-hover);
+    /* color: var(--texte-primaire); */
+}
+.celliers-carte__actions .bouton img {
+    width: auto;
+    height: 25px;
+}
 
-.celliers-carte+.celliers-carte {
+.celliers-carte + .celliers-carte {
     margin-top: var(--espace-moyen);
 }
