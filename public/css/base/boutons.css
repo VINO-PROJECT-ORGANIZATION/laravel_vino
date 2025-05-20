@@ -47,6 +47,7 @@ button {
 .bouton-danger {
     background-color: var(--couleur-danger);
     color: var(--texte-secondaire);
+    border-radius: 6px;
 }
 
 .bouton-danger:hover {
