@@ -15,7 +15,7 @@
         <div class="conteneur">
             <a href="{{ route('bouteilles.index') }}">
                 <img src="{{asset('images/icons/loupe.svg')}}" alt="loupe">
-                <span>Recherche</span>
+                <span>Bouteilles SAQ</span>
             </a>
         </div>
     </div>
