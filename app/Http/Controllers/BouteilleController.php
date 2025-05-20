@@ -62,7 +62,6 @@ class BouteilleController extends Controller
         }
 
         $listePays = Bouteille::trouveNomDePays();
-        // dd($pays);
 
         $pageCourante = 'bouteilles';
 
@@ -86,7 +85,7 @@ class BouteilleController extends Controller
         do {
             //Combiner la date, l'heure, la minute et les secondes actuelles avec l'ID de l'utilisateur pour créer un code unique
             $code_saq = now()->format('ymdHis') . $user_id;
-        } while (\App\Models\Bouteille::where('code_saq', $code_saq)->exists());
+        } while (Bouteille::where('code_saq', $code_saq)->exists());
 
 
         return view('bouteilles.create', compact('pageCourante', 'code_saq'));
