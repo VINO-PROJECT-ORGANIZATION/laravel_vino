@@ -4,9 +4,16 @@
     gap: var(--espace-grand);
     flex-grow: 1;
 }
+
 .cellier-page form {
     display: flex;
     flex-direction: column;
+}
+
+.cellier-carte {
+    display: flex;
+    flex-direction: column;
+    gap: var(--espace-moyen);
 }
 
 .cellier-carte__image {
@@ -35,7 +42,7 @@
 }
 
 .cellier-carte__titre a:hover {
-    cursor: pointer
+    cursor: pointer;
 }
 
 .cellier-carte__description {
