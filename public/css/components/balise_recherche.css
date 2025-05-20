@@ -1,8 +1,8 @@
 .recherche {
     display: flex;
-    padding: var(--espace-moyen);
+    padding: 0 var(--espace-moyen);
     max-width: 600px;
-    margin: 0 auto;
+    margin: var(--espace-moyen) auto 0;
 
     /* & input {
 
