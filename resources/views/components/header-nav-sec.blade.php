@@ -41,7 +41,7 @@
             <ul>
                 <li><a href="{{ route('celliers.index') }}">Mes celliers</a></li>
                 <li><a href="{{ route('bouteilles.create') }}">Création de bouteille</a></li>
-                <li><a href="{{ route('bouteilles.index') }}">Bouteilles</a></li>
+                <li><a href="{{ route('bouteilles.index') }}">Liste des bouteilles</a></li>
                 <li>
 
                 <li><a href="{{ route('profile.edit') }}">Mon profil</a></li>
