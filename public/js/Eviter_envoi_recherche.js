@@ -20,7 +20,7 @@ export default class Eviter_envoi{
 
             if(this.recherche.value.trim() === ""){
 
-                e.preventDefault();
+                // e.preventDefault();
             }
         })
 
@@ -28,7 +28,7 @@ export default class Eviter_envoi{
 
                 if(this.recherche.value.trim() === ""){
 
-                    e.preventDefault();
+                    // e.preventDefault();
                     this.recherche.focus();
                 }
         })
