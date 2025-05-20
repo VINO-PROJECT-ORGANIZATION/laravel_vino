@@ -24,7 +24,7 @@ main {
     padding: var(--espace-moyen);
     border-radius: var(--rayon-carte);
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-    min-height: calc(100dvh - 140px);
+    min-height: calc(100dvh - 165px);
     margin: var(--espace-moyen) auto;
     background-color: #ffffff;
 
