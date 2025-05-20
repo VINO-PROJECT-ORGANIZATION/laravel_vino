@@ -5,8 +5,6 @@
     padding-right: 5px;
     max-width: 600px;
     margin: 10px auto;
-   
-
 
     /* & input {
 
@@ -23,19 +21,16 @@
         border-radius: 0 30px 30px 0;
         border-top: 1px solid black; */
 
-
-        & img {
-            transform: rotate(90deg);
-            width: 70%;
-            filter: brightness(0) saturate(100%) invert(7%) sepia(33%) saturate(1557%) hue-rotate(197deg) brightness(91%) contrast(90%);
-        }
-
+    & img {
+        transform: rotate(90deg);
+        width: 70%;
+        filter: brightness(0) saturate(100%) invert(7%) sepia(33%)
+            saturate(1557%) hue-rotate(197deg) brightness(91%) contrast(34%);
     }
+}
 
-    .contenant_loupe:hover {
-
-        cursor: pointer;
-    }
+.contenant_loupe:hover {
+    cursor: pointer;
 }
 
 .filtres {
@@ -43,33 +38,39 @@
     justify-content: space-between;
 
     & .groupe-input {
-
         display: flex;
         flex-direction: column;
         align-items: center;
     }
 }
 
-.recherche .champ-recherche { 
+.recherche .champ-recherche {
     display: flex;
     flex-direction: row;
-    border-radius: 50px;
+    border-radius: 10px;
     overflow: hidden;
-    border: 2px solid #848688;
+    background-color: var(--arriere-plan);
+    border: 1px solid var(--bordure-claire);
 }
 .recherche form {
     width: 100%;
+}
+.recherche .form-recherche-cellier {
 }
 
 .champ-recherche input {
     border: none;
     flex-grow: 1;
+    background-color: transparent;
 }
-.champ-recherche input:hover, .champ-recherche input:active, .champ-recherche input:focus, .champ-recherche input:focus-visible {
+.champ-recherche input:hover,
+.champ-recherche input:active,
+.champ-recherche input:focus,
+.champ-recherche input:focus-visible {
     border: none;
     outline: none;
 }
-.recherche .contenant_loupe{
+.recherche .contenant_loupe {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -84,14 +85,18 @@
     display: flex;
     flex-direction: row;
     margin-top: 10px;
-    gap: 15px;
+    gap: 10px;
 }
 .recherche .filtres .groupe-input {
-   flex-grow: 1;
+    flex-grow: 1;
 }
 .recherche .filtres label {
-    display:none;
- }
+    display: none;
+}
+.recherche .groupe-input select {
+    font-size: 14px;
+    color: var(--texte-info);
+}
 /* 
 @media (min-width: 1200px) {
 
