@@ -18,6 +18,7 @@
 </head>
 
 <body>
+    @auth
     <header class="header__general">
         <nav class="header__nav-sec">
             <div class="bouton bouton_nav">
@@ -38,19 +39,32 @@
 
         <div class="menu-deroulant invisible" id="menu-deroulant">
             <ul>
-                <li><a href="{{ route('profile.edit') }}">Mon profil</a></li>
                 <li><a href="{{ route('celliers.index') }}">Mes celliers</a></li>
+                <li><a href="{{ route('bouteilles.create') }}">Création de bouteille</a></li>
                 <li><a href="{{ route('bouteilles.index') }}">Bouteilles</a></li>
                 <li>
-                    <form method="POST" action="{{ route('logout') }}">
-                        @csrf
-                        <input type="submit" value="Déconnexion" class="deconnexion">
-                    </form>
+
+                <li><a href="{{ route('profile.edit') }}">Mon profil</a></li>
+                <form method="POST" action="{{ route('logout') }}">
+                    @csrf
+                    <input type="submit" value="Déconnexion" class="deconnexion">
+                </form>
                 </li>
             </ul>
         </div>
 
     </header>
+    @else
+    <header class="header__general">
+        <nav class="header__nav-sec" style="justify-content: center;">
+            <div class="header__nav-sec__logo">
+                <a href="{{ route('accueil') }}">
+                    <img src="{{asset('images/logo_vino.svg')}}" alt="logo">
+                </a>
+            </div>
+        </nav>
+    </header>
+    @endauth
     <!-- boite de message d'erreurs -->
     @if ($errors->any())
     <div class="boiteAlerte error" role="alert">
