@@ -1,3 +1,7 @@
+html{
+    font-size: 16px;
+}
+
 body {
     /* background-color: var(--arriere-plan); */
     background-color: #ffffff;
@@ -18,7 +22,7 @@ main {
     padding: var(--espace-moyen);
     border-radius: var(--rayon-carte);
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-    min-height: calc(100dvh - 70px - 40px);
+    min-height: calc(100dvh - 140px);
     margin: 0 auto 20px;
     background-color: #ffffff;
 
@@ -26,4 +30,7 @@ main {
         font-size: 1.5em;
         color: var(--texte-primaire);
     }
+}
+input[type="submit" i] {
+    border: none;
 }

@@ -25,7 +25,7 @@
                     <option value="#E5E5E5" class="gris-perle">Gris perle</option>
                 </select>
             </div>
-            <button type="submit" class="bouton bouton-success">Mettre à jour</button>
+            <button type="submit" class="bouton">Mettre à jour</button>
         </form>
     </div>
     @if ($errors->any())

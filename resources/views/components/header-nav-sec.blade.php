@@ -10,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=WindSong:wght@400;500&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Sen:wght@400..800&display=swap" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
     <script src="{{asset('js/main.js')}}" type="module"></script>
     <title>à changer</title>
@@ -21,12 +22,17 @@
         <nav class="header__nav-sec">
             <div class="bouton bouton_nav">
                 <a href="{{ back()->getTargetUrl() }}" class="nav__link">
-                    <img src="{{asset('images/icons/back.svg')}}" alt="icone">
-
+                    <!-- <img src="{{asset('images/icons/back.svg')}}" alt="icone"> -->
+                    <span><i class="fa fa-chevron-left"></i></span>
+                </a>
+            </div>
+            <div class="header__nav-sec__logo">
+                <a href="{{ route('celliers.index') }}">
+                    <img src="{{asset('images/logo_vino.svg')}}" alt="logo">
                 </a>
             </div>
             <div class="bouton bouton_nav" id="deconnecter">
-                <p> ... </p>
+                <span> <i class="fa fa-ellipsis-h"></i></span>
             </div>
         </nav>
 

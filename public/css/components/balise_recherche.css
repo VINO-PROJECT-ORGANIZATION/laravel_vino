@@ -1,10 +1,8 @@
 .recherche {
     display: flex;
-    position: relative;
-    padding-left: 5px;
-    padding-right: 5px;
+    padding: var(--espace-moyen);
     max-width: 600px;
-    margin: 10px auto;
+    margin: 0 auto;
 
     /* & input {
 
@@ -89,6 +87,7 @@
 }
 .recherche .filtres .groupe-input {
     flex-grow: 1;
+    margin: 0;
 }
 .recherche .filtres label {
     display: none;
