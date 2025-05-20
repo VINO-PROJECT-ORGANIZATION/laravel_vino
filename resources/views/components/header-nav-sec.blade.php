@@ -36,12 +36,19 @@
             </div>
         </nav>
 
-
-        <form method="POST" id="form-deconnexion" action="{{ route('logout') }}" class="invisible">
-            @csrf
-
-            <input type="submit" value="Déconnexion" class="deconnexion">
-        </form>
+        <div class="menu-deroulant invisible" id="menu-deroulant">
+            <ul>
+                <li><a href="{{ route('profile.edit') }}">Mon profil</a></li>
+                <li><a href="{{ route('celliers.index') }}">Mes celliers</a></li>
+                <li><a href="{{ route('bouteilles.index') }}">Bouteilles</a></li>
+                <li>
+                    <form method="POST" action="{{ route('logout') }}">
+                        @csrf
+                        <input type="submit" value="Déconnexion" class="deconnexion">
+                    </form>
+                </li>
+            </ul>
+        </div>
 
     </header>
     <!-- boite de message d'erreurs -->
