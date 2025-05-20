@@ -15,10 +15,10 @@ class BouteilleController extends Controller
     {
         $demande = $request->input('requete');
 
-
         // champs de filtre
         $type = $request->input('type');
         $format = $request->input('format');
+        $pays = $request->input('pays');
 
         if ($demande == '') {
             $bouteilles = Bouteille::query();
@@ -32,6 +32,9 @@ class BouteilleController extends Controller
                 $bouteilles->where('format', $format);
             }
 
+            if ($pays) {
+                $bouteilles->where('pays', $pays);
+            }
 
             $bouteilles = $bouteilles->paginate(50);
         } else {
@@ -51,19 +54,20 @@ class BouteilleController extends Controller
                 $bouteilles->where('format', $format);
             }
 
+            if ($pays) {
+                $bouteilles->where('pays', $pays);
+            }
 
             $bouteilles = $bouteilles->paginate(50)->withQueryString();
         }
 
-        $pays = Bouteille::trouveNomDePays();
+        $listePays = Bouteille::trouveNomDePays();
         // dd($pays);
 
         $pageCourante = 'bouteilles';
 
-        return view('bouteilles.index', compact('bouteilles', 'pageCourante', 'demande', 'pays'));
+        return view('bouteilles.index', compact('bouteilles', 'pageCourante', 'demande', 'listePays'));
     }
-
-
 
     /**
      * Show the form for creating a new resource.
