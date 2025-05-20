@@ -10,7 +10,7 @@
             value="{{ old('requete', $query ?? '') }}" />
 
         <button type="submit" id="bouton-recherche-cellier" class="contenant_loupe">
-            <img src="{{ asset('images/icons/Loupe.svg') }}" alt="loupe">
+            <img src="{{ asset('images/icons/loupe.svg') }}" alt="loupe">
         </button>
     </form>
     @else
@@ -21,7 +21,7 @@
         <input type="text" name="requete" placeholder="Faire une recherche..." id="input-recherche-cellier"
             value="{{ request('requete') }}" />
         <button type="submit" id="bouton-recherche-cellier" class="contenant_loupe">
-            <img src="{{ asset('images/icons/Loupe.svg') }}" alt="loupe" />
+            <img src="{{ asset('images/icons/loupe.svg') }}" alt="loupe" />
         </button>
         <section class="filtres">
             <div class="groupe-input">
@@ -42,7 +42,7 @@
                 <select name="pays" id="pays">
                     <option value="">Pays</option>
                     @foreach ($pays as $p)
-                    <option value="{{ $p }}">{{ $p }}</option>
+                    <option value="{{ $p }}" @if (request('pays')==$p) selected @endif>{{ $p }}</option>
                     @endforeach
                 </select>
             </div>
