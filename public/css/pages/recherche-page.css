@@ -1,6 +1,10 @@
 .recherche-page {
     background-color: #fff;
 }
-.recherche-page h1 {
+.recherche-page h1, .recherche-page h2 {
     text-align: left;
+    font-size: var(--taille-titre);
+    font-weight: var(--poids-texte-gras);
+    color: var(--texte-primaire);
+    margin-bottom: var(--espace-grand);
 }
