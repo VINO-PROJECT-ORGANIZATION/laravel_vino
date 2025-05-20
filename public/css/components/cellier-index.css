@@ -66,7 +66,7 @@
     font-weight: 400;
 }
 
-.celliers-page {
+.celliers-page, .cellier-page {
     gap: var(--espace-moyen);
 }
 
@@ -96,6 +96,11 @@
     background-color: var(--arriere-plan-bouton);
     padding: var(--espace-petit);
     gap: var(--espace-petit);
+    border: none;
+    color: var(--texte-primaire);
+}
+.celliers-carte__actions .bouton .fa{
+    font-size:1.5rem;
 }
 .celliers-carte__actions .bouton:hover {
     background-color: var(--arriere-plan-bouton-hover);

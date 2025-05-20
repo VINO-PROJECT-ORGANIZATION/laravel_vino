@@ -6,13 +6,15 @@
     <section>
         <!-- liens pour modifier & supprimer un cellier -->
         <div class="celliers-carte__actions">
-            <a href="{{ route('celliers.edit', ['id' => $cellier->id]) }}" class="bouton bouton-warning">Modifier le
-                cellier</a>
-            <form action="{{ route('celliers.destroy', ['id' => $cellier->id]) }}" method="POST">
+            <div class="container"><a href="{{ route('celliers.edit', ['id' => $cellier->id]) }}" class="bouton bouton-warning"> <i class="fa fa-pencil-square-o"></i> <span> Modifier le
+                    cellier</span></a>
+            </div>
+            <div class="container"><form action="{{ route('celliers.destroy', ['id' => $cellier->id]) }}" method="POST">
                 @csrf
                 @method('DELETE')
-                <button type="submit" class="bouton bouton-danger">Supprimer le cellier</button>
-            </form>
+                <button type="submit" class="bouton bouton-danger"> <i class="fa fa-trash-o"></i><span> Supprimer le cellier</span></button>
+                </form>
+            </div>
 
         </div>
 
@@ -40,22 +42,22 @@
                 les resultats</a>
         </div>
         @if($bouteilles->isEmpty())
-    <section>
-        <div>
-            <h2>Recherche de : "{{$demande}}"</h2>
-            <ul>Désolé, aucun résultat trouvé.
-                <li>Essayez une autre recherche</li>
-                <br>
-                <a href="{{ route('cellier_bouteilles.cellier.bouteilles', ['cellier_id' => session('id_cellier')]) }}"
-                    class="bouton">Retour au cellier</a>
-            </ul>
-        </div>
-    </section>
-@else
-    @foreach ($bouteilles as $reponse)
+        <section>
+            <div>
+                <h2>Recherche de : "{{$demande}}"</h2>
+                <ul>Désolé, aucun résultat trouvé.
+                    <li>Essayez une autre recherche</li>
+                    <br>
+                    <a href="{{ route('cellier_bouteilles.cellier.bouteilles', ['cellier_id' => session('id_cellier')]) }}"
+                        class="bouton">Retour au cellier</a>
+                </ul>
+            </div>
+        </section>
+        @else
+        @foreach ($bouteilles as $reponse)
         <x-carte-bouteille-saq :bouteille="$reponse->bouteille" :pageCourante="$pageCourante" :reponse="$reponse" />
         <x-formulaire-quantite-bouteille :reponse="$reponse" />
-    @endforeach
-@endif
+        @endforeach
+        @endif
 </main>
 <x-footer :pageCourante="$pageCourante" />
