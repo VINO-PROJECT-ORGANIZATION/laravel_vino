@@ -10,19 +10,20 @@
             value="{{ old('requete', $query ?? '') }}" />
 
         <button type="submit" id="bouton-recherche-cellier" class="contenant_loupe">
-            <img src="{{ asset('images/icons/Loupe.svg') }}" alt="loupe">
+            <img src="{{ asset('images/icons/loupe.svg') }}" alt="loupe">
         </button>
     </form>
     @else
     <form action="{{ route('bouteilles.index') }}" method="GET" class="form-recherche-cellier"
         id="form-recherche-cellier">
-
-        <label for="requete" class="invisible">Recherche</label>
-        <input type="text" name="requete" placeholder="Faire une recherche..." id="input-recherche-cellier"
-            value="{{ request('requete') }}" />
-        <button type="submit" id="bouton-recherche-cellier" class="contenant_loupe">
-            <img src="{{ asset('images/icons/Loupe.svg') }}" alt="loupe" />
-        </button>
+        <section class="champ-recherche">
+            <label for="requete" class="invisible">Recherche</label>
+            <input type="text" name="requete" placeholder="Faire une recherche..." id="input-recherche-cellier"
+                value="{{ request('requete') }}" />
+            <button type="submit" id="bouton-recherche-cellier" class="contenant_loupe">
+                <img src="{{ asset('images/icons/Loupe.svg') }}" alt="loupe" />
+            </button>
+        </section>
         <section class="filtres">
             <div class="groupe-input">
                 <label for="type">Type</label>
