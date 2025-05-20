@@ -4,7 +4,7 @@ html{
 
 body {
     /* background-color: var(--arriere-plan); */
-    background-color: #ffffff;
+    background-color: var(--arriere-plan);
     min-width: 100%;
     min-height: 100%;
     margin: 0;
@@ -14,7 +14,9 @@ body {
     font-weight: 400;
     font-style: normal;
 }
-
+header.header__general{
+    background-color: var(--arriere-plan);
+}
 main {
     display: flex;
     flex-direction: column;

@@ -2,23 +2,10 @@
 <x-composante-recherche :pageCourante="$pageCourante" :pays="$listePays" />
 
 <main class="cellier-page">
+    <h1 class="celliers-carte__titre">{{ $cellier->nom }}</h1>
+    
 
-    <section>
-        <!-- liens pour modifier & supprimer un cellier -->
-        <div class="celliers-carte__actions">
-            <div class="container"><a href="{{ route('celliers.edit', ['id' => $cellier->id]) }}" class="bouton bouton-warning"> <i class="fa fa-pencil-square-o"></i> <span> Modifier le
-                    cellier</span></a>
-            </div>
-            <div class="container"><form action="{{ route('celliers.destroy', ['id' => $cellier->id]) }}" method="POST">
-                @csrf
-                @method('DELETE')
-                <button type="submit" class="bouton bouton-danger"> <i class="fa fa-trash-o"></i><span> Supprimer le cellier</span></button>
-                </form>
-            </div>
-
-        </div>
-
-    </section>
+   
     <section class="cellier-carte">
         <div class="cellier-carte__image @if ($cellier->teinte == '#F28B82') rouge-framboise
                 @elseif ($cellier->teinte == '#FBC4AB') rose-peche
@@ -33,8 +20,23 @@
             @endif">
             <img src="{{asset('images/icons/celliers-icon-01.svg')}}" alt="Image de cellier" />
         </div>
+<section>
+        <!-- liens pour modifier & supprimer un cellier -->
+        <div class="celliers-carte__actions">
 
-        <h1 class="celliers-carte__titre">{{ $cellier->nom }}</h1>
+            <div class="container"><a href="{{ route('celliers.edit', ['id' => $cellier->id]) }}" class="bouton bouton-warning"> <i class="fa fa-pencil-square-o"></i> <span> Modifier le
+                        cellier</span></a>
+            </div>
+            <div class="container">
+                <form action="{{ route('celliers.destroy', ['id' => $cellier->id]) }}" method="POST">
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit" class="bouton bouton-danger"> <i class="fa fa-trash-o"></i><span> Supprimer le cellier</span></button>
+                </form>
+            </div>
+
+        </div>
+ </section>
 
 
         <div>
