@@ -3,8 +3,6 @@
 <main class="cellier-page">
     <h1 class="celliers-carte__titre">{{ $cellier->nom }}</h1>
 
-
-
     <section class="cellier-carte">
         <div class="cellier-carte__image @if ($cellier->teinte == '#F28B82') rouge-framboise
                 @elseif ($cellier->teinte == '#FBC4AB') rose-peche
@@ -23,17 +21,23 @@
             <!-- liens pour modifier & supprimer un cellier -->
             <div class="celliers-carte__actions">
 
-                <div class="container"><a href="{{ route('celliers.edit', ['id' => $cellier->id]) }}" class="bouton bouton-warning"> <i class="fa fa-pencil-square-o"></i> <span> Modifier le
+                <div class="container"><a href="{{ route('celliers.edit', ['id' => $cellier->id]) }}"
+                        class="bouton bouton-warning"> <i class="fa fa-pencil-square-o"></i> <span> Modifier le
                             cellier</span></a>
                 </div>
                 <div class="container">
                     <form action="{{ route('celliers.destroy', ['id' => $cellier->id]) }}" method="POST">
                         @csrf
                         @method('DELETE')
-                        <button type="submit" class="bouton bouton-danger"> <i class="fa fa-trash-o"></i><span> Supprimer le cellier</span></button>
+                        <button type="submit" class="bouton bouton-danger"> <i class="fa fa-trash-o"></i><span
+                                style="text-align: left;">
+                                Supprimer le cellier</span></button>
                     </form>
                 </div>
-
+                <div class="container">
+                    <a href="{{ route('bouteilles.index') }}" class="bouton"><img
+                            src="/images/icons/ajout-bouteille.svg" alt=""> <span> Ajouter des bouteilles</span></a>
+                </div>
             </div>
         </section>
 
@@ -50,9 +54,9 @@
         <section>
             <div>
                 <h2>Recherche de : "{{$demande}}"</h2>
+
                 <p>Désolé, aucun résultat trouvé.
                 <br>Essayez une autre recherche</p> 
-
 
             </div>
         </section>
