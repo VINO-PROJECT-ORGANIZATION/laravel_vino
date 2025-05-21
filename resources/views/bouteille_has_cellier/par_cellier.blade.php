@@ -36,7 +36,7 @@
 
             </div>
         </section>
-        
+
         <section class="section-recherche">
             <h2 class="section-recherche__titre">Recherche de bouteilles dans le cellier</h2>
             <x-composante-recherche :pageCourante="$pageCourante" :pays="$listePays" />
@@ -50,11 +50,10 @@
         <section>
             <div>
                 <h2>Recherche de : "{{$demande}}"</h2>
-                <ul>Désolé, aucun résultat trouvé.
-                    <li>Essayez une autre recherche</li>
-                    <br>
-                    
-                </ul>
+                <p>Désolé, aucun résultat trouvé.
+                <br>Essayez une autre recherche</p> 
+
+
             </div>
         </section>
         @else

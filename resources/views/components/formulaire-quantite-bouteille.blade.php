@@ -7,6 +7,7 @@
     <div class="input-group">
         <label for="quantite">Quantité</label>
         <input type="number" id="quantite" name="quantite" min="1" max="100" value="{{ $reponse->quantite }}">
+        <button type="submit" class="bouton">Confirmer</button>
     </div>
-    <button type="submit" class="boutons">Confirmer</button>
+
 </form>
