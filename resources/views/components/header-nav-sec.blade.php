@@ -34,7 +34,6 @@
         <div class="menu-deroulant invisible" id="menu-deroulant">
             <ul>
                 <li><a href="{{ route('celliers.index') }}">Mes celliers</a></li>
-                <li><a href="{{ route('bouteilles.create') }}">Création de bouteille</a></li>
                 <li><a href="{{ route('bouteilles.index') }}">Liste des bouteilles</a></li>
                 <li>
 
