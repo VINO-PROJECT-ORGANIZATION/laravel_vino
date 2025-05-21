@@ -1,3 +1,6 @@
+@php
+use Illuminate\Support\Str;
+@endphp
 <section class="celliers-carte">
     <div class="celliers-carte__image
             @if ($cellier->teinte == '#F28B82') rouge-framboise
@@ -14,7 +17,7 @@
         <img src="{{asset('images/icons/celliers-icon-01.svg')}}" alt="Image de cellier" />
     </div>
     <a href="{{ route('cellier_bouteilles.cellier.bouteilles', ['cellier_id' => $cellier->id]) }}">
-        <h2 class="celliers-carte__titre">{{ $cellier['nom'] }}</h2>
+        <h2 class="celliers-carte__titre">{{ Str::limit($cellier['nom'], 21) }}</h2>
     </a>
     <!-- afficher le nombre de bouteille par cellier -->
     <p class="celliers-carte__description">{{ $quantiteBouteilles[$cellier->id] }} bouteille(s)</p>
