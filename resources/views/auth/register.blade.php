@@ -5,7 +5,7 @@
             <h1>Création de compte</h1>
         </header>
         <div class="enregistrement-form__container balise-form">
-            <form method="POST" action="{{ route('register') }}">
+            <form method="POST" action="{{ route('register') }}" class="enregistrement-form__container__contenu">
                 @csrf
 
                 <!-- Nom -->

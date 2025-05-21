@@ -25,7 +25,7 @@
 
                 <!-- Lien vers la page d'inscription -->
                 <div class="groupe-input balise-inscrire">
-                    <p></p><a href="{{ route('password.request') }}">Mot de passe oublié</a>
+                    <p></p><a href="{{ route('password.request') }}">Mot de passe oublié?</a>
                 </div>
                 <!-- Soumettre le formulaire -->
                 <div class="groupe-input">
