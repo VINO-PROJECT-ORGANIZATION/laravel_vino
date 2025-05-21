@@ -26,6 +26,19 @@
             saturate(1557%) hue-rotate(197deg) brightness(91%) contrast(34%);
     }
 }
+.section-recherche {
+    background-color: var(--arriere-plan-gris-pale);
+    border-radius: 6px;
+    padding: var(--espace-moyen) 0;
+}
+.section-recherche__titre {
+    font-size: var(--taille-texte);
+    padding: 0 var(--espace-moyen);
+    
+}
+.section-recherche .recherche {
+    
+}
 
 .contenant_loupe:hover {
     cursor: pointer;
