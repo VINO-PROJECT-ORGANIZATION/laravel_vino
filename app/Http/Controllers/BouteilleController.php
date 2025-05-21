@@ -96,18 +96,20 @@ class BouteilleController extends Controller
      */
     public function store(Request $request)
     {
-
-
         $validee = $request->validate([
             'nom' => 'required|string|max:255',
             'pays' => 'required|string|max:255',
             'format' => 'required|string|max:255',
-            'degre_alcool' => 'required|string|max:255',
+            'degre_alcool' => 'required|numeric|min:0|max:100',
             'region' => 'required|string|max:255',
             'type' => 'required|string|max:255',
-            'code_saq' => 'required|string|max:255',
-            'user_id' => 'required|integer',
         ]);
+
+        // Générer un code unique
+        do {
+            $code_saq = now()->format('ymdHis') . auth()->id();
+        } while (Bouteille::where('code_saq', $code_saq)->exists());
+
         // Créer une nouvelle bouteille
         $bouteille = new Bouteille();
         $bouteille->nom = $request->nom;
@@ -116,11 +118,11 @@ class BouteilleController extends Controller
         $bouteille->degre_alcool = $request->degre_alcool;
         $bouteille->region = $request->region;
         $bouteille->type = $request->type;
-        $bouteille->code_saq = $request->code_saq;
+        $bouteille->code_saq = $code_saq;
+        $bouteille->user_id = auth()->id();
+        $bouteille->url_image = "https://www.saq.com/media/catalog/product/1/2/12824197-1_1578411313.png?width=367&height=550&canvas=367,550&optimize=high&fit=bounds&format=jpeg";
         $bouteille->save();
 
-
-        // rediriger vers la page de la bouteille
         return redirect()->route('bouteilles.index')->with('success', 'La bouteille a été ajoutée avec succès');
     }
 
@@ -129,11 +131,12 @@ class BouteilleController extends Controller
      */
     public function show(string $id)
     {
+        $pageCourante = "Présentation de bouteille";
         $bouteille = Bouteille::find($id);
         if (!$bouteille) {
-            return redirect()->route('dashboard')->with('error', 'La bouteille n\'existe pas');
+            return redirect()->route('bouteilles.index')->with('error', 'La bouteille n\'existe pas');
         }
-        return view('bouteilles.show', compact('bouteille'));
+        return view('bouteilles.show', compact('bouteille', 'pageCourante'));
     }
 
     /**
