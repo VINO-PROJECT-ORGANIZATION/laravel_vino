@@ -33,7 +33,7 @@
             width: 100%;
             bottom: 0;
 
-           
+
         }
     }
 
@@ -58,7 +58,6 @@
                 & h3 {
                     font-family: var(--police-principale);
                     font-weight: 600;
-                    text-transform: capitalize;
                     font-size: 0.95rem;
                     min-height: 2lh;
                     line-height: 1.15rem;
@@ -77,6 +76,7 @@
             & .favori {
                 width: 35px;
                 flex-shrink: 0;
+
                 & .fav {
                     /* margin-top: 0.3rem; */
                     /* margin-left: 1.2rem; */
@@ -112,6 +112,7 @@
                     }
                 }
             }
+
             & .espace-bouton {
                 display: flex;
                 justify-content: end;
