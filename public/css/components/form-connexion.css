@@ -41,12 +41,9 @@ body {
     border-radius: 24px;
     background: #fff;
     width: 100%;
-    padding: 20px;
     gap: var(--espace-grand);
 
     & form {
-
-
         & input,
         textarea {
             border: none;
@@ -56,7 +53,6 @@ body {
         }
 
         & .balise_courriel {
-
             display: flex;
             flex-direction: column;
             margin-top: 24px;
@@ -70,7 +66,6 @@ body {
         }
 
         & .balise_password {
-
             display: flex;
             flex-direction: column;
             margin-top: 20px;
@@ -95,7 +90,6 @@ body {
                 left: 20.5rem;
                 top: 0.3rem;
 
-
                 & svg {
                     margin-top: 0.5rem;
                     width: 30px;
@@ -112,7 +106,6 @@ body {
         }
 
         & .balise_souvenir {
-
             display: flex;
             justify-content: space-between;
             margin-top: 30px;
@@ -161,18 +154,15 @@ body {
 }
 
 .balise-inscrire {
-
     display: flex;
     justify-content: space-between;
-    max-width: 400px;
-    margin-top: 30px;
+
     color: #646982;
     font-family: var(--police-principale);
     font-size: 14px;
     font-style: normal;
     font-weight: 400;
     line-height: 24px;
-    max-width: 400px;
     align-items: baseline;
 
     & a {
@@ -216,4 +206,14 @@ input {
     font-size: 14px;
     font-style: normal;
     font-weight: 700;
+}
+
+/*Ajustement de la page d'accueil*/
+.enregistrement-form-page form .balise_courriel,
+.enregistrement-form-page form .groupe-input.balise_inscrire,
+.enregistrement-form-page form .balise_password {
+    margin-top: 0;
+}
+.enregistrement-form-page form .groupe-input {
+    margin-bottom: 0;
 }

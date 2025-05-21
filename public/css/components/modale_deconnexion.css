@@ -5,7 +5,11 @@
     width: 100%;
     border-radius: 0;
     background-color: var(--arriere-plan-bouton);
+    border-radius: var(--rayon-bouton);
+    font-weight: var(--poids-texte-gras);
+    
 }
+
 
 .deconnexion:hover{
 
