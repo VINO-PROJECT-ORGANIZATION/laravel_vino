@@ -4,6 +4,7 @@ main h1 {
     font-weight: var(--poids-texte-gras);
     color: var(--texte-primaire);
     min-height: 2lh;
+    padding-bottom: var(--espace-moyen);
 }
 
 /* Groupe d'entrée */
