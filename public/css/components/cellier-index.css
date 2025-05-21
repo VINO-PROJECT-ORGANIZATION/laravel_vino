@@ -112,3 +112,8 @@
 .celliers-carte + .celliers-carte {
     margin-top: var(--espace-moyen);
 }
+
+.cellier-page .carte {
+    border-bottom: none;
+    margin-bottom: none;
+}

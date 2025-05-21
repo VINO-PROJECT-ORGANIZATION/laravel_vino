@@ -54,11 +54,10 @@
         <section>
             <div>
                 <h2>Recherche de : "{{$demande}}"</h2>
-                <ul>Désolé, aucun résultat trouvé.
-                    <li>Essayez une autre recherche</li>
-                    <br>
 
-                </ul>
+                <p>Désolé, aucun résultat trouvé.
+                <br>Essayez une autre recherche</p> 
+
             </div>
         </section>
         @else
