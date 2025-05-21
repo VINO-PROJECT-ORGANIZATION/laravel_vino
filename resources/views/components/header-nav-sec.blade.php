@@ -21,12 +21,6 @@
     @auth
     <header class="header__general">
         <nav class="header__nav-sec">
-            <div class="bouton bouton_nav">
-                <a href="{{ back()->getTargetUrl() }}" class="nav__link">
-                    <!-- <img src="{{asset('images/icons/back.svg')}}" alt="icone"> -->
-                    <span><i class="fa fa-chevron-left"></i></span>
-                </a>
-            </div>
             <div class="header__nav-sec__logo">
                 <a href="{{ route('accueil') }}">
                     <img src="{{asset('images/logo_vino.svg')}}" alt="logo">
@@ -40,7 +34,6 @@
         <div class="menu-deroulant invisible" id="menu-deroulant">
             <ul>
                 <li><a href="{{ route('celliers.index') }}">Mes celliers</a></li>
-                <li><a href="{{ route('bouteilles.create') }}">Création de bouteille</a></li>
                 <li><a href="{{ route('bouteilles.index') }}">Liste des bouteilles</a></li>
                 <li>
 
