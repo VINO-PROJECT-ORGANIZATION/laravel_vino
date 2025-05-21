@@ -14,7 +14,7 @@
                         <img src="./images/icons/user-profil.svg" alt="utilisateur">
                     </div>
                     <h2 class="section__sous-titre-texte">Informations personnelles</h2>
-                    
+
                 </div>
                 <div class="groupe-input">
                     <label for="nom">Nom</label>
@@ -36,7 +36,7 @@
                         <img src="./images/icons/map.svg" alt="carte">
                     </div>
                     <h2 class="section__sous-titre-texte">Adresse</h2>
-                    
+
                 </div>
                 <div class="groupe-input">
                     <label for="adresse">Adresse</label>
@@ -57,12 +57,7 @@
                     <div class="section__icone-cercle">
                         <img src="./images/icons/courriel.svg" alt="courriel">
                     </div>
-                    <h2 class="section__sous-titre-texte">Courriel & mot de passe</h2>
-                    
-                </div>
-                <div class="groupe-input">
-                    <label for="email" hidden>Courriel</label>
-                    <input type="email" id="email" name="email" value="{{ $user['email'] }}" hidden>
+                    <h2 class="section__sous-titre-texte">Mot de passe</h2>
                 </div>
                 <div class="groupe-input">
                     <label for="update_password_current_password">Mot de passe courrant</label>
@@ -79,6 +74,10 @@
                     <input type="password" id="update_password_password_confirmation" name="password_confirmation"
                         required>
                     <x-input-error :messages="$errors->updatePassword->get('password_confirmation')" />
+                </div>
+                <div class="groupe-input" hidden>
+                    <label for="password_email" hidden></label>
+                    <input type="email" id="password_email" name="email" value="{{ $user['email'] }}" hidden>
                 </div>
                 <x-primary-button class="bouton">{{ __('Enregister') }}</x-primary-button>
                 @if (session('status') === 'password-updated')
