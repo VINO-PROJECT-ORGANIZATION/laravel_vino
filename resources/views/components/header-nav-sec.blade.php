@@ -59,16 +59,21 @@
     </header>
     @endauth
     <!-- boite de message d'erreurs -->
-    @if ($errors->any())
+    @if (session('error'))
     <div class="boiteAlerte error" role="alert">
         {{ session('error') }}
         <button type="button" class="close-btn" aria-label="Close">×</button>
     </div>
-    @endif
     <!-- boite de message de succès -->
-    @if (session('success'))
+    @elseif (session('success'))
     <div class="boiteAlerte success" role="alert">
         {{ session('success') }}
+        <button type="button" class="close-btn">x</button>
+    </div>
+    <!-- boite de message de succès -->
+    @elseif (session('status'))
+    <div class="boiteAlerte status error" role="alert">
+        {{ session('status') }}
         <button type="button" class="close-btn">x</button>
     </div>
     @endif
