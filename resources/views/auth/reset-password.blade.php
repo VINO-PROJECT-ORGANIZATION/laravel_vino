@@ -1,9 +1,10 @@
-<x-header-nav-sec />
+<x-header-nav-sec :pageCourante="$pageCourante" />
 <main class="enregistrement-form-page">
     <section class="enregistrement-form">
         <header>
             <h1>Création du nouveau mot de passe</h1>
         </header>
+
         <div class="enregistrement-form__container balise-form">
             <form method="POST" action="{{ route('password.update') }}" class="enregistrement-form__container__contenu">
                 @csrf
@@ -12,12 +13,14 @@
                 <!-- Jeton -->
                 <input type="hidden" name="token" value="{{ request()->route('token') }}">
 
-                <!-- Email -->
-                <div class="groupe-input balise_courriel">
-                    <label for="email">Adresse courriel</label>
-                    <input id="email" type="email" name="email" value="{{ old('email', request('email')) }}" required autofocus>
-                    <x-input-error :messages="$errors->get('email')" />
-                </div>
+            <!-- Email -->
+            <div class="groupe-input balise_courriel">
+                <label for="email">Adresse courriel</label>
+                <input id="email" type="email" name="email" value="{{ old('email', request('email')) }}" required
+                    autofocus>
+                <x-input-error :messages="$errors->get('email')" />
+            </div>
+
 
                 <!-- Mot de passe -->
                 <div class="groupe-input balise_password">

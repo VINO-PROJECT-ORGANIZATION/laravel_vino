@@ -10,40 +10,42 @@
 }
 
 
-    .formulaire-quantite .input-group {
-        display: flex;
-        flex-direction: row;
-        gap: var(--espace-moyen);
-        width: 100%;
-        align-items: center;
-    }
-    .formulaire-quantite label{
-        flex-grow: 1;
-        flex-shrink: 0;
-        flex-basis: 20%;
-        font-size: 0.875rem;
-    }
-    .formulaire-quantite input {
-            width: 100%;
-            border: 1px solid var(--bordure-claire);
-            border-radius: var(--rayon-bouton);
-            min-width: 100px;
-            height: 25px;
-            flex-grow: 0;
-            flex-shrink: 1;
-            background-color: var(--arriere-plan);
-        }
+.formulaire-quantite .input-group {
+    display: flex;
+    flex-direction: row;
+    gap: var(--espace-moyen);
+    width: 100%;
+    align-items: center;
+}
 
-        .formulaire-quantite .bouton {
-            min-width: 125px;
-            max-width: 180px;
-            width: 60%;
-            font-size: 0.8rem;
-            height: 25px;
-            margin: 0;
-            padding: var(--espace-petit);
-            display: flex;
-            align-content: center;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
+.formulaire-quantite label {
+    flex-grow: 1;
+    flex-shrink: 0;
+    flex-basis: 20%;
+    font-size: 0.875rem;
+}
+
+.formulaire-quantite input {
+    width: 100%;
+    border: 1px solid var(--bordure-claire);
+    border-radius: var(--rayon-bouton);
+    min-width: 100px;
+    height: 25px;
+    flex-grow: 0;
+    flex-shrink: 1;
+    background-color: var(--arriere-plan);
+}
+
+.formulaire-quantite .bouton {
+    color: var(--texte-primaire);
+    max-width: 180px;
+    width: 60%;
+    font-size: 0.8rem;
+    height: 25px;
+    margin: 0;
+    padding: var(--espace-petit);
+    display: flex;
+    align-content: center;
+    flex-wrap: wrap;
+    justify-content: center;
+}
