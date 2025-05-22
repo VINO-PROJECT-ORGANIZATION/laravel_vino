@@ -103,13 +103,13 @@ class CellierController extends Controller
             'nom' => [
                 'required',
                 'string',
-                'max:255',
+                'max:50',
                 // vérifier que le nom du cellier est unique pour l'utilisateur
                 Rule::unique('celliers')->where(function ($query) use ($id) {
                     return $query->where('user_id', auth()->id())->where('id', '<>', $id);
                 }),
             ],
-            'teinte' => 'nullable|string|max:255',
+            'teinte' => 'nullable|string|max:7',
         ]);
 
         //mettre à jour le cellier
