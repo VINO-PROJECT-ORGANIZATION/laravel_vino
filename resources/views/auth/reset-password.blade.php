@@ -4,7 +4,7 @@
         <header>
             <h1>Création du nouveau mot de passe</h1>
         </header>
-        <form method="POST" action="{{ route('password.update') }}">
+        <form method="POST" action="{{ route('password.store') }}">
             @csrf
             @method('PUT')
 
