@@ -6,20 +6,20 @@
         </header>
 
         <div class="enregistrement-form__container balise-form">
-            <form method="POST" action="{{ route('password.update') }}" class="enregistrement-form__container__contenu">
+            <form method="POST" action="{{ route('password.store') }}" class="enregistrement-form__container__contenu">
                 @csrf
                 @method('PUT')
 
                 <!-- Jeton -->
                 <input type="hidden" name="token" value="{{ request()->route('token') }}">
 
-            <!-- Email -->
-            <div class="groupe-input balise_courriel">
-                <label for="email">Adresse courriel</label>
-                <input id="email" type="email" name="email" value="{{ old('email', request('email')) }}" required
-                    autofocus>
-                <x-input-error :messages="$errors->get('email')" />
-            </div>
+                <!-- Email -->
+                <div class="groupe-input balise_courriel">
+                    <label for="email">Adresse courriel</label>
+                    <input id="email" type="email" name="email" value="{{ old('email', request('email')) }}" required
+                        autofocus>
+                    <x-input-error :messages="$errors->get('email')" />
+                </div>
 
 
                 <!-- Mot de passe -->
