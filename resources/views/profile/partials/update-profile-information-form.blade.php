@@ -60,7 +60,7 @@
                     <h2 class="section__sous-titre-texte">Mot de passe</h2>
                 </div>
                 <div class="groupe-input">
-                    <label for="update_password_current_password">Mot de passe courrant</label>
+                    <label for="update_password_current_password">Mot de passe courant</label>
                     <input type="password" id="update_password_current_password" name="current_password">
                     <x-input-error :messages="$errors->updatePassword->get('current_password')" />
                 </div>
