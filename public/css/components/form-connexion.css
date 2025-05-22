@@ -7,7 +7,7 @@
 }
 
 .enregistrement-form,
-.enregistrement-form__container__contenu {
+.enregistrement-form__container__contenu, .enregistrement-form-page{
     display: flex;
     flex-direction: column;
     gap: var(--espace-moyen);
