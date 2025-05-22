@@ -80,7 +80,7 @@
                     <input type="email" id="password_email" name="email" value="{{ $user['email'] }}" hidden>
                 </div>
                 <x-primary-button class="bouton">{{ __('Enregister') }}</x-primary-button>
-                @if (session('status') === 'password-updated')
+                @if (session('status') === 'Le mot de passe a été réinitialisé.')
                 <p x-data="{ show: true }" x-show="show" x-transition x-init="setTimeout(() => show = false, 2000)"
                     class="">{{ __('Enregirstré.') }}</p>
                 @endif
