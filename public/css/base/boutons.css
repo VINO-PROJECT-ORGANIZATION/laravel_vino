@@ -1,5 +1,4 @@
 .bouton {
-    padding: 0px 5px;
     background-color: var(--couleur-principale);
     border-radius: var(--rayon-bouton);
     font-weight: 600;
@@ -14,6 +13,8 @@
     }
 }
 
+
+
 button {
     border: none;
 }
@@ -27,6 +28,14 @@ button {
     background-color: var(--couleur-principale-survol);
     transition: all 0.3s ease-in-out;
     cursor: pointer;
+}
+
+.secondaire {
+    background-color: var(--arriere-plan-bouton);
+}
+
+.secondaire:hover {
+    background-color: var(--arriere-plan-bouton-survol);
 }
 
 .bouton_nav {
@@ -52,6 +61,7 @@ button {
 
 .bouton-danger:hover {
     background-color: var(--couleur-danger-survol);
+    color: var(--arriere-plan);
 }
 
 .bouton-success {
@@ -64,10 +74,11 @@ button {
 }
 
 .bouton-warning {
-    background-color: var(--couleur-warning);
-    color: var(--texte-secondaire);
+    background-color: var(--arriere-plan);
+    color: var(--couleur-warning);
 }
 
 .bouton-warning:hover {
     background-color: var(--couleur-warning-survol);
+    color: var(--arriere-plan);
 }

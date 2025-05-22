@@ -54,8 +54,6 @@
 }
 
 .cellier-page .bouton-warning {
-    background-color: #fff;
-    color: var(--couleur-warning);
     border-radius: 6px;
     padding: 1px 5px 0px;
 }

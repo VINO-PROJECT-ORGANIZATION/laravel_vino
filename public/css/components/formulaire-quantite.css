@@ -2,18 +2,18 @@
     display: flex;
     flex-direction: row;
     gap: var(--espace-moyen);
-    background-color: var(--arriere-plan-gris-pale);
     align-items: center;
     border-radius: var(--rayon-bouton);
     height: 50px;
     padding: var(--espace-moyen);
+    border: 1px solid var(--bordure-claire);
 }
 
 
     .formulaire-quantite .input-group {
         display: flex;
         flex-direction: row;
-        gap: var(--espace-petit);
+        gap: var(--espace-moyen);
         width: 100%;
         align-items: center;
     }

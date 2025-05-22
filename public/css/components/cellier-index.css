@@ -45,6 +45,7 @@
     gap: var(--espace-moyen);
 }
 
+
 .celliers-carte__image {
     display: flex;
     justify-content: center;
@@ -85,14 +86,14 @@
 }
 .celliers-page .container {
      margin: 0;
+     flex-grow: 1;
 }
-.celliers-carte__actions .bouton {
+ .celliers-carte__actions .bouton {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     font-size: var(--taille-label);
-    background-color: var(--arriere-plan-bouton);
     padding: var(--espace-petit);
     gap: var(--espace-petit);
     border: none;
@@ -101,9 +102,9 @@
 .celliers-carte__actions .bouton .fa{
     font-size:1.5rem;
 }
-.celliers-carte__actions .bouton:hover {
+/* .celliers-carte__actions .bouton:hover {
     background-color: var(--arriere-plan-bouton-survol);
-}
+} */
 .celliers-carte__actions .bouton img {
     width: auto;
     height: 25px;

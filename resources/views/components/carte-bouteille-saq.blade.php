@@ -80,7 +80,7 @@
 
 
             <div class="espace-bouton">
-                <a class="bouton" href="{{ route('cellier_bouteilles.create', ['id' => $bouteille->id]) }}">
+                <a class="bouton secondaire" href="{{ route('cellier_bouteilles.create', ['id' => $bouteille->id]) }}">
                     Ajouter au cellier
                 </a>
             </div>
