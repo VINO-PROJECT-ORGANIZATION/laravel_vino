@@ -45,8 +45,8 @@ button {
 }
 
 .bouton-danger {
-    background-color: var(--couleur-danger);
-    color: var(--texte-secondaire);
+    background-color: var(--arriere-plan);
+    color: var(--couleur-danger);
     border-radius: 6px;
 }
 

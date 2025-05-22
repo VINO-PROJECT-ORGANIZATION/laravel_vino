@@ -59,6 +59,7 @@
     max-width: 100px;
 }
 
+
 .celliers-carte__titre {
     font-size: var(--taille-titre-page);
     color: var(--texte-primaire);
@@ -83,8 +84,7 @@
     font-size: 11px;
 }
 .celliers-page .container {
-    flex-grow: 1;
-    margin: 0;
+     margin: 0;
 }
 .celliers-carte__actions .bouton {
     display: flex;
