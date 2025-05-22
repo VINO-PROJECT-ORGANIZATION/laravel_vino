@@ -19,16 +19,17 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
-        align-items: center;
         gap: var(--espace-petit);
         padding: var(--espace-moyen) 0;
     }
 }
+
 .slider__cellier-container-item .bouton {
     display: flex;
     justify-content: center;
-    
+
 }
+
 .slider__cellier-container-item .bouton a {
-   font-size: 0.9rem; 
+    font-size: 0.9rem;
 }
