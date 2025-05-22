@@ -1,4 +1,4 @@
-<x-header-nav-sec />
+<x-header-nav-sec :pageCourante="$pageCourante" />
 <main class="enregistrement-form-page">
     <section class="enregistrement-form">
         <header>
@@ -14,7 +14,8 @@
             <!-- Email -->
             <div class="groupe-input balise_courriel">
                 <label for="email">Adresse courriel</label>
-                <input id="email" type="email" name="email" value="{{ old('email', request('email')) }}" required autofocus>
+                <input id="email" type="email" name="email" value="{{ old('email', request('email')) }}" required
+                    autofocus>
                 <x-input-error :messages="$errors->get('email')" />
             </div>
 

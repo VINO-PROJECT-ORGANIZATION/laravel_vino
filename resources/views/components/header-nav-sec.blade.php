@@ -1,3 +1,4 @@
+@props(['pageCourante'])
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -13,7 +14,7 @@
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
     <script src="{{asset('js/main.js')}}" type="module"></script>
-    <title>à changer</title>
+    <title>{{ $pageCourante }}</title>
 
 </head>
 
