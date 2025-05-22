@@ -86,5 +86,11 @@
                 @endif
             </section>
         </form>
+        <form method="POST" action="{{ route('profile.destroy') }}" class="margin-top">
+            @csrf
+            @method('DELETE')
+            <input type="text" id="delete_user_id" name="delete_user_id" value="{{ $user['id'] }}" hidden>
+            <button class="bouton bouton-danger" type="submit">Supprimer le compte</button>
+        </form>
     </div>
 </section>
