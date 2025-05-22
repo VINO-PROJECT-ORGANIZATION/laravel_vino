@@ -38,6 +38,8 @@
     background-color: #e5e5e5;
 }
 
+
+
 .celliers-carte__actions {
     display: flex;
     /* justify-content: space-between; */
@@ -47,17 +49,23 @@
 
 
 .celliers-carte__image {
+    padding: var(--espace-moyen);
     display: flex;
-    justify-content: center;
     align-items: center;
     width: 100%;
-    height: 120px;
+    height: 100px;
+    line-height: 1.25rem;
     border-radius: 1rem;
     object-fit: cover;
+    gap: var(--espace-moyen);
 }
 
 .celliers-carte__image img {
-    max-width: 100px;
+    max-width: 75px;
+}
+
+.celliers-carte__image h2 {
+    font-size: medium;
 }
 
 
@@ -67,7 +75,12 @@
     font-weight: var(--poids-texte-gras);
 }
 
-.celliers-page, .cellier-page {
+.celliers-carte__titre+.celliers-carte__description {
+    margin-top: var(--espace-petit);
+}
+
+.celliers-page,
+.cellier-page {
     gap: var(--espace-moyen);
 }
 
@@ -84,11 +97,13 @@
     max-width: 180px;
     font-size: 11px;
 }
+
 .celliers-page .container {
      margin: 0;
      flex-grow: 1;
 }
- .celliers-carte__actions .bouton {
+
+.celliers-carte__actions .bouton {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -99,18 +114,16 @@
     border: none;
     color: var(--texte-primaire);
 }
-.celliers-carte__actions .bouton .fa{
-    font-size:1.5rem;
+
+.celliers-carte__actions .bouton .fa {
+    font-size: 1.5rem;
 }
-/* .celliers-carte__actions .bouton:hover {
-    background-color: var(--arriere-plan-bouton-survol);
-} */
 .celliers-carte__actions .bouton img {
     width: auto;
     height: 25px;
 }
 
-.celliers-carte + .celliers-carte {
+.celliers-carte+.celliers-carte {
     margin-top: var(--espace-moyen);
 }
 
