@@ -1,4 +1,4 @@
-<x-header-nav-sec />
+<x-header-nav-sec :pageCourante="$pageCourante" />
 <main>
     <h1>Edition des bouteilles dans le cellier</h1>
 </main>

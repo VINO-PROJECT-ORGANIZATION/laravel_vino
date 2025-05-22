@@ -1,4 +1,4 @@
-<x-header-nav-sec />
+<x-header-nav-sec :pageCourante="$pageCourante" />
 <main class="enregistrement-form-page">
     <section class="enregistrement-form">
         <header>

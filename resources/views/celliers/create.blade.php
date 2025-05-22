@@ -1,4 +1,4 @@
-<x-header-nav-sec />
+<x-header-nav-sec :pageCourante="$pageCourante" />
 <main>
     <div class="edit_cellier">
         <h1>Création de cellier</h1>

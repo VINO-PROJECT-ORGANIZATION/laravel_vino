@@ -1,4 +1,4 @@
-<x-header-nav-sec />
+<x-header-nav-sec :pageCourante="$pageCourante" />
 <main>
     <h1>ajout de bouteille dans le cellier</h1>
     <form method="POST" action="{{ route('cellier_bouteilles.store') }}">

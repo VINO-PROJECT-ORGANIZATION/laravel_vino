@@ -1,4 +1,4 @@
-<x-header-nav-sec />
+<x-header-nav-sec :pageCourante="$pageCourante" />
 <main>
     <h1>Bouteilles par utilisateur</h1>
     @foreach ($bouteillesUtilisateur as $bouteilleUtilisateur)

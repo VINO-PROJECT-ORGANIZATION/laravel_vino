@@ -1,10 +1,10 @@
-html{
+html {
     font-size: 16px;
 }
 
 body {
     /* background-color: var(--arriere-plan); */
-    background-color: var(--arriere-plan);
+    background-color: var(--arriere-plan-gris-pale);
     min-width: 100%;
     min-height: 100%;
     margin: 0;
@@ -14,9 +14,11 @@ body {
     font-weight: 400;
     font-style: normal;
 }
-header.header__general{
+
+header.header__general {
     background-color: var(--arriere-plan);
 }
+
 main {
     display: flex;
     flex-direction: column;
@@ -33,6 +35,7 @@ main {
         color: var(--texte-primaire);
     }
 }
+
 input[type="submit" i] {
     border: none;
 }

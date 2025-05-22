@@ -1,4 +1,4 @@
-<x-header-nav-sec />
+<x-header-nav-sec :pageCourante="$pageCourante" />
 <main class="enregistrement-form-page">
     <section class="enregistrement-form">
         <header>
@@ -11,7 +11,8 @@
 
                 <!-- Email -->
                 <div class="groupe-input balise_courriel">
-                    <label for="email">Veuillez entrer votre courriel afin de recevoir votre nouveau mot de passe</label>
+                    <label for="email">Veuillez entrer votre courriel afin de recevoir votre nouveau mot de
+                        passe</label>
                     <input type="email" id="email" name="email" required autofocus>
                     <x-input-error :messages="$errors->get('email')" />
                 </div>

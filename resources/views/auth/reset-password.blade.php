@@ -1,10 +1,10 @@
-<x-header-nav-sec />
+<x-header-nav-sec :pageCourante="$pageCourante" />
 <main class="enregistrement-form-page">
     <section class="enregistrement-form">
         <header>
             <h1>Création du nouveau mot de passe</h1>
         </header>
-        <form method="POST" action="{{ route('password.update') }}">
+        <form method="POST" action="{{ route('password.store') }}">
             @csrf
             @method('PUT')
 
@@ -14,7 +14,8 @@
             <!-- Email -->
             <div class="groupe-input balise_courriel">
                 <label for="email">Adresse courriel</label>
-                <input id="email" type="email" name="email" value="{{ old('email', request('email')) }}" required autofocus>
+                <input id="email" type="email" name="email" value="{{ old('email', request('email')) }}" required
+                    autofocus>
                 <x-input-error :messages="$errors->get('email')" />
             </div>
 

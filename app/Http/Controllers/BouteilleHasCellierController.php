@@ -30,6 +30,10 @@ class BouteilleHasCellierController extends Controller
         // $les cellier de l'utilisateur
         $celliers = Cellier::where('user_id', auth()->id())->get();
 
+        if ($celliers->isEmpty()) {
+            return redirect()->route('celliers.index')->with('error', 'Vous devez d\'abord créer un cellier.');
+        }
+
         return view('bouteille_has_cellier.create', compact('bouteilles', 'celliers', 'pageCourante'));
     }
 
@@ -115,68 +119,68 @@ class BouteilleHasCellierController extends Controller
 
     // Fonction pour montrer toutes les bouteilles d'un cellier
     public function bouteillesDansCellier($cellier_id, Request $request)
-{
-    $user = Auth::user();
-    $demande = $request->input('requete');
-    $type = $request->input('type');
-    $format = $request->input('format');
-    $pays = $request->input('pays');
-    $pageCourante = 'bouteillesParCellier';
+    {
+        $user = Auth::user();
+        $demande = $request->input('requete');
+        $type = $request->input('type');
+        $format = $request->input('format');
+        $pays = $request->input('pays');
+        $pageCourante = 'bouteillesParCellier';
 
-    // Vérifie si ce cellier appartient bien à l'utilisateur connecté
-    $cellier = Cellier::where('id', $cellier_id)
-        ->where('user_id', $user->id)
-        ->first();
+        // Vérifie si ce cellier appartient bien à l'utilisateur connecté
+        $cellier = Cellier::where('id', $cellier_id)
+            ->where('user_id', $user->id)
+            ->first();
 
-    if (!$cellier) {
-        return redirect()->route('accueil')->with('error', 'Ce cellier ne vous appartient pas.');
+        if (!$cellier) {
+            return redirect()->route('accueil')->with('error', 'Ce cellier ne vous appartient pas.');
+        }
+
+        $bouteillesQuery = BouteilleHasCellier::with(['bouteille', 'cellier'])
+            ->where('cellier_id', $cellier_id)
+            ->join('bouteilles', 'bouteille_id', '=', 'bouteilles.id')
+            ->select('bouteille_has_celliers.*'); // Pour éviter de surcharger les attributs
+
+        // Si recherche textuelle
+        if (!empty($demande)) {
+            $champs = ['nom', 'format', 'pays', 'type', 'code_saq'];
+            $bouteillesQuery->where(function ($query) use ($demande, $champs) {
+                foreach ($champs as $champ) {
+                    $query->orWhere($champ, 'like', "%{$demande}%");
+                }
+            });
+        }
+
+        // Filtres
+        if ($type) {
+            $bouteillesQuery->where('type', $type);
+        }
+
+        if ($format) {
+            $bouteillesQuery->where('format', $format);
+        }
+
+        if ($pays) {
+            $bouteillesQuery->where('pays', $pays);
+        }
+
+        // Pagination
+        $bouteilles = $bouteillesQuery->paginate(50)->withQueryString();
+
+        session()->put('id_cellier', $cellier_id);
+
+        // Pour générer la liste de pays dynamiquement (utile pour ton select dans la vue)
+        $listePays = Bouteille::trouveNomDePays();
+
+        return view('bouteille_has_cellier.par_cellier', compact(
+            'bouteilles',
+            'cellier_id',
+            'pageCourante',
+            'cellier',
+            'demande',
+            'listePays'
+        ));
     }
-
-    $bouteillesQuery = BouteilleHasCellier::with(['bouteille', 'cellier'])
-        ->where('cellier_id', $cellier_id)
-        ->join('bouteilles', 'bouteille_id', '=', 'bouteilles.id')
-        ->select('bouteille_has_celliers.*'); // Pour éviter de surcharger les attributs
-
-    // Si recherche textuelle
-    if (!empty($demande)) {
-        $champs = ['nom', 'format', 'pays', 'type', 'code_saq'];
-        $bouteillesQuery->where(function ($query) use ($demande, $champs) {
-            foreach ($champs as $champ) {
-                $query->orWhere($champ, 'like', "%{$demande}%");
-            }
-        });
-    }
-
-    // Filtres
-    if ($type) {
-        $bouteillesQuery->where('type', $type);
-    }
-
-    if ($format) {
-        $bouteillesQuery->where('format', $format);
-    }
-
-    if ($pays) {
-        $bouteillesQuery->where('pays', $pays);
-    }
-
-    // Pagination
-    $bouteilles = $bouteillesQuery->paginate(50)->withQueryString();
-
-    session()->put('id_cellier', $cellier_id);
-
-    // Pour générer la liste de pays dynamiquement (utile pour ton select dans la vue)
-    $listePays = Bouteille::trouveNomDePays();
-
-    return view('bouteille_has_cellier.par_cellier', compact(
-        'bouteilles',
-        'cellier_id',
-        'pageCourante',
-        'cellier',
-        'demande',
-        'listePays'
-    ));
-}
 
     // Fonction pour montrer toutes les bouteilles de l'utilisateur
     public function bouteillesUtilisateur($user_id)
