@@ -12,17 +12,17 @@
                 <div class="groupe-input">
                     <label for="teinte">Teinte de fond</label>
                     <select name="teinte" id="teinte" required>
-                        <option value="">Sélectionner une teinte</option>
-                        <option value="#F28B82">Rouge Framboise pastel</option>
-                        <option value="#FBC4AB">Rosé Pêche</option>
-                        <option value="#FDF6E3">Blanc Vanille</option>
-                        <option value="#CDEAC0">Sauge pâle</option>
-                        <option value="#E6E6FA">Lavande brume</option>
-                        <option value="#D1F2EB">Menthe douce</option>
-                        <option value="#AEDFF7">Bleu Ciel</option>
-                        <option value="#FFF1D0">Champagne pâle</option>
-                        <option value="#FFD1DC">Corail pastel</option>
-                        <option value="#E5E5E5">Gris perle</option>
+                        <option value="" selected>Choisir option</option>
+                        <option value="#F28B82" class="rouge-framboise">Rouge Framboise pastel</option>
+                        <option value="#FBC4AB" class="rose-peche">Rosé Pêche</option>
+                        <option value="#FDF6E3" class="blanc-vanille">Blanc Vanille</option>
+                        <option value="#CDEAC0" class="sauge-pale">Sauge pâle</option>
+                        <option value="#E6E6FA" class="lavande-brume">Lavande brume</option>
+                        <option value="#D1F2EB" class="menthe-douce">Menthe douce</option>
+                        <option value="#AEDFF7" class="bleu-ciel">Bleu Ciel</option>
+                        <option value="#FFF1D0" class="champagne-pale">Champagne pâle</option>
+                        <option value="#FFD1DC" class="corail-pastel">Corail pastel</option>
+                        <option value="#E5E5E5" class="gris-perle">Gris perle</option>
                     </select>
                 </div>
                 <label for="user_id" hidden></label>
