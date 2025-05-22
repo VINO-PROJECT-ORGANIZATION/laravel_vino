@@ -37,6 +37,7 @@
 }
 
 .formulaire-quantite .bouton {
+    color: var(--texte-primaire);
     max-width: 180px;
     width: 60%;
     font-size: 0.8rem;
